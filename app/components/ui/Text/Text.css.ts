@@ -1,12 +1,13 @@
 import { styleVariants, style } from "@vanilla-extract/css";
+import { createStyleObject } from "@capsizecss/core";
 import { breakpoints } from "~/theme/breakpoints";
 import { vars } from "~/theme/theme.css";
 import {
   baseTypescaleTokens,
-  breakPointFontSizePx,
+  breakPointFontRelativeSize,
   fontMetrics,
 } from "~/theme/typography";
-import { createTextStyle } from "~/util/capsize";
+import { stripUnit } from "polished";
 
 export const textBase = style({
   margin: 0,
@@ -17,10 +18,10 @@ function getFontSize({
   breakPoint,
   token,
 }: {
-  breakPoint: keyof typeof breakPointFontSizePx;
+  breakPoint: keyof typeof breakPointFontRelativeSize;
   token: keyof typeof baseTypescaleTokens;
 }) {
-  return baseTypescaleTokens[token] * breakPointFontSizePx[breakPoint];
+  return baseTypescaleTokens[token] * breakPointFontRelativeSize[breakPoint];
 }
 
 function getStyles(
@@ -39,33 +40,59 @@ function getStyles(
   const tabletFontSize = getFontSize({ breakPoint: "tablet", token });
   const desktopFontSize = getFontSize({ breakPoint: "desktop", token });
 
-  return createTextStyle(
-    {
-      fontSize: mobileFontSize,
-      lineGap: lineGapRatio.mobile
-        ? lineGapRatio.mobile * mobileFontSize
-        : undefined,
-      fontMetrics,
-    },
-    {
-      "@media": {
-        [`screen and (min-width: ${breakpoints.tablet}px)`]: {
-          fontSize: getFontSize({ breakPoint: "tablet", token }),
-          lineGap: lineGapRatio.tablet
-            ? lineGapRatio.tablet * tabletFontSize
-            : undefined,
-          fontMetrics,
-        },
-        [`screen and (min-width: ${breakpoints.desktop}px)`]: {
-          fontSize: getFontSize({ breakPoint: "desktop", token }),
-          lineGap: lineGapRatio.desktop
-            ? lineGapRatio.desktop * desktopFontSize
-            : undefined,
-          fontMetrics,
-        },
+  const styleMobile = createStyleObject({
+    fontSize: mobileFontSize,
+    lineGap: lineGapRatio.mobile
+      ? lineGapRatio.mobile * mobileFontSize
+      : undefined,
+    fontMetrics,
+  });
+
+  const styleTablet = createStyleObject({
+    fontSize: tabletFontSize,
+    lineGap: lineGapRatio.tablet
+      ? lineGapRatio.tablet * tabletFontSize
+      : undefined,
+    fontMetrics,
+  });
+
+  const styleDesktop = createStyleObject({
+    fontSize: desktopFontSize,
+    lineGap: lineGapRatio.desktop
+      ? lineGapRatio.desktop * desktopFontSize
+      : undefined,
+    fontMetrics,
+  });
+
+  return style({
+    fontSize: `${stripUnit(styleMobile.fontSize)}rem`,
+    lineHeight:
+      styleMobile.lineHeight === "normal"
+        ? styleMobile.lineHeight
+        : `${stripUnit(styleMobile.lineHeight)}rem`,
+    "::before": styleMobile["::before"],
+    "::after": styleMobile["::after"],
+    "@media": {
+      [`screen and (min-width: ${breakpoints.tablet}px)`]: {
+        fontSize: `${stripUnit(styleTablet.fontSize)}rem`,
+        lineHeight:
+          styleTablet.lineHeight === "normal"
+            ? styleTablet.lineHeight
+            : `${stripUnit(styleTablet.lineHeight)}rem`,
+        "::before": styleTablet["::before"],
+        "::after": styleTablet["::after"],
       },
-    }
-  );
+      [`screen and (min-width: ${breakpoints.desktop}px)`]: {
+        fontSize: `${stripUnit(styleDesktop.fontSize)}rem`,
+        lineHeight:
+          styleDesktop.lineHeight === "normal"
+            ? styleDesktop.lineHeight
+            : `${stripUnit(styleDesktop.lineHeight)}rem`,
+        "::before": styleDesktop["::before"],
+        "::after": styleDesktop["::after"],
+      },
+    },
+  });
 }
 
 /**

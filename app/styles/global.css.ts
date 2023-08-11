@@ -2,7 +2,7 @@ import { globalStyle } from "@vanilla-extract/css";
 import { darkMode, lightMode } from "~/styles/colorMode";
 import { breakpoints } from "~/theme/breakpoints";
 import { vars } from "~/theme/theme.css";
-import { breakPointFontSizePx } from "~/theme/typography";
+import { breakPointFontRelativeSize } from "~/theme/typography";
 
 const { colors } = vars;
 const { standard, info } = colors;
@@ -14,13 +14,13 @@ globalStyle("html, body", {
   fontFamily: vars.fonts,
   background: standard.appBackground,
   color: standard.highContrastText,
-  fontSize: `${breakPointFontSizePx.mobile}px`,
+  fontSize: `${breakPointFontRelativeSize.mobile * 100}%`,
   "@media": {
     [`screen and (min-width: ${breakpoints.tablet}px)`]: {
-      fontSize: `${breakPointFontSizePx.tablet}px`,
+      fontSize: `${breakPointFontRelativeSize.tablet * 100}%`,
     },
     [`screen and (min-width: ${breakpoints.desktop}px)`]: {
-      fontSize: `${breakPointFontSizePx.desktop}px`,
+      fontSize: `${breakPointFontRelativeSize.desktop * 100}%`,
     },
   },
 });

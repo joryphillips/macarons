@@ -5,19 +5,11 @@ import {
   lightColorStateTheme,
 } from "./colors";
 import { boxShadow } from "./shadows";
-import { px, spacing } from "./spacing";
-import {
-  fonts,
-  typeScaleContract,
-  weight,
-  getTypographyScalesByBreakpoint,
-} from "./typography";
-import { rem } from "polished";
+import { spacing } from "./spacing";
+import { fonts, weight } from "./typography";
 
 export const vars = createThemeContract({
   colors: colorStateContract,
-  // fontSize: typeScaleContract,
-  // lineHeight: typeScaleContract,
   fonts: "",
   weight: {
     thin: "",
@@ -88,8 +80,6 @@ export const vars = createThemeContract({
 });
 
 const commonVars = {
-  // fontSize: getTypographyScalesByBreakpoint("fontSize"),
-  // lineHeight: getTypographyScalesByBreakpoint("lineHeight"),
   fonts,
   weight,
   spacing,

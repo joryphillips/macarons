@@ -58,6 +58,7 @@ export const vars = createThemeContract({
     fit: "",
     min: "",
     max: "",
+    prose: "",
   },
   border: {
     width: {
@@ -99,6 +100,7 @@ const commonVars = {
     fit: "fit-content",
     min: "min-content",
     max: "max-content",
+    prose: "65ch",
   },
   border: {
     width: {

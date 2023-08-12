@@ -1,12 +1,12 @@
 import { Link } from "@remix-run/react";
-import { VStack, Heading, Text, Divider, Box } from "~/components/ui";
+import { VStack, Heading, Text, Divider } from "~/components/ui";
 
 export default function IntroductionRoute() {
   return (
     <VStack
       gap={8}
       paddingBottom={8}
-      maxWidth="sm"
+      maxWidth="prose"
       width="100%"
       alignItems="flex-start"
     >

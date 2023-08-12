@@ -1,11 +1,11 @@
-import { VStack, Heading, Text, Divider, Box } from "~/components/ui";
+import { VStack, Heading, Text } from "~/components/ui";
 
 export default function WhyRoute() {
   return (
     <VStack
       gap={8}
       paddingBottom={8}
-      maxWidth="sm"
+      maxWidth="prose"
       width="100%"
       alignItems="flex-start"
     >

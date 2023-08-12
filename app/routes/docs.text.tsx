@@ -1,4 +1,4 @@
-import { Divider, Heading, Text, VStack } from "~/components/ui";
+import { Box, Divider, Heading, Text, VStack } from "~/components/ui";
 
 export default function TextRoute() {
   return (
@@ -106,6 +106,40 @@ export default function TextRoute() {
           </Text>
         </VStack>
       </VStack>
+      <VStack gap={6} alignItems="flex-start">
+        <Heading as="h3" size="lg">
+          Text for Building UIs
+        </Heading>
+        <VStack width="100%" alignItems="baseline" gap={0} maxWidth="xs">
+          <Box
+            width="100%"
+            style={{ height: "1rem", opacity: 0.5 }}
+            backgroundColor="solidBackground"
+          />
+          <Text size="uiMd">
+            uiMd: note that when this size variant wraps, it will use Capsize to
+            make the top of capital letters touch the bottom of the element
+            above, and elements below will be touching the baseline.
+          </Text>
+          <Box
+            width="100%"
+            style={{ height: "1rem", opacity: 0.5 }}
+            backgroundColor="solidBackground"
+          />
+
+          <Text size="uiSm">
+            uiSm: note that when this size variant wraps, it will use Capsize to
+            make the top of capital letters touch the bottom of the element
+            above, and elements below will be touching the baseline.
+          </Text>
+          <Box
+            width="100%"
+            style={{ height: "1rem", opacity: 0.5 }}
+            backgroundColor="solidBackground"
+          />
+        </VStack>
+      </VStack>
+      <Divider />
     </VStack>
   );
 }

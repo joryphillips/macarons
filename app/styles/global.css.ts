@@ -11,6 +11,15 @@ globalStyle("html, body", {
   margin: 0,
   padding: 0,
   boxSizing: "border-box",
+});
+
+/**
+ * Controls the font and scaling of the entire app based on the defined
+ * breakpoints. We are using relative units for font size, so that users are
+ * able to increase the font size in their browser settings, which is important
+ * for accessibility.
+ */
+globalStyle("html", {
   fontFamily: vars.fonts,
   background: standard.appBackground,
   color: standard.highContrastText,

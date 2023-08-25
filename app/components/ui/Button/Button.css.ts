@@ -22,7 +22,7 @@ const buttonBase = style({
   borderColor: "transparent",
   backgroundColor: info.solidBackground,
   // TEMP flipping as the background is a dark blue
-  color: standard.appBackground,
+  color: standard.textOnSolidBackground,
   cursor: "pointer",
   selectors: {
     "&:hover": {
@@ -36,7 +36,7 @@ const buttonBase = style({
       opacity: 0.5,
     },
     "&:active": {
-      backgroundColor: info.hoveredSolidBackground,
+      backgroundColor: info.activeSolidBackground,
       boxShadow: "none",
     },
   },
@@ -60,11 +60,12 @@ export const buttonStyleVariants = styleVariants({
         "&:hover": {
           backgroundColor: destructive.hoveredSolidBackground,
         },
-        "&:active": {
-          backgroundColor: destructive.hoveredSolidBackground,
-        },
         "&:focus-visible": {
           boxShadow: `0 0 0 2px ${destructive.elementBorder}`,
+        },
+        "&:active": {
+          backgroundColor: destructive.hoveredSolidBackground,
+          boxShadow: "none",
         },
       },
     },
@@ -85,7 +86,8 @@ export const buttonStyleVariants = styleVariants({
           backgroundColor: standard.hoveredElementBackground,
         },
         "&:active": {
-          backgroundColor: standard.hoveredElementBackground,
+          backgroundColor: standard.activeElementBackground,
+          boxShadow: "none",
         },
       },
     },
@@ -99,11 +101,12 @@ export const buttonStyleVariants = styleVariants({
         "&:hover": {
           backgroundColor: standard.hoveredElementBackground,
         },
-        "&:active, &.active": {
-          backgroundColor: standard.hoveredElementBackground,
-        },
         "&:focus-visible": {
           boxShadow: `0 0 0 2px ${standard.hoveredElementBorder}`,
+        },
+        "&:active, &.active": {
+          backgroundColor: standard.activeElementBackground,
+          boxShadow: "none",
         },
       },
     },
@@ -117,11 +120,12 @@ export const buttonStyleVariants = styleVariants({
         "&:hover": {
           backgroundColor: standard.hoveredElementBackground,
         },
-        "&:active, &.active": {
-          backgroundColor: standard.hoveredElementBackground,
-        },
         "&:focus-visible": {
           boxShadow: `0 0 0 2px ${standard.hoveredElementBorder}`,
+        },
+        "&:active, &.active": {
+          backgroundColor: standard.activeElementBackground,
+          boxShadow: "none",
         },
       },
     },
@@ -168,11 +172,12 @@ export const buttonStyleVariants = styleVariants({
         "&:hover": {
           backgroundColor: primary.hoveredSolidBackground,
         },
-        "&:active": {
-          backgroundColor: primary.hoveredSolidBackground,
-        },
         "&:focus-visible": {
           boxShadow: `0 0 0 2px ${primary.elementBorder}`,
+        },
+        "&:active": {
+          backgroundColor: primary.activeSolidBackground,
+          boxShadow: "none",
         },
       },
     },

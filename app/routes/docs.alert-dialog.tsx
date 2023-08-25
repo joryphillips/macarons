@@ -20,7 +20,7 @@ export default function AlertDialogRoute() {
       <Button onClick={() => setDialogOpen(true)}>Open Dialog</Button>
       <AlertDialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <AlertDialogContent>
-          <VStack spacing={4} alignItems="flex-start" width="100%">
+          <VStack spacing={8} alignItems="flex-start" width="100%">
             <AlertDialogHeader>Dialog Header</AlertDialogHeader>
             <AlertDialogDescription>
               Dialog description area. Give your user clear instructions and

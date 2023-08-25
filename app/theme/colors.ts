@@ -43,26 +43,10 @@ const greenDark = {
   green12: grassDark.grass12,
 } as const;
 
-export const lightPalette = {
-  ...yellow,
-  ...gray,
-  ...green,
-  ...blue,
-  ...red,
-} as const;
-
-export const darkPalette = {
-  ...yellowDark,
-  ...grayDark,
-  ...greenDark,
-  ...blueDark,
-  ...redDark,
-} as const;
-
 /**
  *  https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale
  */
-export const colorTokenContract = {
+const radixColorScale = {
   /** Radix Color Scale Step 1: App background, or text on solid backgrounds */
   appBackground: "",
   /** Radix Color Scale Step 2: Subtle background */
@@ -83,13 +67,29 @@ export const colorTokenContract = {
   solidBackground: "",
   /** Radix Color Scale Step 10: Hovered solid backgrounds */
   hoveredSolidBackground: "",
-  /** Radix Color Scale Step 11: Low-contrast text */
+  /** Radix Color Scale Step 11: Low-contrast text, or active solid backgrounds */
   lowContrastText: "",
   /** Radix Color Scale Step 12: High-contrast text */
   highContrastText: "",
 } as const;
 
-type ColorToken = keyof typeof colorTokenContract;
+type RadixScale = keyof typeof radixColorScale;
+
+/**
+ * Additional token aliases for better DX. Values must match keys of the
+ * radixColorScale object.
+ */
+const tokenAliases = {
+  textOnSolidBackground: "appBackground",
+  activeSolidBackground: "lowContrastText",
+} as const;
+
+export const colorTokenContract = {
+  ...radixColorScale,
+  ...tokenAliases,
+};
+
+type TokenContract = keyof typeof colorTokenContract;
 
 export const colorStateContract = {
   primary: colorTokenContract,
@@ -105,14 +105,12 @@ export const colorStateContract = {
  * Alias Radix color scales to color states. If the Radix color system changes,
  * this function will need to be updated.
  */
-function aliasColorToTokens(
+function aliasStatesToColors(
   colorScale: Record<string, string>,
   colorName: string
-): Record<ColorToken, string> {
+): Record<RadixScale, string> {
   const colorScaleKeys = Object.keys(colorScale);
-  const colorTokens = Object.keys(
-    colorTokenContract
-  ) as (keyof typeof colorTokenContract)[];
+  const colorTokens = Object.keys(radixColorScale) as RadixScale[];
   if (colorScaleKeys.length !== colorTokens.length) {
     throw new Error(
       `Token and Color scale lengths are inconsistent. Token length: ${colorTokens.length}, Color scale length: ${colorScaleKeys.length}
@@ -124,26 +122,52 @@ function aliasColorToTokens(
       ...acc,
       [key]: colorScale[`${colorName}${index + 1}`],
     };
-  }, {} as Record<ColorToken, string>);
+  }, {} as Record<RadixScale, string>);
+}
+
+/**
+ * Merges the color scale with the token aliases.
+ */
+function getAliases(
+  colorScale: Record<string, string>,
+  colorName: string
+): Record<TokenContract, string> {
+  const scale = aliasStatesToColors(colorScale, colorName);
+  const additionalAliases = Object.entries(tokenAliases).reduce(
+    (acc, [newAlias, scaleKey]) => {
+      if (!(scaleKey in scale)) {
+        throw new Error(`Token ${scaleKey} is not in the color scale.`);
+      }
+      return {
+        ...acc,
+        [newAlias]: scale[scaleKey],
+      };
+    },
+    {} as Record<keyof typeof tokenAliases, string>
+  );
+  return {
+    ...scale,
+    ...additionalAliases,
+  };
 }
 
 export const lightColorStateTheme = {
-  primary: aliasColorToTokens(green, "green"), // anything other than gray, red, or yellow
-  standard: aliasColorToTokens(gray, "gray"),
-  info: aliasColorToTokens(blue, "blue"),
-  success: aliasColorToTokens(green, "green"),
-  warning: aliasColorToTokens(yellow, "yellow"),
-  error: aliasColorToTokens(red, "red"),
-  destructive: aliasColorToTokens(red, "red"), // same as error
+  primary: getAliases(green, "green"), // anything other than gray, red, or yellow
+  standard: getAliases(gray, "gray"),
+  info: getAliases(blue, "blue"),
+  success: getAliases(green, "green"),
+  warning: getAliases(yellow, "yellow"),
+  error: getAliases(red, "red"),
+  destructive: getAliases(red, "red"), // same as error
 };
 
 // NOTE that the property names do not have the word "Dark" in them
 export const darkColorStateTheme = {
-  primary: aliasColorToTokens(greenDark, "green"), // anything other than gray, red or yellow
-  standard: aliasColorToTokens(grayDark, "gray"),
-  info: aliasColorToTokens(blueDark, "blue"),
-  success: aliasColorToTokens(greenDark, "green"),
-  warning: aliasColorToTokens(yellowDark, "yellow"),
-  error: aliasColorToTokens(redDark, "red"),
-  destructive: aliasColorToTokens(redDark, "red"), // same as error
+  primary: getAliases(greenDark, "green"), // anything other than gray, red or yellow
+  standard: getAliases(grayDark, "gray"),
+  info: getAliases(blueDark, "blue"),
+  success: getAliases(greenDark, "green"),
+  warning: getAliases(yellowDark, "yellow"),
+  error: getAliases(redDark, "red"),
+  destructive: getAliases(redDark, "red"), // same as error
 };

@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "@remix-run/react";
 import type { UserTheme } from "~/components/ThemeProvider/ThemeProvider";
 import { ThemeProvider } from "~/components/ThemeProvider/ThemeProvider";
-import { Divider, HStack, Heading, Text, VStack } from "~/components/ui";
+import { Divider, HStack, Heading, VStack } from "~/components/ui";
 import { useMatchesData } from "~/util/useMatchesData";
 
 export default function UI() {
@@ -40,6 +40,8 @@ export default function UI() {
           >
             <NavLink to="/docs/intro">Introduction</NavLink>
             <NavLink to="/docs/why">Why</NavLink>
+            <NavLink to="/docs/philosophy">Philosophy</NavLink>
+
             <Divider />
 
             <NavLink to="/docs/alert">Alert</NavLink>

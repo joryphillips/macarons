@@ -1,4 +1,5 @@
-import { Box, Divider, Heading, Text, VStack } from "~/components/ui";
+import { Link } from "@remix-run/react";
+import { Box, Divider, HStack, Heading, Text, VStack } from "~/components/ui";
 
 export default function TextRoute() {
   return (
@@ -11,7 +12,7 @@ export default function TextRoute() {
         <Heading as="h3" size="lg">
           Size Options
         </Heading>
-        <VStack width="100%" alignItems="baseline" gap={8}>
+        <VStack width="100%" alignItems="flex-start" gap={8}>
           <Text as="p" size="2xl" color="lowContrastText">
             2xl: Hero size. Good for big, bold statements and headlines.
           </Text>
@@ -106,37 +107,48 @@ export default function TextRoute() {
           </Text>
         </VStack>
       </VStack>
+      <Divider />
       <VStack gap={6} alignItems="flex-start">
         <Heading as="h3" size="lg">
           Text for Building UIs
         </Heading>
-        <VStack width="100%" alignItems="baseline" gap={0} maxWidth="xs">
-          <Box
-            width="100%"
-            style={{ height: "1rem", opacity: 0.5 }}
-            backgroundColor="solidBackground"
-          />
-          <Text size="uiMd">
-            uiMd: note that when this size variant wraps, it will use Capsize to
-            make the top of capital letters touch the bottom of the element
-            above, and elements below will be touching the baseline.
+        <VStack width="100%" alignItems="flex-start" gap={8}>
+          <HStack
+            gap={6}
+            alignItems="center"
+            marginY={6}
+            style={{
+              borderTop: "1px solid gray",
+              borderBottom: "1px solid gray",
+            }}
+          >
+            <Text as="label" size="md" color="standardHighContrast">
+              Label
+            </Text>
+            <Box
+              backgroundColor="elementBackground"
+              style={{ height: "1rem" }}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              paddingX={2}
+            >
+              <Text size="xs">Box with height at 1rem</Text>
+            </Box>
+          </HStack>
+          <Text>
+            Using size="md" calculates capital letters at exactly 1rem. Because
+            we are using{" "}
+            <Link to="https://seek-oss.github.io/capsize/">Capsize</Link>, the
+            resulting computed font size shown in the browser's developer tools
+            will be non-rounded numbers larger than 1rem. This is mitigated
+            using typography tokens for root relative sizes that are smaller.
           </Text>
-          <Box
-            width="100%"
-            style={{ height: "1rem", opacity: 0.5 }}
-            backgroundColor="solidBackground"
-          />
-
-          <Text size="uiSm">
-            uiSm: note that when this size variant wraps, it will use Capsize to
-            make the top of capital letters touch the bottom of the element
-            above, and elements below will be touching the baseline.
+          <Text>
+            For this small cost, we have finer control for lining text up with
+            UI elements, and the user can change the readability of text by
+            changing the default font size for the page.
           </Text>
-          <Box
-            width="100%"
-            style={{ height: "1rem", opacity: 0.5 }}
-            backgroundColor="solidBackground"
-          />
         </VStack>
       </VStack>
       <Divider />

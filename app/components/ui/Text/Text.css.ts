@@ -17,12 +17,12 @@ const LINE_GAP_RATIO = {
 } as const;
 
 /**
- * Note that instead of using the vanilla-extract capsize function, we are using
- * createStyleObject to get the font and line height values. This is because we
- * are using relative units for font size and line height (hence the `stripUnit`
- * function), and letting global styles control scaling at the defined
- * breakpoints. As a result, users are able to increase the font size in their
- * browser settings, which is important for accessibility.
+ * Note that instead of using the vanilla extract-specific capsize function, we
+ * are using createStyleObject to get the font and line height values. This is
+ * because we are using relative units for font size and line height (hence the
+ * `stripUnit` function), and letting global styles control scaling at the
+ * defined breakpoints. As a result, users are able to increase the font size in
+ * their browser settings, which is important for accessibility.
  */
 function getStyles(
   token: keyof typeof baseTypescaleTokens,
@@ -31,17 +31,11 @@ function getStyles(
   const fontSize = baseTypescaleTokens[token];
   const lineGap = lineGapRatio != null ? lineGapRatio * fontSize : undefined;
 
-  const styleParam = token.includes("ui")
-    ? {
-        capHeight: fontSize,
-        lineGap,
-        fontMetrics,
-      }
-    : {
-        fontSize,
-        lineGap,
-        fontMetrics,
-      };
+  const styleParam = {
+    capHeight: fontSize,
+    lineGap,
+    fontMetrics,
+  };
 
   const fontStyle = createStyleObject(styleParam);
 
@@ -83,8 +77,6 @@ export const textScale = styleVariants({
   md: [textBase, getStyles("md", LINE_GAP_RATIO.prose)],
   sm: [textBase, getStyles("sm", LINE_GAP_RATIO.prose)],
   xs: [textBase, getStyles("xs", LINE_GAP_RATIO.prose)],
-  uiMd: [textBase, getStyles("uiMd", LINE_GAP_RATIO.prose)],
-  uiSm: [textBase, getStyles("uiSm", LINE_GAP_RATIO.normal)],
 });
 
 export const textAlignStyles = styleVariants({

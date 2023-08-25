@@ -24,10 +24,14 @@ export const weight = {
   black: "900",
 } as const;
 
+/**
+ * These relative sizes might seem small, but we are using Capsize to size
+ * according to the actual height of capital letters for easier grid alignment.
+ */
 export const breakPointFontRelativeSize = {
-  mobile: 1,
-  tablet: 1.125,
-  desktop: 1.25,
+  mobile: 0.75, // ~17px when base font size is 16px
+  tablet: 0.8125, // ~18.5px when base font size is 16px
+  desktop: 0.875, // ~20px when base font size is 16px
 } as const;
 
 /**
@@ -38,8 +42,6 @@ export const baseTypescaleTokens = {
   xl: Number(modularScale(2, 1, "majorThird")),
   lg: Number(modularScale(1, 1, "majorThird")),
   md: 1,
-  uiMd: Number(modularScale(-1, 1, "majorThird")),
   sm: Number(modularScale(-1, 1, "majorThird")),
-  uiSm: Number(modularScale(-2, 1, "majorThird")),
   xs: Number(modularScale(-2, 1, "majorThird")),
 } as const;

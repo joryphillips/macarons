@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 import { VStack, Heading, Button } from "~/components/ui";
 
-export default function AlertDialogRoute() {
+export default function ButtonRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
       <Heading>Button</Heading>

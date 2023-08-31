@@ -14,16 +14,16 @@ export default function IntroductionRoute() {
         Introduction
       </Heading>
       <Text as="p">
-        Madeleines is a design and UI component system intended for React
-        projects. It was built with{" "}
-        <Link to="https://www.radix-ui.com/" target="_blank">
-          Radix
+        Madeleine is a design system with styled UI components intended for
+        React projects. It was built with{" "}
+        <Link to="https://vanilla-extract.style" target="_blank">
+          Vanilla Extract
         </Link>{" "}
         and{" "}
-        <Link to="https://vanilla-extract.style" target="_blank">
-          Vanilla Extract,
-        </Link>{" "}
-        and is heavily influenced by{" "}
+        <Link to="https://www.radix-ui.com/" target="_blank">
+          Radix
+        </Link>
+        , and is heavily influenced by{" "}
         <Link to="https://chakra-ui.com/" target="_blank">
           Chakra UI
         </Link>{" "}
@@ -34,7 +34,7 @@ export default function IntroductionRoute() {
         .
       </Text>
       <Text as="p">
-        Madeleines was originally created to make a{" "}
+        Madeleine was originally created to make a{" "}
         <Link to="https://remix.run" target="_blank">
           Remix
         </Link>{" "}
@@ -47,24 +47,31 @@ export default function IntroductionRoute() {
         </Link>{" "}
         for users with limited bandwith and spotty internet connections.
       </Text>
+      <Heading as="h4" size="lg">
+        Priorities
+      </Heading>
       <Text as="p">
-        Madeleines is intended for intitial rapid app development, not
-        production use. It is opinionated, but is built in a way that makes it
-        easy to customize and extend.
+        Madeleine balances the needs for rapid development, flexibility, and
+        future maintenance. It prioritizes user experience and accessibility
+        along with easy developer onboarding —— or just being able to pick it
+        back up after not looking at it for a couple of months!
       </Text>
       <Text as="p">
-        If you want something more mature and have no qualms about Tailwind,{" "}
-        <Link to="https://ui.shadcn.com/" target="_blank">
-          shadcn/ui
-        </Link>{" "}
-        may be right for you. If you want something more mature and don't care
-        about SSR Streaming,{" "}
-        <Link to="https://chakra-ui.com/" target="_blank">
-          Chakra UI
-        </Link>{" "}
-        has just about everything you need to build your app. If you need
-        control over your own design system, and want something simple to build
-        from, keep reading.
+        Like the app it was developed alongside, Madeleine recognizes the future
+        potential need to swap out any library or tech stack decision or
+        approach for better solutions if they come along.{" "}
+      </Text>
+
+      <Heading as="h4" size="lg">
+        Non-Goals
+      </Heading>
+      <Text as="p">
+        So what was deprioritized? Madeleine does not attempt to be a
+        comprehensive solution, or one that can be installed via npm.
+      </Text>
+
+      <Text as="p">
+        Next: <Link to="/docs/philosophy">Philosophy</Link>
       </Text>
     </VStack>
   );

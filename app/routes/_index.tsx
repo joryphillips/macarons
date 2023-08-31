@@ -2,10 +2,11 @@ import { redirect, type V2_MetaFunction } from "@remix-run/node";
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: "Madeleines" },
+    { title: "Madeleine" },
     {
       name: "description",
-      content: "UI Components Built With Radix and Vanilla Extract ",
+      content:
+        "Design System and Styled UI Components Built with Vanilla Extract and Radix",
     },
   ];
 };

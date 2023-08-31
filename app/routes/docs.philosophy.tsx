@@ -100,10 +100,10 @@ export default function IntroductionRoute() {
           </Heading>
           <Text as="p">
             Never again add a css class prefix to prevent rules from leaking
-            from their intended component. (Hello, Web Components!) It's a
-            bummer to have to add <strong>.input</strong> to everything related
-            to your input, then realize that someone else is already using that
-            in one of your imports, and you have to go back and change it to{" "}
+            from their intended component. It's a bummer to have to add{" "}
+            <strong>.input</strong> to everything related to your input, then
+            realize that someone else is already using that in one of your
+            imports, and you have to go back and change it to{" "}
             <strong>.input-custom-to-this-project</strong> or something. Anyway,
             Vanilla Extract makes avoiding all this a breeze.
           </Text>
@@ -133,7 +133,7 @@ export default function IntroductionRoute() {
         <Text as="p">
           Includes a Box component for great DX and rapid iteration. Once you
           have experienced building a webpage with a Box, you'll want it for
-          everything.
+          everything. Notably, Radix recently added this to their system!
         </Text>
       </VStack>
     </VStack>

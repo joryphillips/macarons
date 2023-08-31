@@ -22,11 +22,11 @@ export default function UI() {
         <VStack width="100%" alignItems="flex-start" spacing={5}>
           <VStack width="100%" alignItems="flex-start" spacing={4}>
             <Heading as="h1" size="2xl">
-              Madeleines
+              Madeleine
             </Heading>
-            <Heading as="h2" size="lg" color="lowContrastText">
-              Design System and UI Components built with Radix and Vanilla
-              Extract
+            <Heading as="h2" size="md" color="lowContrastText">
+              Design System and Styled UI Components Built with Vanilla Extract
+              and Radix
             </Heading>
           </VStack>
         </VStack>
@@ -39,7 +39,6 @@ export default function UI() {
             alignItems="flex-start"
           >
             <NavLink to="/docs/intro">Introduction</NavLink>
-            <NavLink to="/docs/why">Why</NavLink>
             <NavLink to="/docs/philosophy">Philosophy</NavLink>
 
             <Divider />

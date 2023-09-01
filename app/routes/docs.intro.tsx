@@ -67,7 +67,8 @@ export default function IntroductionRoute() {
       </Heading>
       <Text as="p">
         So what was deprioritized? Madeleine does not attempt to be a
-        comprehensive solution, or one that can be installed via npm.
+        comprehensive solution, or one that can be installed via npm. This is
+        more of a starter kit or boilerplate to expand upon.
       </Text>
 
       <Text as="p">

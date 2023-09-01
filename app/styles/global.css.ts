@@ -1,5 +1,5 @@
 import { globalStyle } from "@vanilla-extract/css";
-import { darkMode, lightMode } from "~/styles/colorMode";
+import { darkMode, lightMode } from "~/theme/colorMode";
 import { breakpoints } from "~/theme/breakpoints";
 import { vars } from "~/theme/theme.css";
 import { breakPointFontRelativeSize } from "~/theme/typography";

@@ -47,7 +47,6 @@ export default function UI() {
             <NavLink to="/docs/alert-dialog">Alert Dialog</NavLink>
             <NavLink to="/docs/badge">Badge</NavLink>
             <NavLink to="/docs/checkbox">Checkbox</NavLink>
-            <NavLink to="/docs/combobox">Combobox</NavLink>
             <NavLink to="/docs/dialog">Dialog</NavLink>
             <NavLink to="/docs/divider">Divider</NavLink>
             <NavLink to="/docs/dropdown">Dropdown</NavLink>

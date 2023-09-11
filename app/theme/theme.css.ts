@@ -33,6 +33,7 @@ export const vars = createThemeContract({
     6: "",
     8: "",
     10: "",
+    12: "",
   },
   boxShadow: {
     none: "",

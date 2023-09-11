@@ -8,12 +8,16 @@ export default function ButtonRoute() {
       <Button>Default</Button>
       <Button variant="primary">Primary</Button>
       <Button variant="destructive">Destructive</Button>
+      <Button variant="outline">Outline</Button>
       <Button variant="subtle">Subtle</Button>
       <Button variant="ghost">Ghost</Button>
       <Button asChild variant="link">
         <Link to="/docs/button">Link</Link>
       </Button>
       <Button isDisabled>Disabled</Button>
+      <Button variant="outline" width="2xs">
+        With a specific width and very long text
+      </Button>
     </VStack>
   );
 }

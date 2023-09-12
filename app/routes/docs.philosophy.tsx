@@ -4,6 +4,7 @@ import { VStack, Heading, Text, Divider } from "~/components/ui";
 export default function IntroductionRoute() {
   return (
     <VStack
+      as="article"
       gap={8}
       paddingBottom={8}
       maxWidth="prose"
@@ -44,8 +45,8 @@ export default function IntroductionRoute() {
           <Text as="p">
             While we have a special place in our hearts for Web Components,
             React is what most devs know, and if you plan to scale, you're going
-            to need to hire some. However, if you can make a valid argument to
-            an investor for using Svelte, or similar, then go for it!!
+            to need to hire some. However, if you can make a successful argument
+            to an investor for using Svelte, or similar, then go for it!!
           </Text>
         </VStack>
         <VStack alignItems="flex-start">

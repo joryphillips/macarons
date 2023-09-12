@@ -1,5 +1,6 @@
 import { keyframes, style, styleVariants } from "@vanilla-extract/css";
 import { vars } from "~/theme/theme.css";
+import { uIText } from "../Text/Text.css";
 
 const { colors } = vars;
 const { standard, info, primary, destructive } = colors;
@@ -9,19 +10,16 @@ const buttonBase = style({
   alignItems: "center",
   justifyContent: "center",
   width: "auto",
+  minWidth: vars.contentWidth["4xs"],
   borderRadius: vars.border.radius.sm,
-  fontSize: "1rem",
-  fontWeight: "500",
-  fontFamily: vars.fonts,
-  minWidth: "2.5rem",
+  fontWeight: vars.weight.medium,
   transitionProperty: vars.transitionPropertyCommon,
   transitionDuration: "200ms",
   outline: "none",
-  borderWidth: "1px",
+  borderWidth: vars.border.width.standard,
   borderStyle: "solid",
   borderColor: "transparent",
   backgroundColor: info.solidBackground,
-  // TEMP flipping as the background is a dark blue
   color: standard.textOnSolidBackground,
   cursor: "pointer",
   selectors: {
@@ -29,7 +27,7 @@ const buttonBase = style({
       backgroundColor: info.hoveredSolidBackground,
     },
     "&:focus-visible": {
-      boxShadow: `0 0 0 2px ${info.elementBorder}`,
+      boxShadow: `0 0 0 ${vars.border.width.double} ${info.elementBorder}`,
     },
     "&:disabled": {
       cursor: "not-allowed",
@@ -49,13 +47,12 @@ export const disabledStyle = style({
 });
 
 export const buttonStyleVariants = styleVariants({
-  default: [buttonBase],
+  default: [buttonBase, uIText["default"]],
   destructive: [
     buttonBase,
     {
       backgroundColor: destructive.solidBackground,
-      // flipping gray and graydark for color as the background is a dark red
-      color: standard.appBackground,
+      color: destructive.textOnSolidBackground,
       selectors: {
         "&:hover": {
           backgroundColor: destructive.hoveredSolidBackground,
@@ -64,7 +61,7 @@ export const buttonStyleVariants = styleVariants({
           boxShadow: `0 0 0 2px ${destructive.elementBorder}`,
         },
         "&:active": {
-          backgroundColor: destructive.hoveredSolidBackground,
+          backgroundColor: destructive.activeSolidBackground,
           boxShadow: "none",
         },
       },
@@ -80,7 +77,7 @@ export const buttonStyleVariants = styleVariants({
         "&:focus-visible": {
           outline: "none",
           borderColor: "transparent",
-          boxShadow: `0 0 0 2px ${standard.hoveredElementBorder}`,
+          boxShadow: `0 0 0 ${vars.border.width.double} ${standard.hoveredElementBorder}`,
         },
         "&:hover": {
           backgroundColor: standard.hoveredElementBackground,
@@ -96,6 +93,7 @@ export const buttonStyleVariants = styleVariants({
     buttonBase,
     {
       backgroundColor: standard.subtleBackground,
+      borderColor: standard.subtleBorder,
       color: standard.lowContrastText,
       selectors: {
         "&:hover": {
@@ -135,7 +133,6 @@ export const buttonStyleVariants = styleVariants({
     {
       backgroundColor: "transparent",
       color: info.lowContrastText,
-      fontSize: "1rem",
       borderWidth: 0,
       justifyContent: "flex-start",
       textDecorationOffset: "0.25rem",
@@ -167,7 +164,7 @@ export const buttonStyleVariants = styleVariants({
     {
       borderColor: "transparent",
       backgroundColor: primary.solidBackground,
-      color: "#FFFFFF",
+      color: primary.textOnSolidBackground,
       selectors: {
         "&:hover": {
           backgroundColor: primary.hoveredSolidBackground,
@@ -185,20 +182,27 @@ export const buttonStyleVariants = styleVariants({
 });
 
 export const buttonSizeVariants = styleVariants({
-  default: {
-    height: "2.5rem",
-    padding: "0.75rem 1rem",
-  },
-  sm: {
-    height: "2rem",
-    padding: "0.5rem 0.75rem",
-    fontSize: "0.875rem",
-  },
-  lg: {
-    height: "3rem",
-    padding: "1rem 1.5rem",
-    fontSize: "1.125rem",
-  },
+  default: [
+    {
+      height: vars.spacing[10],
+      padding: `${vars.spacing[2]} ${vars.spacing[4]}`,
+    },
+    uIText["default"],
+  ],
+  sm: [
+    {
+      height: vars.spacing[8],
+      padding: `${vars.spacing[2]} ${vars.spacing[3]}`,
+    },
+    uIText["sm"],
+  ],
+  lg: [
+    {
+      height: vars.spacing[12],
+      padding: `${vars.spacing[4]} ${vars.spacing[6]}`,
+    },
+    uIText["lg"],
+  ],
   listItem: {
     height: "7rem",
     padding: "1rem 1.5rem",
@@ -215,6 +219,21 @@ export const buttonSizeVariants = styleVariants({
   },
 });
 
+export const buttonJustifyContentVariants = styleVariants({
+  center: {
+    justifyContent: "center", // default
+  },
+  start: {
+    justifyContent: "flex-start",
+  },
+  end: {
+    justifyContent: "flex-end",
+  },
+  justify: {
+    justifyContent: "space-between",
+  },
+});
+
 export const buttonWidthVariants = styleVariants({
   auto: {
     width: "auto",
@@ -228,6 +247,26 @@ export const buttonWidthVariants = styleVariants({
   oneThird: {
     width: "33.333%",
   },
+  "4xs": {
+    width: vars.contentWidth["4xs"],
+  },
+  "3xs": {
+    width: vars.contentWidth["3xs"],
+  },
+  "2xs": {
+    width: vars.contentWidth["2xs"],
+  },
+  xs: {
+    width: vars.contentWidth.xs,
+  },
+});
+
+export const buttonPrefixIcon = style({
+  marginRight: vars.spacing[4],
+});
+
+export const buttonSuffixIcon = style({
+  marginLeft: vars.spacing[4],
 });
 
 // spinner animation keyframes

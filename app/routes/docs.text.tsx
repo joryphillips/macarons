@@ -1,18 +1,43 @@
-import { Link } from "@remix-run/react";
-import { Box, Divider, HStack, Heading, Text, VStack } from "~/components/ui";
+import { Divider, Heading, Text, VStack } from "~/components/ui";
 
 export default function TextRoute() {
   return (
-    <VStack gap={8} paddingBottom={8} width="100%" alignItems="flex-start">
+    <VStack
+      as="article"
+      maxWidth="prose"
+      gap={6}
+      paddingBottom={8}
+      width="100%"
+      alignItems="flex-start"
+    >
       <Heading as="h2" size="xl">
         Text
       </Heading>
+      <VStack gap={3} alignItems="flex-start" as="section">
+        <Heading as="h3" size="lg">
+          Overview
+        </Heading>
+        <Text as="p">
+          The Text component implements the typescale provided by the design
+          system's typography theme. It defaults to medium size and left
+          aligment, and is stamped into the DOM as a "span" unless otherwise
+          specified.
+        </Text>
+        <Text as="p">
+          Out of the box, the Text component (via the typescale system) allows
+          the user to change the size of typography across the app by setting
+          the font size in their browser's settings. We view this as an
+          important accessibility measure. Too many websites and apps prevent
+          this functionality by setting a non-relative global font size. Not on
+          our watch!
+        </Text>
+      </VStack>
       <Divider />
-      <VStack gap={6} alignItems="flex-start">
+      <VStack gap={4} alignItems="flex-start" as="section">
         <Heading as="h3" size="lg">
           Size Options
         </Heading>
-        <VStack width="100%" alignItems="flex-start" gap={8}>
+        <VStack width="100%" alignItems="flex-start" gap={6}>
           <Text as="p" size="2xl" color="lowContrastText">
             2xl: Hero size. Good for big, bold statements and headlines.
           </Text>
@@ -34,7 +59,7 @@ export default function TextRoute() {
         </VStack>
       </VStack>
       <Divider />
-      <VStack gap={6} alignItems="flex-start">
+      <VStack gap={6} alignItems="flex-start" as="section">
         <Heading as="h3" size="lg">
           Font Weight Options
         </Heading>
@@ -70,7 +95,7 @@ export default function TextRoute() {
         </VStack>
       </VStack>
       <Divider />
-      <VStack gap={6} alignItems="flex-start">
+      <VStack gap={6} alignItems="flex-start" as="section">
         <Heading as="h3" size="lg">
           Color Options{" "}
         </Heading>
@@ -107,51 +132,6 @@ export default function TextRoute() {
           </Text>
         </VStack>
       </VStack>
-      <Divider />
-      <VStack gap={6} alignItems="flex-start">
-        <Heading as="h3" size="lg">
-          Text for Building UIs
-        </Heading>
-        <VStack width="100%" alignItems="flex-start" gap={8}>
-          <HStack
-            gap={6}
-            alignItems="center"
-            marginY={6}
-            style={{
-              borderTop: "1px solid gray",
-              borderBottom: "1px solid gray",
-            }}
-          >
-            <Text as="label" size="md" color="standardHighContrast">
-              Label
-            </Text>
-            <Box
-              backgroundColor="elementBackground"
-              style={{ height: "1rem" }}
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              paddingX={2}
-            >
-              <Text size="xs">Box with height at 1rem</Text>
-            </Box>
-          </HStack>
-          <Text>
-            Using size="md" calculates capital letters at exactly 1rem. Because
-            we are using{" "}
-            <Link to="https://seek-oss.github.io/capsize/">Capsize</Link>, the
-            resulting computed font size shown in the browser's developer tools
-            will be non-rounded numbers larger than 1rem. This is mitigated
-            using typography tokens for root relative sizes that are smaller.
-          </Text>
-          <Text>
-            For this small cost, we have finer control for lining text up with
-            UI elements, and the user can change the readability of text by
-            changing the default font size for the page.
-          </Text>
-        </VStack>
-      </VStack>
-      <Divider />
     </VStack>
   );
 }

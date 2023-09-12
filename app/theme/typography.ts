@@ -4,9 +4,6 @@ import { modularScale } from "polished";
 const FONT_FAMILY_NAME = "Lexend Variable";
 
 export const fonts = `'${FONT_FAMILY_NAME}', -apple-system, system-ui, sans-serif`;
-
-// We could also use the fromFile utility with a proper path to the font file,
-// instead of overriding the family name.
 export const fontMetrics = {
   ...lexendMetrics,
   familyName: FONT_FAMILY_NAME,
@@ -24,14 +21,10 @@ export const weight = {
   black: "900",
 } as const;
 
-/**
- * These relative sizes might seem small, but we are using Capsize to size
- * according to the actual height of capital letters for easier grid alignment.
- */
 export const breakPointFontRelativeSize = {
-  mobile: 0.75, // ~17px when base font size is 16px
-  tablet: 0.8125, // ~18.5px when base font size is 16px
-  desktop: 0.875, // ~20px when base font size is 16px
+  mobile: 1, // 16px when base font size is 16px
+  tablet: 1.125, // 18px when base font size is 16px
+  desktop: 1.25, // 20px when base font size is 16px
 } as const;
 
 /**

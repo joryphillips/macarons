@@ -261,11 +261,19 @@ export const buttonWidthVariants = styleVariants({
   },
 });
 
+const iconBase = {
+  minWidth: "1.25rem",
+  width: "1.25rem",
+  height: "1.25rem",
+};
+
 export const buttonPrefixIcon = style({
+  ...iconBase,
   marginRight: vars.spacing[4],
 });
 
 export const buttonSuffixIcon = style({
+  ...iconBase,
   marginLeft: vars.spacing[4],
 });
 

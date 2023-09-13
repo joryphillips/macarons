@@ -109,16 +109,14 @@ export const menuItem = style({
   display: "flex",
   alignItems: "center",
   borderRadius: vars.border.radius.xs,
-  paddingTop: vars.spacing["2"],
-  paddingRight: vars.spacing["2"],
-  paddingBottom: vars.spacing["2"],
-  paddingLeft: vars.spacing["2"],
-  fontWeight: vars.weight.regular,
+  padding: `${vars.spacing["2"]} ${vars.spacing["3"]}`,
   outline: "none",
-  transition: "background-color 0.2s",
+  transitionProperty: vars.transitionPropertyCommon,
+  transitionDuration: "150ms",
   selectors: {
-    "&:focus-visible": {
-      backgroundColor: hoveredElementBackground,
+    "&[data-highlighted]": {
+      backgroundColor: vars.colors.standard.solidBackground,
+      color: vars.colors.standard.textOnSolidBackground,
     },
     "&[data-disabled]": {
       pointerEvents: "none",

@@ -15,7 +15,7 @@ import clsx from "clsx";
 import { base as baseReset, button as buttonReset } from "~/styles/reset.css";
 import type { LucideIcon } from "lucide-react";
 import { Loader2 } from "lucide-react";
-import { uIText, truncate } from "../Text/Text.css";
+import { truncate } from "../Text/Text.css";
 
 type ButtonVariant = keyof typeof buttonStyleVariants;
 type ButtonSize = keyof typeof buttonSizeVariants;
@@ -69,7 +69,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           buttonWidthVariants[width],
           buttonJustifyContentVariants[justifyContent],
           isDisabled && disabledStyle,
-          uIText,
           className
         )}
         ref={ref}

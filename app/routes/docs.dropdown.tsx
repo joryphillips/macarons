@@ -14,7 +14,7 @@ export default function DropdownRoute() {
       <Heading>Dropdown</Heading>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button>Open</Button>
+          <Button variant="outline">Open</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem>Item 1</DropdownMenuItem>

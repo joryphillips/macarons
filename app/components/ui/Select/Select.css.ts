@@ -10,7 +10,7 @@ export const content = style({
   zIndex: 50,
   minWidth: vars.contentWidth["4xs"],
   overflow: "hidden",
-  borderRadius: vars.border.radius.xs,
+  borderRadius: vars.border.radius.sm,
   borderWidth: vars.border.width.standard,
   borderStyle: "solid",
   borderColor: elementBorder,
@@ -28,15 +28,17 @@ export const viewPort = style({
 });
 
 export const item = style({
-  position: "relative",
-  display: "flex",
-  alignItems: "center",
-  borderRadius: vars.border.radius.xs,
-  padding: `${vars.spacing["2"]} ${vars.spacing["3"]} ${vars.spacing["2"]} ${vars.spacing["8"]}`,
+  width: vars.contentWidth["xs"],
+  borderRadius: vars.border.radius.sm,
+  padding: `${vars.spacing[2]} ${vars.spacing[4]}`,
   outline: "none",
   transitionProperty: vars.transitionPropertyCommon,
   transitionDuration: "150ms",
   selectors: {
+    "&[data-state=checked]": {
+      backgroundColor: vars.colors.standard.activeSolidBackground,
+      color: vars.colors.standard.textOnSolidBackground,
+    },
     "&[data-highlighted]": {
       backgroundColor: vars.colors.standard.solidBackground,
       color: vars.colors.standard.textOnSolidBackground,
@@ -57,15 +59,6 @@ export const separator = style({
   height: vars.border.width.standard,
   backgroundColor: vars.colors.primary.elementBackground,
   margin: vars.spacing[2],
-});
-
-export const itemIndicator = style({
-  position: "absolute",
-  left: vars.spacing[1],
-  width: vars.spacing[6],
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
 });
 
 export const scrollButton = style({

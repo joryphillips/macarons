@@ -1,16 +1,10 @@
 import * as SelectPrimitive from "@radix-ui/react-select";
 import clsx from "clsx";
-import { Check, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { forwardRef } from "react";
-import {
-  content,
-  itemIndicator,
-  item,
-  label,
-  separator,
-  viewPort,
-} from "./Select.css";
+import { content, item, label, separator, viewPort } from "./Select.css";
 import { Button } from "../Button/Button";
+import { truncate as truncateText } from "../Text/Text.css";
 
 const Select = SelectPrimitive.Root;
 
@@ -79,13 +73,16 @@ SelectLabel.displayName = SelectPrimitive.Label.displayName;
 
 const SelectItem = forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
->(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Item ref={ref} className={clsx(item, className)} {...props}>
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> & {
+    truncate?: boolean;
+  }
+>(({ className, children, truncate = false, ...props }, ref) => (
+  <SelectPrimitive.Item
+    ref={ref}
+    className={clsx(item, truncate && truncateText, className)}
+    {...props}
+  >
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-    <SelectPrimitive.ItemIndicator asChild>
-      <Check className={itemIndicator} />
-    </SelectPrimitive.ItemIndicator>
   </SelectPrimitive.Item>
 ));
 SelectItem.displayName = SelectPrimitive.Item.displayName;

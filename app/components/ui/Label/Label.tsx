@@ -22,8 +22,9 @@ interface LabelProps extends TextLabelProps {
 }
 
 export function Label({
-  size,
-  fontWeight,
+  size = "sm",
+  fontWeight = "medium",
+  color = "lowContrastText",
   className,
   htmlFor,
   cursor,
@@ -32,10 +33,11 @@ export function Label({
   return (
     <Text
       as="label"
-      size="sm"
+      size={size}
       cursor={cursor}
       htmlFor={htmlFor}
       fontWeight={fontWeight}
+      color={color}
       className={clsx(labelStyles, size && textScale[size], className)}
       {...props}
       onMouseDown={(event) => {

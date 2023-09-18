@@ -80,9 +80,7 @@ const InputWithLabel = forwardRef<
     const labelId = `${label.toLowerCase().replace(" ", "_")}-label`;
     return (
       <VStack width="100%" alignItems="flex-start" spacing={1}>
-        <Label fontWeight="medium" color="lowContrastText" htmlFor={labelId}>
-          {label}
-        </Label>
+        <Label htmlFor={labelId}>{label}</Label>
         <Box width="100%" position="relative">
           <Input
             ref={inputRef}

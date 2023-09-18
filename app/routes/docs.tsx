@@ -53,6 +53,7 @@ export default function UI() {
             <NavLink to="/docs/dropdown">Dropdown</NavLink>
             <NavLink to="/docs/heading">Heading</NavLink>
             <NavLink to="/docs/input">Input</NavLink>
+            <NavLink to="/docs/label">Label</NavLink>
             <NavLink to="/docs/popover">Popover</NavLink>
             <NavLink to="/docs/select">Select</NavLink>
             <NavLink to="/docs/spinner">Spinner</NavLink>

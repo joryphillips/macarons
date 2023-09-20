@@ -22,7 +22,7 @@ export default function UI() {
         <VStack width="100%" alignItems="flex-start" spacing={5}>
           <VStack width="100%" alignItems="flex-start" spacing={4}>
             <Heading as="h1" size="2xl">
-              Madeleine
+              Macarons
             </Heading>
             <Heading as="h2" size="md" color="lowContrastText">
               Design System and Styled UI Components Built with Vanilla Extract

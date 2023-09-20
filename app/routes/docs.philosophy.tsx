@@ -116,9 +116,7 @@ export default function IntroductionRoute() {
           <Text as="p">
             Light + dark mode + general theming support. Built with Vanilla
             Extract and Sprinkles. And now you know how we chose the name{" "}
-            <Link to="https://en.wikipedia.org/wiki/Madeleine_(cake)">
-              Madeleines.
-            </Link>
+            <Link to="https://en.wikipedia.org/wiki/Macaron">Macarons.</Link>
           </Text>
         </VStack>
       </VStack>

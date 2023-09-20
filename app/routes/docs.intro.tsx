@@ -16,7 +16,7 @@ export default function IntroductionRoute() {
           Introduction
         </Heading>
         <Text as="p">
-          Madeleine is a design system with styled UI components intended for
+          Macarons is a design system with styled UI components intended for
           React projects. It was built with{" "}
           <Link to="https://vanilla-extract.style" target="_blank">
             Vanilla Extract
@@ -36,7 +36,7 @@ export default function IntroductionRoute() {
           .
         </Text>
         <Text as="p">
-          Madeleine was originally created to make a{" "}
+          Macarons was originally created to make a{" "}
           <Link to="https://remix.run" target="_blank">
             Remix
           </Link>{" "}
@@ -55,13 +55,13 @@ export default function IntroductionRoute() {
           Priorities
         </Heading>
         <Text as="p">
-          Madeleine balances the needs for rapid development, flexibility, and
+          Macarons balances the needs for rapid development, flexibility, and
           future maintenance. It prioritizes user experience and accessibility
           along with easy developer onboarding —— or just being able to pick it
           back up after not looking at it for a couple of months!
         </Text>
         <Text as="p">
-          Like the app it was developed alongside, Madeleine recognizes the
+          Like the app it was developed alongside, Macarons recognizes the
           future potential need to swap out any library or tech stack decision
           or approach for better solutions if they come along.{" "}
         </Text>
@@ -71,7 +71,7 @@ export default function IntroductionRoute() {
           Non-Goals
         </Heading>
         <Text as="p">
-          So what was deprioritized? Madeleine does not attempt to be a
+          So what was deprioritized? Macarons does not attempt to be a
           comprehensive solution, or one that can be installed via npm. This is
           more like a starter kit to expand upon, and a good foundation for
           building out a front end. Follow or modify the patterns shown here to

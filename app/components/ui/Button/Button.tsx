@@ -9,6 +9,7 @@ import {
   loadingSpinner,
   buttonPrefixIcon,
   buttonSuffixIcon,
+  iconSizeVariants,
 } from "./Button.css";
 import { Slot } from "@radix-ui/react-slot";
 import clsx from "clsx";
@@ -32,6 +33,16 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean;
   prefixIcon?: LucideIcon;
   suffixIcon?: LucideIcon;
+  children: ReactNode;
+}
+
+export interface IconButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: ButtonVariant;
+  size?: keyof typeof iconSizeVariants;
+  isDisabled?: boolean;
+  isLoading?: boolean;
+  asChild?: boolean;
   children: ReactNode;
 }
 
@@ -66,7 +77,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           buttonReset,
           buttonStyleVariants[variant],
           buttonSizeVariants[size],
-          size !== "icon" && buttonWidthVariants[width],
+          buttonWidthVariants[width],
           buttonJustifyContentVariants[justifyContent],
           isDisabled && disabledStyle,
           className
@@ -79,11 +90,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ) : (
           <>
             {Prefix && <Prefix className={buttonPrefixIcon} />}
-            {size === "icon" ? (
-              children
-            ) : (
-              <span className={truncate}>{children}</span>
-            )}
+            <span className={truncate}>{children}</span>
             {Suffix && <Suffix className={buttonSuffixIcon} />}
           </>
         )}
@@ -93,4 +100,47 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 Button.displayName = "Button";
 
-export { Button };
+const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+  (
+    {
+      className,
+      variant = "default",
+      size = "default",
+      isDisabled = false,
+      isLoading = false,
+      asChild = false,
+      type = "button",
+      children,
+      ...props
+    },
+    ref
+  ) => {
+    const Comp = asChild ? Slot : "button";
+
+    return (
+      <Comp
+        type={type}
+        disabled={isDisabled}
+        className={clsx(
+          baseReset,
+          buttonReset,
+          buttonStyleVariants[variant],
+          iconSizeVariants[size],
+          isDisabled && disabledStyle,
+          className
+        )}
+        ref={ref}
+        {...props}
+      >
+        {isLoading && !asChild /* asChild does not work with spinner **/ ? (
+          <Loader2 className={loadingSpinner} />
+        ) : (
+          <>{children}</>
+        )}
+      </Comp>
+    );
+  }
+);
+IconButton.displayName = "IconButton";
+
+export { Button, IconButton };

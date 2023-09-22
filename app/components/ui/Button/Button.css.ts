@@ -181,12 +181,6 @@ export const buttonStyleVariants = styleVariants({
   ],
 });
 
-const iconButton = {
-  minWidth: vars.spacing[8],
-  width: vars.spacing[8],
-  height: vars.spacing[8],
-};
-
 export const buttonSizeVariants = styleVariants({
   default: [
     {
@@ -218,8 +212,19 @@ export const buttonSizeVariants = styleVariants({
     height: "auto",
     padding: "0",
   },
-  icon: {
-    ...iconButton,
+});
+
+export const iconSizeVariants = styleVariants({
+  default: {
+    minWidth: vars.spacing[8],
+    width: vars.spacing[8],
+    height: vars.spacing[8],
+    padding: 0,
+  },
+  sm: {
+    minWidth: vars.spacing[6],
+    width: vars.spacing[6],
+    height: vars.spacing[6],
     padding: 0,
   },
 });

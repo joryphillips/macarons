@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import { X } from "lucide-react";
 import type { InputHTMLAttributes } from "react";
-import { forwardRef, useRef } from "react";
+import { forwardRef, useId, useRef } from "react";
 import { base as baseReset, input as inputReset } from "~/styles/reset.css";
-import { Button } from "../Button/Button";
+import { IconButton } from "../Button/Button";
 import { Label } from "../Label/Label";
 import { Box } from "../Layout/Box";
 import { VStack } from "../Layout/Stack";
@@ -65,6 +65,7 @@ const InputWithLabel = forwardRef<
 >(
   (
     {
+      id,
       label,
       isDisabled = false,
       isInvalid = false,
@@ -77,7 +78,7 @@ const InputWithLabel = forwardRef<
     ref
   ) => {
     const inputRef = useRef<HTMLInputElement>(null);
-    const labelId = `${label.toLowerCase().replace(" ", "_")}-label`;
+    const labelId = `${useId()}-${id ?? label}`;
     return (
       <VStack width="100%" alignItems="flex-start" spacing={1}>
         <Label htmlFor={labelId}>{label}</Label>
@@ -92,14 +93,20 @@ const InputWithLabel = forwardRef<
             className={className}
             {...props}
           />
-          {onClear && !!props.value && (
-            <Box position="absolute" right={0} top={0} padding={1}>
+          {onClear && (!!props.value || !!props.defaultValue) && (
+            <Box
+              position="absolute"
+              display="flex"
+              right={0}
+              top={0}
+              padding={1}
+            >
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button
+                  <IconButton
                     aria-label="Clear selection"
                     variant="ghost"
-                    size="sm"
+                    size={size === "sm" ? "sm" : "default"}
                     onClick={(e) => {
                       e.preventDefault();
                       onClear();
@@ -107,7 +114,7 @@ const InputWithLabel = forwardRef<
                     }}
                   >
                     <X />
-                  </Button>
+                  </IconButton>
                 </TooltipTrigger>
                 <TooltipContent>Clear selection</TooltipContent>
               </Tooltip>

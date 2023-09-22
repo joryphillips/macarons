@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   VStack,
   Heading,
@@ -7,6 +8,10 @@ import {
 } from "~/components/ui";
 
 export default function CheckboxRoute() {
+  const [clearableInputValue, setClearableInputValue] = useState("clearable");
+  const [clearableSmallInputValue, setClearableSmallInputValue] =
+    useState("clearable");
+
   return (
     <VStack gap={8} width="100%" alignItems="flex-start" as="article">
       <Heading>Input</Heading>
@@ -14,18 +19,25 @@ export default function CheckboxRoute() {
         <Heading as="h3" size="md">
           Minimal
         </Heading>
-        <Input id="minimal" name="minimal" placeholder="placeholder" />
+        <Input name="minimal" placeholder="placeholder" />
+      </VStack>
+      <VStack alignItems="flex-start" gap={3} as="section">
+        <Heading as="h3" size="md">
+          Clearable
+        </Heading>
+        <InputWithLabel
+          label="Clearable"
+          placeholder="placeholder"
+          value={clearableInputValue}
+          onClear={() => setClearableInputValue("")}
+          onChange={(e) => setClearableInputValue(e.target.value)}
+        />
       </VStack>
       <VStack alignItems="flex-start" gap={3} as="section">
         <Heading as="h3" size="md">
           Invalid state
         </Heading>
-        <Input
-          id="minimal"
-          name="minimal"
-          isInvalid
-          placeholder="placeholder"
-        />
+        <Input name="minimal" isInvalid placeholder="placeholder" />
       </VStack>
       <VStack alignItems="flex-start" gap={3} as="section">
         <Heading as="h3" size="md">
@@ -43,7 +55,6 @@ export default function CheckboxRoute() {
           With Info
         </Heading>
         <InputWithInfo
-          id="with-info"
           name="info"
           placeholder="placeholder"
           label="Label"
@@ -55,7 +66,6 @@ export default function CheckboxRoute() {
           Info with Error State
         </Heading>
         <InputWithInfo
-          id="with-error"
           name="error"
           placeholder="placeholder"
           defaultValue="Invalid input value"
@@ -67,13 +77,21 @@ export default function CheckboxRoute() {
         <Heading as="h3" size="md">
           Small
         </Heading>
-        <Input id="small" name="small" size="sm" placeholder="placeholder" />{" "}
+        <Input name="small" size="sm" placeholder="placeholder" />{" "}
         <InputWithLabel
-          id="small-label"
           name="small w label"
           size="sm"
           placeholder="placeholder"
           label="small with label"
+        />
+        <InputWithLabel
+          name="small clearable w label"
+          size="sm"
+          placeholder="placeholder"
+          label="small with label"
+          value={clearableSmallInputValue}
+          onClear={() => setClearableSmallInputValue("")}
+          onChange={(e) => setClearableSmallInputValue(e.target.value)}
         />
       </VStack>
     </VStack>

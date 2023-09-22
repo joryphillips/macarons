@@ -181,6 +181,12 @@ export const buttonStyleVariants = styleVariants({
   ],
 });
 
+const iconButton = {
+  minWidth: vars.spacing[8],
+  width: vars.spacing[8],
+  height: vars.spacing[8],
+};
+
 export const buttonSizeVariants = styleVariants({
   default: [
     {
@@ -213,8 +219,7 @@ export const buttonSizeVariants = styleVariants({
     padding: "0",
   },
   icon: {
-    height: "40px",
-    width: "40px",
+    ...iconButton,
     padding: 0,
   },
 });
@@ -261,19 +266,19 @@ export const buttonWidthVariants = styleVariants({
   },
 });
 
-const iconBase = {
+const prefixAndSuffixBase = {
   minWidth: "1.25rem",
   width: "1.25rem",
   height: "1.25rem",
 };
 
 export const buttonPrefixIcon = style({
-  ...iconBase,
+  ...prefixAndSuffixBase,
   marginRight: vars.spacing[4],
 });
 
 export const buttonSuffixIcon = style({
-  ...iconBase,
+  ...prefixAndSuffixBase,
   marginLeft: vars.spacing[4],
 });
 

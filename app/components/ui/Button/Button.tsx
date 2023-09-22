@@ -66,7 +66,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           buttonReset,
           buttonStyleVariants[variant],
           buttonSizeVariants[size],
-          buttonWidthVariants[width],
+          size !== "icon" && buttonWidthVariants[width],
           buttonJustifyContentVariants[justifyContent],
           isDisabled && disabledStyle,
           className
@@ -79,7 +79,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ) : (
           <>
             {Prefix && <Prefix className={buttonPrefixIcon} />}
-            <span className={truncate}>{children}</span>
+            {size === "icon" ? (
+              children
+            ) : (
+              <span className={truncate}>{children}</span>
+            )}
             {Suffix && <Suffix className={buttonSuffixIcon} />}
           </>
         )}

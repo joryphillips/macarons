@@ -24,7 +24,8 @@ export default function IntroductionRoute() {
             have the time or budget to make your own from scratch. Extending
             unstyled/barebones UI components is an advantageous solution; not
             having to build, and worse, <strong>maintain</strong>, the
-            challenging parts means more time for iteration and refinement.
+            challenging parts means more time for iteration and refinement in
+            your own app.
           </Text>
         </VStack>
         <VStack alignItems="flex-start">

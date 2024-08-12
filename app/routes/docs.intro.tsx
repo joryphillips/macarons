@@ -23,7 +23,7 @@ export default function IntroductionRoute() {
           </Link>{" "}
           and{" "}
           <Link to="https://www.radix-ui.com/" target="_blank">
-            Radix
+            Radix Primitives
           </Link>
           , and is heavily influenced by{" "}
           <Link to="https://chakra-ui.com/" target="_blank">
@@ -72,7 +72,7 @@ export default function IntroductionRoute() {
         </Heading>
         <Text as="p">
           So what was deprioritized? Macarons does not attempt to be a
-          comprehensive solution, or one that can be installed via npm. This is
+          comprehensive solution, nor one that can be installed via npm. This is
           more like a starter kit to expand upon, and a good foundation for
           building out a front end. Follow or modify the patterns shown here to
           add more components, tokens, or other design system aspects.

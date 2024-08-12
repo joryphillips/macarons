@@ -1,12 +1,11 @@
-import { NavLink, Outlet } from "@remix-run/react";
+import { NavLink, Outlet, useRouteLoaderData } from "@remix-run/react";
 import type { UserTheme } from "~/components/ThemeProvider/ThemeProvider";
 import { ThemeProvider } from "~/components/ThemeProvider/ThemeProvider";
 import { Divider, HStack, Heading, VStack } from "~/components/ui";
 import { TooltipProvider } from "~/components/ui/Tooltip/Tooltip";
-import { useMatchesData } from "~/util/useMatchesData";
 
 export default function UI() {
-  const rootMatchesData = useMatchesData("root");
+  const rootMatchesData = useRouteLoaderData("root");
   const theme = rootMatchesData?.theme as UserTheme;
 
   return (

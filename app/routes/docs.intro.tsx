@@ -42,7 +42,7 @@ export default function IntroductionRoute() {
           </Link>{" "}
           app that supports{" "}
           <Link
-            to="https://remix.run/docs/en/1.19.3/guides/streaming"
+            to="https://remix.run/docs/en/main/guides/streaming"
             target="_blank"
           >
             SSR Streaming

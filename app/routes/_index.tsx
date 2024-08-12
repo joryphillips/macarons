@@ -12,5 +12,5 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export function loader() {
-  return redirect("/docs");
+  return redirect("/docs/intro");
 }

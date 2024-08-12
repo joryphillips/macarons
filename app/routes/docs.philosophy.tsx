@@ -132,7 +132,7 @@ export default function IntroductionRoute() {
         <Text as="p">
           Includes a Box component for great DX and rapid iteration. Once you
           have experienced building a webpage with a Box, you'll want it for
-          everything. Notably, Radix recently added this to their system!
+          everything.
         </Text>
       </VStack>
     </VStack>

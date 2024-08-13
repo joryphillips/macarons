@@ -80,17 +80,6 @@ export const slideInFromBottom0 = {
   },
 };
 
-export const zoomIn90 = {
-  from: {
-    opacity: 0,
-    transform: "scale(0.9)",
-  },
-  to: {
-    opacity: 1,
-    transform: "scale(1)",
-  },
-};
-
 export const fadeOut90 = {
   from: {
     opacity: 1,
@@ -131,3 +120,9 @@ export const contentShow = {
   "0%": { opacity: 0, transform: "translate(-50%, -48%) scale(.96)" },
   "100%": { opacity: 1, transform: "translate(-50%, -50%) scale(1)" },
 };
+
+export const Timing = {
+  easeInOut: "cubic-bezier(0.455,  0.030, 0.515, 0.955)",
+  easeOut: "cubic-bezier(0.250,  0.460, 0.450, 0.940)",
+  easeIn: "cubic-bezier(0.550,  0.085, 0.680, 0.530)",
+} as const;

@@ -4,11 +4,13 @@ import {
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
+  AlertDialogTitle,
   VStack,
   Heading,
   Button,
+  Text,
+  AlertDialogAction,
+  HStack,
 } from "~/components/ui";
 
 export default function AlertDialogRoute() {
@@ -17,25 +19,42 @@ export default function AlertDialogRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
       <Heading>Alert Dialog</Heading>
+      <Text>
+        The alert dialog component is used to focus the user's attention on a
+        required action. It primarily differs from a regular dialog in that
+        clicking outside the dialog does not close it.
+      </Text>
+      <Text>AlertDialog imports styles from Dialog.</Text>
       <Button onClick={() => setDialogOpen(true)}>Open Dialog</Button>
       <AlertDialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <AlertDialogContent>
-          <VStack spacing={8} alignItems="flex-start" width="100%">
-            <AlertDialogHeader>Dialog Header</AlertDialogHeader>
-            <AlertDialogDescription>
-              Dialog description area. Give your user clear instructions and
-              details here.
+          <VStack spacing={4} alignItems="flex-start" width="100%">
+            <AlertDialogTitle asChild>
+              <Heading as="h2" size="lg">
+                Alert Dialog Title
+              </Heading>
+            </AlertDialogTitle>
+            <AlertDialogDescription asChild>
+              <Text>
+                Dialog description area. Give your user clear instructions and
+                details here.
+              </Text>
             </AlertDialogDescription>
-            <AlertDialogFooter>
+            <HStack width="100%" justifyContent="flex-end">
               <AlertDialogCancel asChild>
                 <Button type="button" variant="subtle">
                   Cancel
                 </Button>
               </AlertDialogCancel>
-              <Button onClick={() => setDialogOpen(false)} variant="primary">
-                Confirm
-              </Button>
-            </AlertDialogFooter>
+              <AlertDialogAction asChild>
+                <Button
+                  onClick={() => setDialogOpen(false)}
+                  variant="destructive"
+                >
+                  Confirm
+                </Button>
+              </AlertDialogAction>
+            </HStack>
           </VStack>
         </AlertDialogContent>
       </AlertDialog>

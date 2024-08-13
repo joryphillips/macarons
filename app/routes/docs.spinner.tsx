@@ -4,7 +4,7 @@ export default function SpinnerRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
       <Heading>Spinner</Heading>
-      <Text>
+      <Text as="p">
         The spinner component is used to indicate that a page or component is
         loading.
       </Text>

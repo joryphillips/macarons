@@ -18,7 +18,7 @@ export default function DialogRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
       <Heading>Dialog</Heading>
-      <Text>
+      <Text as="p">
         The dialog component is used to show information above other content in
         a window. It can be closed via action or clicking outside the dialog
         box.
@@ -33,7 +33,7 @@ export default function DialogRoute() {
               </Heading>
             </DialogTitle>
             <DialogDescription asChild>
-              <Text>
+              <Text as="p">
                 Dialog description area. Give your user clear instructions and
                 details here.
               </Text>

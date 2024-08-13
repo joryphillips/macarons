@@ -4,7 +4,7 @@ export default function BadgeRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
       <Heading>Badge</Heading>
-      <Text>
+      <Text as="p">
         The badge component is used to display a small amount of information
         like a count or status.
       </Text>

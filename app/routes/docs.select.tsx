@@ -36,7 +36,7 @@ export default function SelectRoute() {
           </SelectItem>
         </SelectContent>
       </Select>
-      <Text>Selected value: {selection ?? "No selection"}</Text>
+      <Text as="p">Selected value: {selection ?? "No selection"}</Text>
     </VStack>
   );
 }

@@ -19,12 +19,12 @@ export default function AlertDialogRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
       <Heading>Alert Dialog</Heading>
-      <Text>
+      <Text as="p">
         The alert dialog component is used to focus the user's attention on a
         required action. It primarily differs from a regular dialog in that
         clicking outside the dialog does not close it.
       </Text>
-      <Text>AlertDialog imports styles from Dialog.</Text>
+      <Text as="p">AlertDialog imports styles from Dialog.</Text>
       <Button onClick={() => setDialogOpen(true)}>Open Dialog</Button>
       <AlertDialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <AlertDialogContent>
@@ -35,7 +35,7 @@ export default function AlertDialogRoute() {
               </Heading>
             </AlertDialogTitle>
             <AlertDialogDescription asChild>
-              <Text>
+              <Text as="p">
                 Dialog description area. Give your user clear instructions and
                 details here.
               </Text>

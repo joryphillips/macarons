@@ -6,7 +6,7 @@ export default function AlertRoute() {
       <Heading as="h2" size="xl">
         Alert
       </Heading>
-      <Text>
+      <Text as="p">
         The alert component is used to display messages to the user. It can be
         used to display information, warnings, errors, and success. It can also
         be used inline in a page layout or used as a "butter" or "snack" bar
@@ -39,7 +39,7 @@ export default function AlertRoute() {
       <Heading as="h3" size="lg">
         Props and Defaults
       </Heading>
-      <Text>
+      <Text as="p">
         <VStack spacing={2} alignItems="flex-start">
           <code>status="info"</code>
           <code>showIcon=&#123;true&#125;</code>

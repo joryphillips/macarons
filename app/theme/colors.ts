@@ -9,6 +9,8 @@ import {
   grayDark,
   yellow,
   yellowDark,
+  blackA,
+  whiteA,
 } from "@radix-ui/colors";
 
 /** Alias grass to green */
@@ -99,6 +101,8 @@ export const colorStateContract = {
   warning: colorTokenContract,
   error: colorTokenContract,
   destructive: colorTokenContract,
+  // Make an exception for overlay, which is stand-alone and not a scale
+  overlay: "",
 };
 
 /**
@@ -159,6 +163,7 @@ export const lightColorStateTheme = {
   warning: getAliases(yellow, "yellow"),
   error: getAliases(red, "red"),
   destructive: getAliases(red, "red"), // same as error
+  overlay: blackA.blackA9,
 };
 
 // NOTE that the property names do not have the word "Dark" in them
@@ -170,4 +175,5 @@ export const darkColorStateTheme = {
   warning: getAliases(yellowDark, "yellow"),
   error: getAliases(redDark, "red"),
   destructive: getAliases(redDark, "red"), // same as error
+  overlay: whiteA.whiteA9,
 };

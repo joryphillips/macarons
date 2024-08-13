@@ -15,8 +15,8 @@ export default function TooltipRoute() {
       <Text>
         The tooltip component is used to display additional information when a
         user hovers over a trigger element. The base Radix tooltip content
-        component will position itself dynamically based on how close window
-        edges it is.
+        component will position itself dynamically based on proximity to window
+        edges.
       </Text>
       <Tooltip>
         <TooltipTrigger asChild>

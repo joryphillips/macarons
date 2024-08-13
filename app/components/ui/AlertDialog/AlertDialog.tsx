@@ -1,32 +1,18 @@
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import clsx from "clsx";
 import * as React from "react";
-import type { HeadingProps } from "../Heading/Heading";
-import { Heading } from "../Heading/Heading";
 import { textScale } from "../Text/Text.css";
-import { content, footer, overlay, portal } from "./AlertDialog.css";
+import { dialogOverlay, dialogContent } from "../Dialog/Dialog.css";
 
 const AlertDialog = AlertDialogPrimitive.Root;
-
 const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
-
-const AlertDialogPortal = ({
-  className,
-  children,
-  ...props
-}: AlertDialogPrimitive.AlertDialogPortalProps) => (
-  <AlertDialogPrimitive.Portal className={className} {...props}>
-    <div className={portal}>{children}</div>
-  </AlertDialogPrimitive.Portal>
-);
-AlertDialogPortal.displayName = AlertDialogPrimitive.Portal.displayName;
 
 const AlertDialogOverlay = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
 >(({ className, children, ...props }, ref) => (
   <AlertDialogPrimitive.Overlay
-    className={clsx(overlay, className)}
+    className={clsx(dialogOverlay, className)}
     {...props}
     ref={ref}
   />
@@ -37,29 +23,16 @@ const AlertDialogContent = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
 >(({ className, ...props }, ref) => (
-  <AlertDialogPortal>
+  <AlertDialogPrimitive.Portal>
     <AlertDialogOverlay />
     <AlertDialogPrimitive.Content
       ref={ref}
-      className={clsx(content, className)}
+      className={clsx(dialogContent, className)}
       {...props}
     />
-  </AlertDialogPortal>
+  </AlertDialogPrimitive.Portal>
 ));
 AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName;
-
-const AlertDialogHeader = ({ ...props }: HeadingProps) => (
-  <Heading {...props} />
-);
-AlertDialogHeader.displayName = "AlertDialogHeader";
-
-const AlertDialogFooter = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={clsx(footer, className)} {...props} />
-);
-AlertDialogFooter.displayName = "AlertDialogFooter";
 
 const AlertDialogTitle = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Title>,
@@ -93,8 +66,6 @@ export {
   AlertDialog,
   AlertDialogTrigger,
   AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogFooter,
   AlertDialogTitle,
   AlertDialogDescription,
   AlertDialogAction,

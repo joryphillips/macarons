@@ -6,8 +6,6 @@ export {
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "~/components/ui/AlertDialog/AlertDialog";
@@ -15,7 +13,13 @@ export { Badge } from "~/components/ui/Badge/Badge";
 export { Button } from "~/components/ui/Button/Button";
 export { Checkbox } from "~/components/ui/Checkbox/Checkbox";
 
-export { Dialog } from "~/components/ui/Dialog/Dialog";
+export { Dialog, 
+  DialogContent,
+  DialogClose,
+  DialogDescription, 
+  DialogTitle, 
+  DialogTrigger
+ } from "~/components/ui/Dialog/Dialog";
 export { Divider } from "~/components/ui/Divider/Divider";
 export {
   DropdownMenu,

@@ -77,7 +77,7 @@ export default function IntroductionRoute() {
             </Link>
             . Switching to this system from Chakra UI dropped our app's bundle
             size by 140kb and reduced initial site load time by nearly half a
-            second on a gigabit interrnet connection.
+            second on a gigabit internet connection.
           </Text>
         </VStack>
         <VStack alignItems="flex-start">

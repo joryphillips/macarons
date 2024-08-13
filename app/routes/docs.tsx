@@ -41,9 +41,18 @@ export default function UI() {
             >
               <NavLink to="/docs/intro">Introduction</NavLink>
               <NavLink to="/docs/philosophy">Philosophy</NavLink>
-
               <Divider />
 
+              <Heading as="h3" size="sm">
+                Layout
+              </Heading>
+              <NavLink to="/docs/box">Box</NavLink>
+              <NavLink to="/docs/stack">Stack</NavLink>
+              <NavLink to="/docs/card">Card</NavLink>
+              <Divider />
+              <Heading as="h3" size="sm">
+                Components
+              </Heading>
               <NavLink to="/docs/alert">Alert</NavLink>
               <NavLink to="/docs/alert-dialog">Alert Dialog</NavLink>
               <NavLink to="/docs/badge">Badge</NavLink>
@@ -52,20 +61,18 @@ export default function UI() {
               <NavLink to="/docs/dialog">Dialog</NavLink>
               <NavLink to="/docs/divider">Divider</NavLink>
               <NavLink to="/docs/dropdown">Dropdown</NavLink>
-              <NavLink to="/docs/heading">Heading</NavLink>
               <NavLink to="/docs/input">Input</NavLink>
               <NavLink to="/docs/label">Label</NavLink>
               <NavLink to="/docs/popover">Popover</NavLink>
               <NavLink to="/docs/select">Select</NavLink>
               <NavLink to="/docs/spinner">Spinner</NavLink>
-              <NavLink to="/docs/text">Text</NavLink>
               <NavLink to="/docs/tooltip">Tooltip</NavLink>
               <Divider />
               <Heading as="h3" size="sm">
-                Layout
+                Typography
               </Heading>
-              <NavLink to="/docs/box">Box</NavLink>
-              <NavLink to="/docs/stack">Stack</NavLink>
+              <NavLink to="/docs/text">Text</NavLink>
+              <NavLink to="/docs/heading">Heading</NavLink>
             </VStack>
             <VStack gap={8} width="100%" alignItems="flex-start" marginX="auto">
               <Outlet />

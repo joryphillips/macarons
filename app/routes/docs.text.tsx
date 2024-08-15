@@ -13,7 +13,7 @@ export default function TextRoute() {
       <Heading as="h2" size="xl">
         Text
       </Heading>
-      <VStack gap={3} alignItems="flex-start" as="section">
+      <VStack gap={4} alignItems="flex-start" as="section">
         <Heading as="h3" size="lg">
           Overview
         </Heading>
@@ -100,35 +100,35 @@ export default function TextRoute() {
           Color Options{" "}
         </Heading>
         <VStack width="100%" alignItems="baseline" gap={6}>
-          <Text as="p" color="standardLowContrast">
-            standardLowContrast
+          <Text as="p" color="lowContrastText">
+            lowContrastText
           </Text>
-          <Text as="p" color="standardHighContrast">
-            standardHighContrast (default)
+          <Text as="p" color="highContrastText">
+            highContrastText (default)
           </Text>
-          <Text as="p" color="infoLowContrast">
-            infoLowContrast
+          <Text as="p" color="infoLowContrastText">
+            infoLowContrastText
           </Text>
-          <Text as="p" color="infoHighContrast">
-            infoHighContrast
+          <Text as="p" color="infoHighContrastText">
+            infoHighContrastText
           </Text>
-          <Text as="p" color="successLowContrast">
-            successLowContrast
+          <Text as="p" color="successLowContrastText">
+            successLowContrastText
           </Text>
-          <Text as="p" color="successHighContrast">
-            successHighContrast
+          <Text as="p" color="successHighContrastText">
+            successHighContrastText
           </Text>
-          <Text as="p" color="warningLowContrast">
-            warningLowContrast
+          <Text as="p" color="warningLowContrastText">
+            warningLowContrastText
           </Text>
-          <Text as="p" color="warningHighContrast">
-            warningHighContrast
+          <Text as="p" color="warningHighContrastText">
+            warningHighContrastText
           </Text>
-          <Text as="p" color="destructiveLowContrast">
-            destructiveLowContrast
+          <Text as="p" color="destructiveLowContrastText">
+            destructiveLowContrastText
           </Text>
-          <Text as="p" color="destructiveHighContrast">
-            destructiveHighContrast
+          <Text as="p" color="destructiveHighContrastText">
+            destructiveHighContrastText
           </Text>
         </VStack>
       </VStack>

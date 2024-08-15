@@ -51,29 +51,29 @@ export default function HeadingsRoute() {
           <Heading color="highContrastText" size="md">
             highContrastText
           </Heading>
-          <Heading color="infoLowContrast" size="md">
-            infoLowContrast
+          <Heading color="infoLowContrastText" size="md">
+            infoLowContrastText
           </Heading>
-          <Heading color="infoHighContrast" size="md">
-            infoHighContrast
+          <Heading color="infoHighContrastText" size="md">
+            infoHighContrastText
           </Heading>
-          <Heading color="successLowContrast" size="md">
-            successLowContrast
+          <Heading color="successLowContrastText" size="md">
+            successLowContrastText
           </Heading>
-          <Heading color="successHighContrast" size="md">
-            successHighContrast
+          <Heading color="successHighContrastText" size="md">
+            successHighContrastText
           </Heading>
-          <Heading color="warningLowContrast" size="md">
-            warningLowContrast
+          <Heading color="warningLowContrastText" size="md">
+            warningLowContrastText
           </Heading>
-          <Heading color="warningHighContrast" size="md">
-            warningHighContrast
+          <Heading color="warningHighContrastText" size="md">
+            warningHighContrastText
           </Heading>
-          <Heading color="destructiveLowContrast" size="md">
-            destructiveLowContrast
+          <Heading color="destructiveLowContrastText" size="md">
+            destructiveLowContrastText
           </Heading>
-          <Heading color="destructiveHighContrast" size="md">
-            destructiveHighContrast
+          <Heading color="destructiveHighContrastText" size="md">
+            destructiveHighContrastText
           </Heading>
         </VStack>
       </VStack>

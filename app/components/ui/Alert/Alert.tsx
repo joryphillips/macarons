@@ -31,7 +31,6 @@ export function Alert({
     >
       {showIcon && (
         <Box display="flex" alignItems="center" justifyContent="center">
-          {" "}
           <AlertIcon status={status} width="1.5rem" height="1.5rem" />
         </Box>
       )}

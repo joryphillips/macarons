@@ -8,6 +8,7 @@ export type Space = keyof typeof space;
 const responsiveProperties = defineProperties({
   conditions: {
     mobile: {},
+    small: { "@media": `screen and (min-width: ${breakpoints.small}px)` },
     tablet: { "@media": `screen and (min-width: ${breakpoints.tablet}px)` },
     desktop: { "@media": `screen and (min-width: ${breakpoints.desktop}px)` },
   },
@@ -34,6 +35,7 @@ const responsiveProperties = defineProperties({
     width: vars.contentWidth,
     maxWidth: vars.contentWidth,
     minWidth: vars.contentWidth,
+    rotate: ["0deg", "45deg", "90deg", "135deg", "180deg", "225deg", "270deg", "315deg"],
 
     opacity: [0, 1],
 
@@ -71,6 +73,51 @@ const responsiveProperties = defineProperties({
   },
 });
 
+const backgroundColors =  {
+  ...vars.colors.standard,
+
+  primaryAppBackground: vars.colors.primary.appBackground,
+  primarySubtleBackground: vars.colors.primary.subtleBackground,
+  primaryElementBackground: vars.colors.primary.elementBackground,
+  primaryHoveredElementBackground: vars.colors.primary.hoveredElementBackground,
+  primaryActiveElementBackground: vars.colors.primary.activeElementBackground,
+  primarySolidBackground: vars.colors.primary.solidBackground,
+  primaryHoveredSolidBackground: vars.colors.primary.hoveredSolidBackground,
+  
+  infoAppBackground: vars.colors.info.appBackground,
+  infoSubtleBackground: vars.colors.info.subtleBackground,
+  infoElementBackground: vars.colors.info.elementBackground,
+  infoHoveredElementBackground: vars.colors.info.hoveredElementBackground,
+  infoActiveElementBackground: vars.colors.info.activeElementBackground,
+  infoSolidBackground: vars.colors.info.solidBackground,
+  infoHoveredSolidBackground: vars.colors.info.hoveredSolidBackground,
+  
+  successAppBackground: vars.colors.success.appBackground,
+  successSubtleBackground: vars.colors.success.subtleBackground,
+  successElementBackground: vars.colors.success.elementBackground,
+  successHoveredElementBackground: vars.colors.success.hoveredElementBackground,
+  successActiveElementBackground: vars.colors.success.activeElementBackground,
+  successSolidBackground: vars.colors.success.solidBackground,
+  successHoveredSolidBackground: vars.colors.success.hoveredSolidBackground,
+  
+  warningAppBackground: vars.colors.warning.appBackground,
+  warningSubtleBackground: vars.colors.warning.subtleBackground,
+  warningElementBackground: vars.colors.warning.elementBackground,
+  warningHoveredElementBackground: vars.colors.warning.hoveredElementBackground,
+  warningActiveElementBackground: vars.colors.warning.activeElementBackground,
+  warningSolidBackground: vars.colors.warning.solidBackground,
+  warningHoveredSolidBackground: vars.colors.warning.hoveredSolidBackground,
+  
+  destructiveAppBackground: vars.colors.destructive.appBackground,
+  destructiveSubtleBackground: vars.colors.destructive.subtleBackground,
+  destructiveElementBackground: vars.colors.destructive.elementBackground,
+  destructiveHoveredElementBackground:
+    vars.colors.destructive.hoveredElementBackground,
+  destructiveActiveElementBackground: vars.colors.destructive.activeElementBackground,
+  destructiveSolidBackground: vars.colors.destructive.solidBackground,
+  destructiveHoveredSolidBackground: vars.colors.destructive.hoveredSolidBackground,
+};
+
 const unresponsiveProperties = defineProperties({
   properties: {
     flexWrap: ["wrap", "nowrap"],
@@ -83,28 +130,23 @@ const unresponsiveProperties = defineProperties({
     borderWidth: vars.border.width,
     borderStyle: ["none", "solid"],
     fontWeight: vars.weight,
-    background: vars.colors.standard,
-    backgroundColor: vars.colors.standard,
+    background: backgroundColors,
+    backgroundColor: backgroundColors,
     color: {
       ...vars.colors.standard,
-      standardLowContrast: vars.colors.standard.lowContrastText,
-      standardHighContrast: vars.colors.standard.highContrastText,
-      primaryLowContrast: vars.colors.primary.lowContrastText,
-      primaryHighContrast: vars.colors.primary.highContrastText,
-      infoLowContrast: vars.colors.info.lowContrastText,
-      infoHighContrast: vars.colors.info.highContrastText,
-      successLowContrast: vars.colors.success.lowContrastText,
-      successHighContrast: vars.colors.success.highContrastText,
-      warningLowContrast: vars.colors.warning.lowContrastText,
-      warningHighContrast: vars.colors.warning.highContrastText,
-      destructiveLowContrast: vars.colors.destructive.lowContrastText,
-      destructiveHighContrast: vars.colors.destructive.highContrastText,
+      primaryLowContrastText: vars.colors.primary.lowContrastText,
+      primaryHighContrastText: vars.colors.primary.highContrastText,
+      infoLowContrastText: vars.colors.info.lowContrastText,
+      infoHighContrastText: vars.colors.info.highContrastText,
+      successLowContrastText: vars.colors.success.lowContrastText,
+      successHighContrastText: vars.colors.success.highContrastText,
+      warningLowContrastText: vars.colors.warning.lowContrastText,
+      warningHighContrastText: vars.colors.warning.highContrastText,
+      destructiveLowContrastText: vars.colors.destructive.lowContrastText,
+      destructiveHighContrastText: vars.colors.destructive.highContrastText,
     },
     borderColor: {
       ...vars.colors.standard,
-      standardSubtleBorder: vars.colors.standard.subtleBorder,
-      standardElementBorder: vars.colors.standard.elementBorder,
-      standardHoveredElementBorder: vars.colors.standard.hoveredElementBorder,
       primarySubtleBorder: vars.colors.primary.subtleBorder,
       primaryElementBorder: vars.colors.primary.elementBorder,
       primaryHoveredElementBorder: vars.colors.primary.hoveredElementBorder,

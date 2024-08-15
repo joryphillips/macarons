@@ -31,6 +31,7 @@ export const breakPointFontRelativeSize = {
  * Roughly major third scale, dropping some values.
  */
 export const baseTypescaleTokens = {
+  "4xl": Number(modularScale(7, 1, "majorThird")),
   "2xl": Number(modularScale(4, 1, "majorThird")),
   xl: Number(modularScale(2, 1, "majorThird")),
   lg: Number(modularScale(1, 1, "majorThird")),

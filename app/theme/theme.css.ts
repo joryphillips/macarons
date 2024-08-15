@@ -7,6 +7,8 @@ import {
 import { boxShadow } from "./shadows";
 import { spacing } from "./spacing";
 import { fonts, weight } from "./typography";
+import { contentWidth } from "./contentWidth";
+import { border } from "./border";
 
 export const vars = createThemeContract({
   colors: colorStateContract,
@@ -36,13 +38,14 @@ export const vars = createThemeContract({
     12: "",
   },
   boxShadow: {
+    inner: "",
     none: "",
-    xs: "",
     sm: "",
     base: "",
     md: "",
     lg: "",
     xl: "",
+    "2xl": "",
   },
   contentWidth: {
     "4xs": "",
@@ -86,40 +89,8 @@ const commonVars = {
   weight,
   spacing,
   boxShadow,
-  contentWidth: {
-    "4xs": "8rem",
-    "3xs": "12rem",
-    "2xs": "20rem",
-    xs: "30rem",
-    sm: "36rem",
-    md: "48rem",
-    lg: "64rem",
-    xl: "72rem",
-    "2xl": "80rem",
-    "100%": "100%",
-    auto: "auto",
-    fit: "fit-content",
-    min: "min-content",
-    max: "max-content",
-    prose: "65ch",
-  },
-  border: {
-    width: {
-      none: "0",
-      standard: "1px",
-      double: "2px",
-      large: "4px",
-      xlarge: "8px",
-    },
-    radius: {
-      none: "0",
-      xs: "4px",
-      sm: "8px",
-      md: "16px",
-      lg: "24px",
-      full: "9999px",
-    },
-  },
+  contentWidth,
+  border,
   transitionPropertyCommon:
     "background-color,border-color,color,fill,stroke,opacity,box-shadow,transform",
 };

@@ -1,0 +1,17 @@
+export const contentWidth = {
+  "4xs": "8rem",
+  "3xs": "12rem",
+  "2xs": "20rem",
+  xs: "30rem",
+  sm: "36rem",
+  md: "48rem",
+  lg: "64rem",
+  xl: "72rem",
+  "2xl": "80rem",
+  "100%": "100%",
+  auto: "auto",
+  fit: "fit-content",
+  min: "min-content",
+  max: "max-content",
+  prose: "65ch",
+};

@@ -22,8 +22,8 @@ export default function TooltipRoute() {
         <TooltipTrigger asChild>
           <Button variant="outline">Hover over me</Button>
         </TooltipTrigger>
-        <TooltipContent asChild>
-          <Text as="p">This is the tooltip content</Text>
+        <TooltipContent>
+          <Text>This is the tooltip content</Text>
         </TooltipContent>
       </Tooltip>
     </VStack>

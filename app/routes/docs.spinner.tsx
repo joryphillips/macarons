@@ -64,8 +64,8 @@ export default function SpinnerRoute() {
             <Text size="sm">purple</Text>
           </VStack>
           <VStack gap={2}>
-            <Spinner color={vars.colors.error.solidBackground} />
-            <Text size="sm">vars.colors.error.solidBackground</Text>
+            <Spinner color={vars.colors.destructive.solidBackground} />
+            <Text size="sm">vars.colors.destructive.solidBackground</Text>
           </VStack>
         </HStack>
       </VStack>

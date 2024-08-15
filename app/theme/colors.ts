@@ -1,10 +1,12 @@
 import {
-  blue,
-  blueDark,
+  indigo,
+  indigoDark,
   red,
   redDark,
   grass,
   grassDark,
+  pink,
+  pinkDark,
   gray,
   grayDark,
   yellow,
@@ -12,38 +14,6 @@ import {
   blackA,
   whiteA,
 } from "@radix-ui/colors";
-
-/** Alias grass to green */
-const green = {
-  green1: grass.grass1,
-  green2: grass.grass2,
-  green3: grass.grass3,
-  green4: grass.grass4,
-  green5: grass.grass5,
-  green6: grass.grass6,
-  green7: grass.grass7,
-  green8: grass.grass8,
-  green9: grass.grass9,
-  green10: grass.grass10,
-  green11: grass.grass11,
-  green12: grass.grass12,
-} as const;
-
-/** Alias grassDark to greenDark */
-const greenDark = {
-  green1: grassDark.grass1,
-  green2: grassDark.grass2,
-  green3: grassDark.grass3,
-  green4: grassDark.grass4,
-  green5: grassDark.grass5,
-  green6: grassDark.grass6,
-  green7: grassDark.grass7,
-  green8: grassDark.grass8,
-  green9: grassDark.grass9,
-  green10: grassDark.grass10,
-  green11: grassDark.grass11,
-  green12: grassDark.grass12,
-} as const;
 
 /**
  *  https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale
@@ -99,7 +69,6 @@ export const colorStateContract = {
   info: colorTokenContract,
   success: colorTokenContract,
   warning: colorTokenContract,
-  error: colorTokenContract,
   destructive: colorTokenContract,
   // Make an exception for overlay, which is stand-alone and not a scale
   overlay: "",
@@ -107,7 +76,9 @@ export const colorStateContract = {
 
 /**
  * Alias Radix color scales to color states. If the Radix color system changes,
- * this function will need to be updated.
+ * this function will need to be updated. Relies on the fact that there are 12
+ * steps in the Radix color scale and 12 colors/shades in each palette. Things will
+ * get weird if this changes.
  */
 function aliasStatesToColors(
   colorScale: Record<string, string>,
@@ -130,7 +101,7 @@ function aliasStatesToColors(
 }
 
 /**
- * Merges the color scale with the token aliases.
+ * Merges the color scale with the token aliases. See important notes above in aliasStatesToColors.
  */
 function getAliases(
   colorScale: Record<string, string>,
@@ -156,24 +127,22 @@ function getAliases(
 }
 
 export const lightColorStateTheme = {
-  primary: getAliases(green, "green"), // anything other than gray, red, or yellow
+  primary: getAliases(pink, "pink"), // anything other than gray, red, or yellow
   standard: getAliases(gray, "gray"),
-  info: getAliases(blue, "blue"),
-  success: getAliases(green, "green"),
+  info: getAliases(indigo, "indigo"),
+  success: getAliases(grass, "grass"),
   warning: getAliases(yellow, "yellow"),
-  error: getAliases(red, "red"),
-  destructive: getAliases(red, "red"), // same as error
+  destructive: getAliases(red, "red"), // errors or destructive actions
   overlay: blackA.blackA9,
 };
 
 // NOTE that the property names do not have the word "Dark" in them
 export const darkColorStateTheme = {
-  primary: getAliases(greenDark, "green"), // anything other than gray, red or yellow
+  primary: getAliases(pinkDark, "pink"), // anything other than gray, red or yellow
   standard: getAliases(grayDark, "gray"),
-  info: getAliases(blueDark, "blue"),
-  success: getAliases(greenDark, "green"),
+  info: getAliases(indigoDark, "indigo"),
+  success: getAliases(grassDark, "grass"),
   warning: getAliases(yellowDark, "yellow"),
-  error: getAliases(redDark, "red"),
-  destructive: getAliases(redDark, "red"), // same as error
+  destructive: getAliases(redDark, "red"), // errors or destructive actions
   overlay: whiteA.whiteA9,
 };

@@ -17,7 +17,7 @@ export default function AlertDialogRoute() {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
-    <VStack gap={8} width="100%" alignItems="flex-start">
+    <VStack gap={4} width="100%" alignItems="flex-start">
       <Heading>Alert Dialog</Heading>
       <Text as="p">
         The alert dialog component is used to focus the user's attention on a

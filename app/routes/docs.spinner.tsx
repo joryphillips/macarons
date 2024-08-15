@@ -1,5 +1,5 @@
 import { Spinner, VStack, Heading, HStack, Text } from "~/components/ui";
-
+import { vars } from "~/theme/theme.css";
 export default function SpinnerRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
@@ -48,12 +48,8 @@ export default function SpinnerRoute() {
         <Heading size="lg">Color</Heading>
         <HStack gap={6} alignItems="flex-end">
           <VStack gap={2}>
-            <Spinner color="red" />
-            <Text size="sm">red</Text>
-          </VStack>
-          <VStack gap={2}>
-            <Spinner color="green" />
-            <Text size="sm">green</Text>
+            <Spinner color="orange" />
+            <Text size="sm">orange</Text>
           </VStack>
           <VStack gap={2}>
             <Spinner color="blue" />
@@ -66,6 +62,10 @@ export default function SpinnerRoute() {
           <VStack gap={2}>
             <Spinner color="purple" />
             <Text size="sm">purple</Text>
+          </VStack>
+          <VStack gap={2}>
+            <Spinner color={vars.colors.error.solidBackground} />
+            <Text size="sm">vars.colors.error.solidBackground</Text>
           </VStack>
         </HStack>
       </VStack>

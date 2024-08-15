@@ -3,14 +3,7 @@ import { VStack, Heading, Text, Divider } from "~/components/ui";
 
 export default function IntroductionRoute() {
   return (
-    <VStack
-      as="article"
-      gap={8}
-      paddingBottom={8}
-      maxWidth="prose"
-      width="100%"
-      alignItems="flex-start"
-    >
+    <VStack gap={8} width="100%" alignItems="flex-start">
       <Heading as="h2" size="xl">
         Philosophy
       </Heading>
@@ -89,7 +82,7 @@ export default function IntroductionRoute() {
             space shuttle. Let's keep it simple and minimize the learning curve.
             To that end: eschew the mental overhead of devs needing to learn
             utility css classes. Now, Tailwind is awesome, and if you love it,
-            once again, check out{" "}
+            check out{" "}
             <Link to="https://ui.shadcn.com/" target="_blank">
               shadcn/ui
             </Link>
@@ -115,8 +108,9 @@ export default function IntroductionRoute() {
             Theming-ready and highly customizable
           </Heading>
           <Text as="p">
-            Light + dark mode + general theming support. Built with Vanilla
-            Extract and Sprinkles. And now you know how we chose the name{" "}
+            Light + dark mode + general theming support. Use CSS files or
+            CSS-in-JS — or both! Built with Vanilla Extract and Sprinkles. And
+            now you know how we chose the name{" "}
             <Link to="https://en.wikipedia.org/wiki/Macaron">Macarons.</Link>
           </Text>
         </VStack>

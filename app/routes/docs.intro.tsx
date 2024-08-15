@@ -3,15 +3,8 @@ import { VStack, Heading, Text } from "~/components/ui";
 
 export default function IntroductionRoute() {
   return (
-    <VStack
-      gap={6}
-      paddingBottom={8}
-      maxWidth="prose"
-      width="100%"
-      alignItems="flex-start"
-      as="article"
-    >
-      <VStack gap={4} width="100%" alignItems="flex-start" as="section">
+    <VStack gap={6} width="100%" alignItems="flex-start">
+      <VStack width="100%" alignItems="flex-start" as="section">
         <Heading as="h3" size="xl">
           Introduction
         </Heading>
@@ -26,14 +19,11 @@ export default function IntroductionRoute() {
             Radix Primitives
           </Link>
           , and is heavily influenced by{" "}
-          <Link to="https://chakra-ui.com/" target="_blank">
-            Chakra UI
-          </Link>{" "}
-          and{" "}
           <Link to="https://ui.shadcn.com/" target="_blank">
             shadcn/ui
           </Link>
-          .
+          . It also draws inspiration and lessons from the use of MUI, Tailwind,
+          and Chakra UI.
         </Text>
         <Text as="p">
           Macarons was originally created to make a{" "}
@@ -51,7 +41,35 @@ export default function IntroductionRoute() {
         </Text>
       </VStack>
       <VStack gap={4} width="100%" alignItems="flex-start" as="section">
-        <Heading as="h4" size="lg">
+        <Heading as="h4" size="md">
+          Why Macarons?
+        </Heading>
+        <VStack gap={2} width="100%" alignItems="flex-start" as="ul">
+          <Text as="li">
+            • Demystifies how Design Systems and Tokens can work.
+          </Text>
+          <Text as="li">• Balances flexibility with ease-of-use.</Text>
+          <Text as="li">
+            • Leverages TypeScript via Vanilla Extract and Sprinkles to make it
+            faster and easier to select valid tokens in your code.
+          </Text>
+        </VStack>
+        <Text as="p">
+          The most obvious question when using Radix Primitives for UI is, "why
+          not use Radix Themes?" The reason is similar to why shadcn/ui exists:
+          Macarons gives the user complete control over token values and scales.
+        </Text>
+        <Text as="p">
+          While a basic design system is provided here, it is relatively easy to
+          create new scales, tokens, or a completely different system structure.
+          Macarons provides a lot of flexibility compared to many UI component
+          systems. If you don't need or want this control, there are plenty of
+          great options out there.
+        </Text>
+      </VStack>
+
+      <VStack gap={4} width="100%" alignItems="flex-start" as="section">
+        <Heading as="h4" size="md">
           Priorities
         </Heading>
         <Text as="p">
@@ -67,7 +85,7 @@ export default function IntroductionRoute() {
         </Text>
       </VStack>
       <VStack gap={4} width="100%" alignItems="flex-start" as="section">
-        <Heading as="h4" size="lg">
+        <Heading as="h4" size="md">
           Non-Goals
         </Heading>
         <Text as="p">
@@ -77,11 +95,10 @@ export default function IntroductionRoute() {
           building out a front end. Follow or modify the patterns shown here to
           add more components, tokens, or other design system aspects.
         </Text>
-
-        <Text as="p">
-          Next: <Link to="/docs/philosophy">Philosophy</Link>
-        </Text>
       </VStack>
+      <Text as="p">
+        Next: <Link to="/docs/philosophy">Philosophy</Link>
+      </Text>
     </VStack>
   );
 }

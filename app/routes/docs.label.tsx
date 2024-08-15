@@ -44,7 +44,7 @@ export default function LabelRoute() {
           Custom color and sizes
         </Heading>
         <VStack width="100%" alignItems="flex-start" gap={2}>
-          <Label size="md" color="primaryLowContrast" htmlFor="custom">
+          <Label size="md" color="primaryLowContrastText" htmlFor="custom">
             Custom Label
           </Label>
           <Input id="custom" name="custom" placeholder="placeholder" />

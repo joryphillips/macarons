@@ -28,31 +28,36 @@ export default function AlertRoute() {
         Customizing
       </Heading>
       <Alert
+        borderRadius="none"
         borderStyle="none"
         showIcon={false}
         status="info"
         maxWidth="xs"
-        width="100%"
       >
         Custom Alert
       </Alert>
+      <VStack spacing={4} alignItems="flex-start">
+        <code>borderRadius="none"</code>
+        <code>borderStyle="none"</code>
+        <code>showIcon=&#123;false&#125;</code>
+        <code>status="info"</code>
+        <code>maxWidth="xs"</code>
+      </VStack>
       <Heading as="h3" size="lg">
         Props and Defaults
       </Heading>
-      <Text as="p">
-        <VStack spacing={2} alignItems="flex-start">
-          <code>status="info"</code>
-          <code>showIcon=&#123;true&#125;</code>
-          <code>borderRadius="sm"</code>
-          <code>borderStyle="solid"</code>
-          <code>borderWidth="double"</code>
-          <code>padding={3}</code>
-          <code>display="flex"</code>
-          <code>flexDirection="row"</code>
-          <code>alignItems="center"</code>
-          <code>gap={2}</code>
-        </VStack>
-      </Text>
+      <VStack spacing={4} alignItems="flex-start">
+        <code>status="info"</code>
+        <code>showIcon=&#123;true&#125;</code>
+        <code>borderRadius="sm"</code>
+        <code>borderStyle="solid"</code>
+        <code>borderWidth="double"</code>
+        <code>padding={3}</code>
+        <code>display="flex"</code>
+        <code>flexDirection="row"</code>
+        <code>alignItems="center"</code>
+        <code>gap={2}</code>
+      </VStack>
     </VStack>
   );
 }

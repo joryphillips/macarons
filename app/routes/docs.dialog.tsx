@@ -40,9 +40,7 @@ export default function DialogRoute() {
             </DialogDescription>
             <HStack width="100%" justifyContent="flex-end">
               <DialogClose asChild>
-                <Button onClick={() => setDialogOpen(false)} variant="primary">
-                  Close
-                </Button>
+                <Button onClick={() => setDialogOpen(false)}>Close</Button>
               </DialogClose>
             </HStack>
           </VStack>

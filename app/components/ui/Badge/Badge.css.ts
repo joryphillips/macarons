@@ -2,7 +2,7 @@ import { style, styleVariants } from "@vanilla-extract/css";
 import { vars } from "~/theme/theme.css";
 
 const { colors } = vars;
-const { standard, info, success, warning, error } = colors;
+const { standard, info, success, warning, destructive: error } = colors;
 
 const badgeBase = style({
   display: "inline-flex",

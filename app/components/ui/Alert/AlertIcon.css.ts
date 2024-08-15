@@ -2,7 +2,7 @@ import { styleVariants } from "@vanilla-extract/css";
 import { vars } from "~/theme/theme.css";
 
 const { colors } = vars;
-const { info, success, warning, error } = colors;
+const { info, success, warning, destructive: error } = colors;
 
 export const alertIconStyles = styleVariants({
   info: [

@@ -16,6 +16,7 @@ function getFontSize(token: keyof typeof baseTypescaleTokens) {
 }
 
 export const textScale = styleVariants({
+  "4xl": [base, getFontSize("4xl")],
   "2xl": [base, getFontSize("2xl")],
   xl: [base, getFontSize("xl")],
   lg: [base, getFontSize("lg")],

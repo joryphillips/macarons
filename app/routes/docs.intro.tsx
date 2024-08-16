@@ -3,7 +3,7 @@ import { VStack, Heading, Text } from "~/components/ui";
 
 export default function IntroductionRoute() {
   return (
-    <VStack gap={6} width="100%" alignItems="flex-start">
+    <VStack gap={8} width="100%" alignItems="flex-start">
       <VStack width="100%" alignItems="flex-start" as="section">
         <Heading as="h3" size="xl">
           Introduction
@@ -22,8 +22,8 @@ export default function IntroductionRoute() {
           <Link to="https://ui.shadcn.com/" target="_blank">
             shadcn/ui
           </Link>
-          . It also draws inspiration and lessons from the use of MUI, Tailwind,
-          and Chakra UI.
+          . It also draws inspiration and lessons from the use of Material UI,
+          Tailwind, and Chakra UI.
         </Text>
         <Text as="p">
           Macarons was originally created to make a{" "}
@@ -40,13 +40,14 @@ export default function IntroductionRoute() {
           for users with limited bandwith and spotty internet connections.
         </Text>
       </VStack>
-      <VStack gap={4} width="100%" alignItems="flex-start" as="section">
+      <VStack width="100%" alignItems="flex-start" as="section">
         <Heading as="h4" size="md">
           Why Macarons?
         </Heading>
         <VStack gap={2} width="100%" alignItems="flex-start" as="ul">
           <Text as="li">
-            • Demystifies how Design Systems and Tokens can work.
+            • Make custom Design Systems and Tokens easy to work with and
+            understand.
           </Text>
           <Text as="li">• Balances flexibility with ease-of-use.</Text>
           <Text as="li">
@@ -57,7 +58,7 @@ export default function IntroductionRoute() {
         <Text as="p">
           The most obvious question when using Radix Primitives for UI is, "why
           not use Radix Themes?" The reason is similar to why shadcn/ui exists:
-          Macarons gives the user complete control over token values and scales.
+          Macarons gives the user complete control over their own design system.
         </Text>
         <Text as="p">
           While a basic design system is provided here, it is relatively easy to
@@ -68,7 +69,7 @@ export default function IntroductionRoute() {
         </Text>
       </VStack>
 
-      <VStack gap={4} width="100%" alignItems="flex-start" as="section">
+      <VStack width="100%" alignItems="flex-start" as="section">
         <Heading as="h4" size="md">
           Priorities
         </Heading>
@@ -84,7 +85,7 @@ export default function IntroductionRoute() {
           or approach for better solutions if they come along.{" "}
         </Text>
       </VStack>
-      <VStack gap={4} width="100%" alignItems="flex-start" as="section">
+      <VStack width="100%" alignItems="flex-start" as="section">
         <Heading as="h4" size="md">
           Non-Goals
         </Heading>

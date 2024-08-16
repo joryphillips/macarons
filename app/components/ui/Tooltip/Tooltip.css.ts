@@ -10,7 +10,6 @@ export const tooltipContentStyles = style({
   backgroundColor: vars.colors.primary.solidBackground,
   opacity: "0.93",
   boxShadow: vars.boxShadow.md,
-  zIndex: 50,
   overflow: "hidden",
   fontWeight: 400,
   lineHeight: "1.25rem",

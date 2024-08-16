@@ -63,7 +63,9 @@ export default function ColorRoute() {
       {/* Background Colors Table */}
       <HStack gap={2} justifyContent="space-evenly" width="100%">
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Type</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Type
+          </Heading>
           <TextColorLabel label="App" />
           <TextColorLabel label="Subtle" />
           <TextColorLabel label="Element" />
@@ -74,7 +76,9 @@ export default function ColorRoute() {
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Base</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Base
+          </Heading>
           <ColorBox backgroundColor="appBackground" />
           <ColorBox backgroundColor="subtleBackground" />
           <ColorBox backgroundColor="elementBackground" />
@@ -85,7 +89,9 @@ export default function ColorRoute() {
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Primary</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Primary
+          </Heading>
           <ColorBox backgroundColor="primaryAppBackground" />
           <ColorBox backgroundColor="primarySubtleBackground" />
           <ColorBox backgroundColor="primaryElementBackground" />
@@ -96,7 +102,9 @@ export default function ColorRoute() {
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Info</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Info
+          </Heading>
           <ColorBox backgroundColor="infoAppBackground" />
           <ColorBox backgroundColor="infoSubtleBackground" />
           <ColorBox backgroundColor="infoElementBackground" />
@@ -107,7 +115,9 @@ export default function ColorRoute() {
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Success</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Success
+          </Heading>
           <ColorBox backgroundColor="successAppBackground" />
           <ColorBox backgroundColor="successSubtleBackground" />
           <ColorBox backgroundColor="successElementBackground" />
@@ -118,7 +128,9 @@ export default function ColorRoute() {
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Warning</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Warning
+          </Heading>
           <ColorBox backgroundColor="warningAppBackground" />
           <ColorBox backgroundColor="warningSubtleBackground" />
           <ColorBox backgroundColor="warningElementBackground" />
@@ -129,7 +141,9 @@ export default function ColorRoute() {
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Destructive</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Dest&shy;ructive
+          </Heading>
           <ColorBox backgroundColor="destructiveAppBackground" />
           <ColorBox backgroundColor="destructiveSubtleBackground" />
           <ColorBox backgroundColor="destructiveElementBackground" />
@@ -154,49 +168,63 @@ export default function ColorRoute() {
       {/* Border Color Table */}
       <HStack gap={2} justifyContent="space-evenly" width="100%">
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Type</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Type
+          </Heading>
           <TextColorLabel label="Subtle" />
           <TextColorLabel label="Element" />
           <TextColorLabel label="Hovered" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Base</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Base
+          </Heading>
           <ColorBox backgroundColor="subtleBorder" />
           <ColorBox backgroundColor="elementBorder" />
           <ColorBox backgroundColor="hoveredElementBorder" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Primary</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Primary
+          </Heading>
           <ColorBox backgroundColor="primarySubtleBorder" />
           <ColorBox backgroundColor="primaryElementBorder" />
           <ColorBox backgroundColor="primaryHoveredElementBorder" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Info</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Info
+          </Heading>
           <ColorBox backgroundColor="infoSubtleBorder" />
           <ColorBox backgroundColor="infoElementBorder" />
           <ColorBox backgroundColor="infoHoveredElementBorder" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Success</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Success
+          </Heading>
           <ColorBox backgroundColor="successSubtleBorder" />
           <ColorBox backgroundColor="successElementBorder" />
           <ColorBox backgroundColor="successHoveredElementBorder" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Warning</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Warning
+          </Heading>
           <ColorBox backgroundColor="warningSubtleBorder" />
           <ColorBox backgroundColor="warningElementBorder" />
           <ColorBox backgroundColor="warningHoveredElementBorder" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Destructive</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Dest&shy;ructive
+          </Heading>
           <ColorBox backgroundColor="destructiveSubtleBorder" />
           <ColorBox backgroundColor="destructiveElementBorder" />
           <ColorBox backgroundColor="destructiveHoveredElementBorder" />
@@ -217,43 +245,57 @@ export default function ColorRoute() {
       {/* Text Color Table */}
       <HStack gap={2} justifyContent="space-evenly" width="100%">
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Type</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Type
+          </Heading>
           <TextColorLabel label="Low Contrast" />
           <TextColorLabel label="High Constrast" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Base</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Base
+          </Heading>
           <ColorBox backgroundColor="lowContrastText" />
           <ColorBox backgroundColor="highContrastText" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Primary</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Primary
+          </Heading>
           <ColorBox backgroundColor="primaryLowContrastText" />
           <ColorBox backgroundColor="primaryHighContrastText" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Info</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Info
+          </Heading>
           <ColorBox backgroundColor="infoLowContrastText" />
           <ColorBox backgroundColor="infoHighContrastText" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Success</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Success
+          </Heading>
           <ColorBox backgroundColor="successLowContrastText" />
           <ColorBox backgroundColor="successHighContrastText" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Warning</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Warning
+          </Heading>
           <ColorBox backgroundColor="warningLowContrastText" />
           <ColorBox backgroundColor="warningHighContrastText" />
         </VStack>
 
         <VStack gap={2}>
-          <Heading className={colorTableLabelSize}>Destructive</Heading>
+          <Heading className={clsx(colorLabel, colorTableLabelSize)}>
+            Dest&shy;ructive
+          </Heading>
           <ColorBox backgroundColor="destructiveLowContrastText" />
           <ColorBox backgroundColor="destructiveHighContrastText" />
         </VStack>

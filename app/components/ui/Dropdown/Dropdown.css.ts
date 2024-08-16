@@ -120,7 +120,7 @@ export const menuItem = style({
     },
     "&[data-disabled]": {
       pointerEvents: "none",
-      opacity: 0.5,
+      backgroundColor: vars.colors.standard.subtleBackground,
     },
   },
 });

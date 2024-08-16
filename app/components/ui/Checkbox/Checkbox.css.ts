@@ -36,7 +36,8 @@ const checkboxBase = style({
     },
     "&:disabled": {
       cursor: "not-allowed",
-      opacity: 0.5,
+      backgroundColor: vars.colors.standard.subtleBackground,
+      borderColor: vars.colors.standard.subtleBorder,
     },
   },
 });

@@ -5,6 +5,7 @@ import {
   Input,
   InputWithInfo,
   InputWithLabel,
+  Text,
 } from "~/components/ui";
 
 export default function CheckboxRoute() {
@@ -17,6 +18,10 @@ export default function CheckboxRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start" as="article">
       <Heading>Input</Heading>
+      <Text as="p">
+        The Input component is used to collect text input from users, often in a
+        form. It can be used in a variety of sizes and states.
+      </Text>
       <VStack alignItems="flex-start" gap={3} as="section">
         <Heading as="h3" size="md">
           Minimal

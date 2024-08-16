@@ -3,6 +3,7 @@ import { Box } from "../ui";
 
 import { useTheme } from "../ThemeProvider/ThemeProvider";
 import { themeToggleClasses } from "./ThemeToggle.css";
+import { vars } from "~/theme/theme.css";
 
 export function ThemeToggle() {
   const { userTheme, setUserTheme } = useTheme();
@@ -16,10 +17,10 @@ export function ThemeToggle() {
   const getModeIcon = () => {
     switch (userTheme) {
       case "dark":
-        return <Moon size={24} />;
+        return <Moon size={24} color={vars.colors.primary.lowContrastText} />;
       default:
       case "light":
-        return <Sun size={24} />;
+        return <Sun size={24} color={vars.colors.primary.lowContrastText} />;
     }
   };
 

@@ -10,7 +10,7 @@ export {
   AlertDialogTrigger,
 } from "~/components/ui/AlertDialog/AlertDialog";
 export { Badge } from "~/components/ui/Badge/Badge";
-export { Button } from "~/components/ui/Button/Button";
+export { Button, IconButton } from "~/components/ui/Button/Button";
 export { Checkbox } from "~/components/ui/Checkbox/Checkbox";
 
 export { Dialog, 

@@ -31,7 +31,7 @@ const buttonBase = style({
     },
     "&:disabled": {
       cursor: "not-allowed",
-      opacity: 0.5,
+      backgroundColor: info.subtleBackground,
     },
     "&:active": {
       backgroundColor: info.activeSolidBackground,

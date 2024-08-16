@@ -20,7 +20,7 @@ export function Titlemark() {
           macarons
         </Heading>
         <HStack gap={0} justifyContent="center" flexWrap="nowrap">
-          <MacaronStack width="40px" count={12} />
+          <MacaronStack width="36px" count={12} />
         </HStack>
       </Box>
       <Heading as="h2" size="md" color="primaryLowContrastText" align="center">

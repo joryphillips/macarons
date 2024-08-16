@@ -2,7 +2,6 @@ import clsx from "clsx";
 import { X } from "lucide-react";
 import type { InputHTMLAttributes } from "react";
 import { forwardRef, useId, useRef } from "react";
-import { base as baseReset, input as inputReset } from "~/styles/reset.css";
 import { IconButton } from "../Button/Button";
 import { Label } from "../Label/Label";
 import { Box } from "../Layout/Box";
@@ -11,8 +10,9 @@ import { Text } from "../Text/Text";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../Tooltip/Tooltip";
 import {
   errorTextStyles,
-  inputSizeVariants,
+  inputContainerStyles,
   inputStyles,
+  inputClearButtonStyles,
   invalid,
 } from "./Input.css";
 
@@ -24,7 +24,7 @@ export const defaultScrollBehavior: ScrollIntoViewOptions = {
 type InputAttributes = Omit<InputHTMLAttributes<HTMLInputElement>, "size">;
 
 export interface InputProps extends InputAttributes {
-  size?: keyof typeof inputSizeVariants;
+  size?: keyof typeof inputStyles;
   isDisabled?: boolean;
   isInvalid?: boolean;
 }
@@ -43,14 +43,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         disabled={isDisabled}
-        className={clsx(
-          baseReset,
-          inputReset,
-          inputSizeVariants[size],
-          inputStyles,
-          isInvalid && invalid,
-          className
-        )}
+        className={clsx(inputStyles[size], isInvalid && invalid, className)}
         ref={ref}
         {...props}
       />
@@ -82,7 +75,7 @@ const InputWithLabel = forwardRef<
     return (
       <VStack width="100%" alignItems="flex-start" spacing={1}>
         <Label htmlFor={labelId}>{label}</Label>
-        <Box width="100%" position="relative">
+        <Box className={inputContainerStyles}>
           <Input
             ref={inputRef}
             name={name}
@@ -94,13 +87,7 @@ const InputWithLabel = forwardRef<
             {...props}
           />
           {onClear && (!!props.value || !!props.defaultValue) && (
-            <Box
-              position="absolute"
-              display="flex"
-              right={0}
-              top={0}
-              padding={1}
-            >
+            <Box className={inputClearButtonStyles[size]}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <IconButton

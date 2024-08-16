@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import * as React from "react";
 import { base as baseReset, input as inputReset } from "~/styles/reset.css";
-import { inputStyles, textAreaStyles } from "./Input.css";
+import { inputBaseStyles, textAreaStyles } from "./Input.css";
 
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -16,7 +16,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         className={clsx(
           baseReset,
           inputReset,
-          inputStyles,
+          inputBaseStyles,
           textAreaStyles,
           className
         )}

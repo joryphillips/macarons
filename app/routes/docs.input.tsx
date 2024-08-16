@@ -9,8 +9,10 @@ import {
 
 export default function CheckboxRoute() {
   const [clearableInputValue, setClearableInputValue] = useState("clearable");
+  const [wideInputValue, setWideInputValue] = useState("wide");
+
   const [clearableSmallInputValue, setClearableSmallInputValue] =
-    useState("clearable");
+    useState("small clearable");
 
   return (
     <VStack gap={8} width="100%" alignItems="flex-start" as="article">
@@ -31,6 +33,19 @@ export default function CheckboxRoute() {
           value={clearableInputValue}
           onClear={() => setClearableInputValue("")}
           onChange={(e) => setClearableInputValue(e.target.value)}
+        />
+      </VStack>
+      <VStack alignItems="flex-start" gap={3} as="section" width="100%">
+        <Heading as="h3" size="md">
+          Wide
+        </Heading>
+        <InputWithLabel
+          width="full"
+          label="Wide"
+          placeholder="placeholder"
+          value={wideInputValue}
+          onClear={() => setWideInputValue("")}
+          onChange={(e) => setWideInputValue(e.target.value)}
         />
       </VStack>
       <VStack alignItems="flex-start" gap={3} as="section">

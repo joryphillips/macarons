@@ -24,22 +24,29 @@ function ShadowBox({ shadow }: { shadow: Sprinkles["boxShadow"] }) {
 
 export default function ShadowsRoute() {
   return (
-    <VStack gap={4} width="100%" alignItems="flex-start">
-      <Heading size="lg">Shadows</Heading>
+    <VStack gap={8} width="100%" alignItems="flex-start">
+      <VStack gap={4} width="100%" alignItems="flex-start">
+        <Heading size="lg">Shadows</Heading>
+        <Text as="p">
+          Box and derived components (Stack, etc) have a boxShadow prop that
+          accepts a shadow key from the theme. This scale is very similar to
+          Tailwind CSS's shadow scale.
+        </Text>
+        <HStack gap={8} flexWrap="wrap">
+          <ShadowBox shadow="inner" />
+          <ShadowBox shadow="sm" />
+          <ShadowBox shadow="base" />
+          <ShadowBox shadow="md" />
+          <ShadowBox shadow="lg" />
+          <ShadowBox shadow="xl" />
+          <ShadowBox shadow="2xl" />
+        </HStack>
+      </VStack>
       <Text as="p">
-        Box and derived components (Stack, etc) have a boxShadow prop that
-        accepts a shadow key from the theme. This scale is very similar to
-        Tailwind CSS's shadow scale.
+        Note that in dark mode, shadows disappear. It does not look proper to
+        have shadows lighter than a background, and so elevation is expressed
+        via background color instead.
       </Text>
-      <HStack gap={8}>
-        <ShadowBox shadow="sm" />
-        <ShadowBox shadow="base" />
-        <ShadowBox shadow="md" />
-        <ShadowBox shadow="lg" />
-        <ShadowBox shadow="xl" />
-        <ShadowBox shadow="2xl" />
-      </HStack>
-      <ShadowBox shadow="inner" />
     </VStack>
   );
 }

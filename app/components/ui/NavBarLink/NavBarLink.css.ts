@@ -2,13 +2,13 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "~/theme/theme.css";
 
 const { colors } = vars;
-const { standard, info, primary } = colors;
+const { primary } = colors;
 
 export const navLinkStyles = style({
+  boxSizing: "border-box",
   display: "inline-flex",
   alignItems: "center",
   width: "100%",
-  minWidth: vars.contentWidth["4xs"],
   borderRadius: vars.border.radius.sm,
   padding: vars.spacing[2],
   transitionProperty: vars.transitionPropertyCommon,
@@ -17,7 +17,6 @@ export const navLinkStyles = style({
   borderWidth: vars.border.width.standard,
   borderStyle: "solid",
   borderColor: "transparent",
-  backgroundColor: standard.appBackground,
   color: primary.lowContrastText,
   cursor: "pointer",
   selectors: {
@@ -25,16 +24,15 @@ export const navLinkStyles = style({
       backgroundColor: primary.hoveredElementBackground,
     },
     "&:focus-visible": {
-      boxShadow: `0 0 0 ${vars.border.width.double} ${info.elementBorder}`,
+      boxShadow: `0 0 0 ${vars.border.width.double} ${primary.elementBorder}`,
     },
-    "&:disabled": {
+    "&.disabled": {
       cursor: "not-allowed",
-      opacity: 0.5,
+      color: primary.subtleBorder,
     },
     "&:active, &.active": {
       backgroundColor: primary.activeElementBackground,
       color: primary.highContrastText,
-      boxShadow: "none",
     },
   },
 });

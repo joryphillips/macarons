@@ -26,9 +26,9 @@ export default function DarkmodeRoute() {
         The Radix color palette offers light and dark versions of all its
         colors. When dark theme is activated, all the colors in the app are
         swapped out for their dark counterparts. This allows us to use one
-        designation for colors app-wide, instead of specifying names on a
-        color-by-color basis. It is a tremendous affordance in developer
-        experience.
+        designation for colors app-wide, instead of specifying two different
+        names based on the mode each time a color is used. It is a tremendous
+        affordance in developer experience.
       </Text>
     </VStack>
   );

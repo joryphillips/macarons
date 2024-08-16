@@ -27,9 +27,10 @@ export default function TextRoute() {
           Out of the box, the Text component (via the typescale system) allows
           the user to change the size of typography across the app by setting
           the font size in their browser's settings. We view this as an
-          important accessibility measure. Too many websites and apps prevent
-          this functionality by setting a non-relative global font size. Not on
-          our watch!
+          important accessibility measure. As of this writing, among Chakra UI,
+          Material UI, Radix, and TailwindCSS, only Material UI complies with
+          global font size changes in the browser. Too many websites and apps
+          prevent this functionality. Not on our watch!
         </Text>
       </VStack>
       <Divider />
@@ -38,6 +39,9 @@ export default function TextRoute() {
           Size Options
         </Heading>
         <VStack width="100%" alignItems="flex-start" gap={6}>
+          <Text as="p" size="jumbo" color="lowContrastText">
+            jumbo: Jumbotron or titlemark text.
+          </Text>
           <Text as="p" size="2xl" color="lowContrastText">
             2xl: Hero size. Good for big, bold statements and headlines.
           </Text>

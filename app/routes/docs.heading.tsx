@@ -19,8 +19,11 @@ export default function HeadingsRoute() {
           Size Options
         </Heading>
         <VStack width="100%" alignItems="baseline" gap={8}>
+          <Heading size="jumbo" color="lowContrastText">
+            jumbo: Jumbo size. Use sparingly.
+          </Heading>
           <Heading size="2xl" color="lowContrastText">
-            2xl: Hero size. Use sparingly.
+            2xl: Hero size. Also use sparingly.
           </Heading>
           <Heading size="xl" color="lowContrastText">
             xl: Heading size. Default. Good for page headings.

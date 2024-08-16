@@ -21,6 +21,11 @@ const responsiveProperties = defineProperties({
     borderTopRightRadius: vars.border.radius,
     boxShadow: vars.boxShadow,
 
+    top: vars.spacing,
+    bottom: vars.spacing,
+    left: vars.spacing,
+    right: vars.spacing,
+
     marginBottom: space,
     marginLeft: space,
     marginRight: space,
@@ -41,7 +46,7 @@ const responsiveProperties = defineProperties({
 
     zIndex: [-1, 0, 1],
     position: ["absolute", "relative", "fixed", "sticky"],
-    display: ["none", "block", "inline", "inline-block", "inline-flex", "flex"],
+    display: ["none", "block", "inline", "inline-block", "inline-flex", "flex", "grid"],
 
     flexShrink: [0],
     flexGrow: [0, 1],
@@ -55,6 +60,8 @@ const responsiveProperties = defineProperties({
       "space-evenly",
     ],
     flexDirection: ["row", "row-reverse", "column", "column-reverse"],
+    flexWrap: ["wrap", "nowrap"],
+
     gap: space,
 
     overflow: ["hidden", "auto", "scroll", "visible"],
@@ -70,6 +77,7 @@ const responsiveProperties = defineProperties({
     margin: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
     marginX: ["marginLeft", "marginRight"],
     marginY: ["marginTop", "marginBottom"],
+    inset: ["top", "bottom", "left", "right"],
   },
 });
 
@@ -116,15 +124,38 @@ const backgroundColors =  {
   destructiveActiveElementBackground: vars.colors.destructive.activeElementBackground,
   destructiveSolidBackground: vars.colors.destructive.solidBackground,
   destructiveHoveredSolidBackground: vars.colors.destructive.hoveredSolidBackground,
+
+  // Included for demonstrative purposes in color docs; these ordinarily do not need be included as background colors
+  primaryLowContrastText: vars.colors.primary.lowContrastText,
+  primaryHighContrastText: vars.colors.primary.highContrastText,
+  infoLowContrastText: vars.colors.info.lowContrastText,
+  infoHighContrastText: vars.colors.info.highContrastText,
+  successLowContrastText: vars.colors.success.lowContrastText,
+  successHighContrastText: vars.colors.success.highContrastText,
+  warningLowContrastText: vars.colors.warning.lowContrastText,
+  warningHighContrastText: vars.colors.warning.highContrastText,
+  destructiveLowContrastText: vars.colors.destructive.lowContrastText,
+  destructiveHighContrastText: vars.colors.destructive.highContrastText,
+  primarySubtleBorder: vars.colors.primary.subtleBorder,
+  primaryElementBorder: vars.colors.primary.elementBorder,
+  primaryHoveredElementBorder: vars.colors.primary.hoveredElementBorder,
+  infoSubtleBorder: vars.colors.info.subtleBorder,
+  infoElementBorder: vars.colors.info.elementBorder,
+  infoHoveredElementBorder: vars.colors.info.hoveredElementBorder,
+  successSubtleBorder: vars.colors.success.subtleBorder,
+  successElementBorder: vars.colors.success.elementBorder,
+  successHoveredElementBorder: vars.colors.success.hoveredElementBorder,
+  warningSubtleBorder: vars.colors.warning.subtleBorder,
+  warningElementBorder: vars.colors.warning.elementBorder,
+  warningHoveredElementBorder: vars.colors.warning.hoveredElementBorder,
+  destructiveSubtleBorder: vars.colors.destructive.subtleBorder,
+  destructiveElementBorder: vars.colors.destructive.elementBorder,
+  destructiveHoveredElementBorder:
+    vars.colors.destructive.hoveredElementBorder,
 };
 
 const unresponsiveProperties = defineProperties({
   properties: {
-    flexWrap: ["wrap", "nowrap"],
-    top: vars.spacing,
-    bottom: vars.spacing,
-    left: vars.spacing,
-    right: vars.spacing,
     cursor: ["pointer", "default", "text", "grab", "grabbing", "disabled"],
     pointerEvents: ["none", "auto"],
     borderWidth: vars.border.width,
@@ -164,9 +195,6 @@ const unresponsiveProperties = defineProperties({
       destructiveHoveredElementBorder:
         vars.colors.destructive.hoveredElementBorder,
     },
-  },
-  shorthands: {
-    inset: ["top", "bottom", "left", "right"],
   },
 });
 

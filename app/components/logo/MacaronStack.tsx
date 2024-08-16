@@ -1,40 +1,59 @@
 import type { SVGProps } from "react";
+import { useTheme } from "../ThemeProvider/ThemeProvider";
+import { pink, yellow, cyan, lime } from "@radix-ui/colors";
 
-export const greenMacaron = {
-  body: "rgb(201,232,202)",
-  inner: "rgb(218,241,219)",
-  outer: "rgb(233,246,233)",
+type MacaronHue = {
+  body: string;
+  inner: string;
+  outer: string;
 };
 
-export const blueMacaron = {
-  body: "rgb(202,232,232)",
-  inner: "rgb(219,241,241)",
-  outer: "rgb(233,246,246)",
-};
+type Hue = "pink" | "yellow" | "lime" | "cyan";
 
-export const yellowMacaron = {
-  body: "rgb(255,231,112)",
-  inner: "rgb(255,243,148)",
-  outer: "rgb(255,250,184)",
-};
+/**
+ * Note that we do not want to use dark theme palettes or the macaroons
+ * will not read as pastels (or macaroons). Tones "flip" in dark mode and that
+ * works for UI components, but not for macaroons.
+ */
+function getPalette(hue: Hue) {
+  switch (hue) {
+    case "pink":
+      return pink;
+    case "yellow":
+      return yellow;
+    case "lime":
+      return lime;
+    case "cyan":
+      return cyan;
+    default:
+      return pink;
+  }
+}
 
-export const pinkMacaron = {
-  body: "rgb(231,172,208)",
-  inner: "rgb(246,206,231)",
-  outer: "rgb(251,220,239)",
-};
+function getMacaroonHue(hue: Hue, theme: "light" | "dark"): MacaronHue {
+  const palette = getPalette(hue);
 
-export function MacaronInsetSVG({
+  // Darken the colors for dark theme
+  const bodyStep = theme === "light" ? 6 : 8;
+  const innerStep = theme === "light" ? 5 : 7;
+  const outerStep = theme === "light" ? 4 : 6;
+
+  return {
+    body: palette[`${hue}${bodyStep}` as keyof typeof palette],
+    inner: palette[`${hue}${innerStep}` as keyof typeof palette],
+    outer: palette[`${hue}${outerStep}` as keyof typeof palette],
+  };
+}
+
+const pinkMacaron = getMacaroonHue("pink", "light");
+
+function MacaronInsetSVG({
   height = "100%",
   width = "50px",
-  hue = pinkMacaron,
+  macaroonHue = pinkMacaron,
   ...props
 }: SVGProps<SVGSVGElement> & {
-  hue?: {
-    body: string;
-    inner: string;
-    outer: string;
-  };
+  macaroonHue: MacaronHue;
 }) {
   return (
     <svg
@@ -78,7 +97,7 @@ export function MacaronInsetSVG({
               >
                 <path
                   d="M494.654,978.562L494.654,981.692C494.654,982.716 493.232,983.547 491.481,983.547L430.268,983.547C428.517,983.547 427.095,982.716 427.095,981.692L427.095,763.437C427.095,762.413 428.517,761.581 430.268,761.581L491.481,761.581C493.232,761.581 494.654,762.413 494.654,763.437L494.654,766.577C494.915,766.503 495.208,766.461 495.518,766.461L574.403,766.602C574.788,766.602 575.146,766.666 575.45,766.777L575.45,763.437C575.45,762.413 576.872,761.581 578.623,761.581L639.835,761.581C641.586,761.581 643.008,762.413 643.008,763.437L643.008,981.692C643.008,982.716 641.586,983.547 639.835,983.547L578.623,983.547C576.872,983.547 575.45,982.716 575.45,981.692L575.45,978.644C575.146,978.755 574.788,978.82 574.403,978.82L495.518,978.679C495.208,978.679 494.915,978.637 494.654,978.562Z"
-                  fill={hue.body}
+                  fill={macaroonHue.body}
                 />
               </g>
               <g
@@ -87,7 +106,7 @@ export function MacaronInsetSVG({
               >
                 <path
                   d="M643.008,762.634L643.008,982.494C643.008,983.075 641.586,983.547 639.835,983.547L578.623,983.547C576.872,983.547 575.45,983.075 575.45,982.494L575.45,762.634C575.45,762.053 576.872,761.581 578.623,761.581L639.835,761.581C641.586,761.581 643.008,762.053 643.008,762.634Z"
-                  fill={hue.inner}
+                  fill={macaroonHue.inner}
                 />
               </g>
               <g
@@ -96,7 +115,7 @@ export function MacaronInsetSVG({
               >
                 <path
                   d="M643.008,762.634L643.008,982.494C643.008,983.075 641.586,983.547 639.835,983.547L578.623,983.547C576.872,983.547 575.45,983.075 575.45,982.494L575.45,762.634C575.45,762.053 576.872,761.581 578.623,761.581L639.835,761.581C641.586,761.581 643.008,762.053 643.008,762.634Z"
-                  fill={hue.inner}
+                  fill={macaroonHue.inner}
                 />
               </g>
               <g
@@ -105,7 +124,7 @@ export function MacaronInsetSVG({
               >
                 <path
                   d="M643.008,762.881L643.008,982.247C643.008,982.964 641.586,983.547 639.835,983.547L578.623,983.547C576.872,983.547 575.45,982.964 575.45,982.247L575.45,762.881C575.45,762.164 576.872,761.581 578.623,761.581L639.835,761.581C641.586,761.581 643.008,762.164 643.008,762.881Z"
-                  fill={hue.outer}
+                  fill={macaroonHue.outer}
                 />
               </g>
               <g
@@ -114,7 +133,7 @@ export function MacaronInsetSVG({
               >
                 <path
                   d="M643.008,762.875L643.008,982.253C643.008,982.967 641.586,983.547 639.835,983.547L578.623,983.547C576.872,983.547 575.45,982.967 575.45,982.253L575.45,762.875C575.45,762.161 576.872,761.581 578.623,761.581L639.835,761.581C641.586,761.581 643.008,762.161 643.008,762.875Z"
-                  fill={hue.outer}
+                  fill={macaroonHue.outer}
                 />
               </g>
             </g>
@@ -125,17 +144,15 @@ export function MacaronInsetSVG({
   );
 }
 
-export function MacaronOusetSVG({
+const yellowMacaron = getMacaroonHue("yellow", "light");
+
+function MacaronOusetSVG({
   height = "100%",
   width = "50px",
-  hue = yellowMacaron,
+  macaroonHue = yellowMacaron,
   ...props
 }: SVGProps<SVGSVGElement> & {
-  hue?: {
-    body: string;
-    inner: string;
-    outer: string;
-  };
+  macaroonHue: MacaronHue;
 }) {
   return (
     <svg
@@ -179,7 +196,7 @@ export function MacaronOusetSVG({
               >
                 <path
                   d="M642.758,982.414C642.276,983.08 641.148,983.547 639.835,983.547L578.623,983.547C576.872,983.547 575.45,982.716 575.45,981.692L575.45,763.437C575.45,762.413 576.872,761.581 578.623,761.581L639.835,761.581C641.148,761.581 642.276,762.049 642.758,762.714L642.758,757.467C642.758,756.831 643.641,756.314 644.729,756.314L682.752,756.314C683.734,756.314 684.549,756.735 684.699,757.285C684.848,756.735 685.663,756.314 686.645,756.314L724.668,756.314C725.756,756.314 726.639,756.831 726.639,757.467L726.639,762.857C726.982,762.049 728.232,761.45 729.719,761.45L790.931,761.45C792.682,761.45 794.104,762.281 794.104,763.305L794.104,981.56C794.104,982.584 792.682,983.415 790.931,983.415L729.719,983.415C728.232,983.415 726.982,982.816 726.639,982.009L726.639,987.248C726.639,987.884 725.756,988.4 724.668,988.4L686.645,988.4C685.663,988.4 684.848,987.979 684.699,987.429C684.549,987.979 683.734,988.4 682.752,988.4L644.729,988.4C643.641,988.4 642.758,987.884 642.758,987.248L642.758,982.414Z"
-                  fill={hue.body}
+                  fill={macaroonHue.body}
                 />
               </g>
               <g
@@ -188,7 +205,7 @@ export function MacaronOusetSVG({
               >
                 <path
                   d="M643.008,763.22L643.008,981.908C643.008,982.812 641.586,983.547 639.835,983.547L578.623,983.547C576.872,983.547 575.45,982.812 575.45,981.908L575.45,763.22C575.45,762.316 576.872,761.581 578.623,761.581L639.835,761.581C641.586,761.581 643.008,762.316 643.008,763.22Z"
-                  fill={hue.outer}
+                  fill={macaroonHue.outer}
                 />
               </g>
               <g
@@ -197,7 +214,7 @@ export function MacaronOusetSVG({
               >
                 <path
                   d="M643.008,763.242L643.008,981.886C643.008,982.803 641.586,983.547 639.835,983.547L578.623,983.547C576.872,983.547 575.45,982.803 575.45,981.886L575.45,763.242C575.45,762.326 576.872,761.581 578.623,761.581L639.835,761.581C641.586,761.581 643.008,762.326 643.008,763.242Z"
-                  fill={hue.outer}
+                  fill={macaroonHue.outer}
                 />
               </g>
               <g
@@ -206,7 +223,7 @@ export function MacaronOusetSVG({
               >
                 <path
                   d="M643.008,762.386L643.008,982.742C643.008,983.186 641.586,983.547 639.835,983.547L578.623,983.547C576.872,983.547 575.45,983.186 575.45,982.742L575.45,762.386C575.45,761.942 576.872,761.581 578.623,761.581L639.835,761.581C641.586,761.581 643.008,761.942 643.008,762.386Z"
-                  fill={hue.inner}
+                  fill={macaroonHue.inner}
                 />
               </g>
               <g
@@ -215,7 +232,7 @@ export function MacaronOusetSVG({
               >
                 <path
                   d="M643.008,762.389L643.008,982.739C643.008,983.185 641.586,983.547 639.835,983.547L578.623,983.547C576.872,983.547 575.45,983.185 575.45,982.739L575.45,762.389C575.45,761.943 576.872,761.581 578.623,761.581L639.835,761.581C641.586,761.581 643.008,761.943 643.008,762.389Z"
-                  fill={hue.inner}
+                  fill={macaroonHue.inner}
                 />
               </g>
             </g>
@@ -223,6 +240,33 @@ export function MacaronOusetSVG({
         </g>
       </g>
     </svg>
+  );
+}
+
+export function MacaronSVG({
+  inset = false,
+  height = "100%",
+  width = "50px",
+  hue = "pink",
+  ...props
+}: SVGProps<SVGSVGElement> & { inset?: boolean; hue: Hue }) {
+  const { userTheme } = useTheme();
+  const macaroonHue = getMacaroonHue(hue, userTheme || "light");
+
+  return inset ? (
+    <MacaronInsetSVG
+      height={height}
+      width={width}
+      macaroonHue={macaroonHue}
+      {...props}
+    />
+  ) : (
+    <MacaronOusetSVG
+      height={height}
+      width={width}
+      macaroonHue={macaroonHue}
+      {...props}
+    />
   );
 }
 
@@ -242,37 +286,27 @@ export function MacaronStack({
           // cycle through pink inset, yellow outset, green inset, and blue outset macarons
           ({
             0: (
-              <MacaronInsetSVG
+              <MacaronSVG
+                inset
                 key={i}
                 width={width}
                 height={height}
-                hue={pinkMacaron}
+                hue="pink"
               />
             ),
             1: (
-              <MacaronOusetSVG
-                key={i}
-                width={width}
-                height={height}
-                hue={yellowMacaron}
-              />
+              <MacaronSVG key={i} width={width} height={height} hue="yellow" />
             ),
             2: (
-              <MacaronInsetSVG
+              <MacaronSVG
+                inset
                 key={i}
                 width={width}
                 height={height}
-                hue={greenMacaron}
+                hue="lime"
               />
             ),
-            3: (
-              <MacaronOusetSVG
-                key={i}
-                width={width}
-                height={height}
-                hue={blueMacaron}
-              />
-            ),
+            3: <MacaronSVG key={i} width={width} height={height} hue="cyan" />,
           }[i % 4])
       )}
     </>

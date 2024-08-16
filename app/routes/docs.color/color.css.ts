@@ -21,20 +21,22 @@ const breakPointStyles = {
 }
 
 export const colorChip = style({
-  width: "3rem",
-  height: "3rem",
+  width: "2.5rem",
+  height: "2.5rem",
   borderRadius: vars.border.radius.md,
   boxShadow: vars.boxShadow.base,
   "@media": breakPointStyles,
 });
 
 export const colorLabel = style({
-  textAlign: "center",
   display:"flex",
   justifyContent:"center",
   alignItems:"center",
-  width: "3rem",
-  height: "3rem",
+  width: "2.5rem",
+  height: "2.5rem",
+  hyphens: "auto",  
+  textAlign: "center",
+  verticalAlign: "bottom",
   "@media": breakPointStyles,
 });
 

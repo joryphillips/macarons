@@ -32,7 +32,7 @@ function getPalette(hue: Hue) {
   }
 }
 
-function getMacaroonHue(hue: Hue, theme: "light" | "dark"): MacaronHue {
+function getMacaroonHue(hue: Hue): MacaronHue {
   const palette = getPalette(hue);
 
   const bodyStep = 6;
@@ -48,7 +48,7 @@ function getMacaroonHue(hue: Hue, theme: "light" | "dark"): MacaronHue {
   };
 }
 
-const pinkMacaron = getMacaroonHue("pink", "light");
+const pinkMacaron = getMacaroonHue("pink");
 
 function MacaronInsetSVG({
   height = "100%",
@@ -161,7 +161,7 @@ function MacaronInsetSVG({
   );
 }
 
-const yellowMacaron = getMacaroonHue("yellow", "light");
+const yellowMacaron = getMacaroonHue("yellow");
 
 function MacaronOusetSVG({
   height = "100%",
@@ -287,7 +287,7 @@ export function MacaronSVG({
   ...props
 }: SVGProps<SVGSVGElement> & { inset?: boolean; hue?: Hue }) {
   const { userTheme } = useTheme();
-  const macaroonHue = getMacaroonHue(hue, userTheme || "light");
+  const macaroonHue = getMacaroonHue(hue);
 
   return inset ? (
     <MacaronInsetSVG

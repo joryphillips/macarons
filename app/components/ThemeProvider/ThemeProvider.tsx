@@ -1,6 +1,6 @@
-import { useFetcher } from "@remix-run/react";
 import type { ReactNode } from "react";
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { useSearchParams } from "@remix-run/react";
 
 type Theme = "dark" | "light";
 export type UserTheme = Theme | null;
@@ -21,10 +21,23 @@ const getPreferredTheme = () =>
   window.matchMedia(prefersDarkMQ).matches ? "dark" : "light";
 
 /**
- * NOTE: If the user specifies the theme, and their device changes that
- * preference while they are away from the site, the theme they chose will
- * be the one that shows when they return.
+ * Because ThemeProvider is not available in the root of the app, we need to
+ * use this hook to set the theme there.
  */
+export const useSpecifiedTheme = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchTheme = searchParams.get("theme") as UserTheme;
+  return {
+    specifiedTheme: searchTheme || getPreferredTheme(),
+    setSpecifiedTheme: (theme: Theme) => {
+      if (theme !== searchTheme) {
+        searchParams.set("theme", theme);
+        setSearchParams(searchParams, { replace: true });
+      }
+    },
+  };
+};
+
 export function ThemeProvider({
   children,
   specifiedTheme,
@@ -34,45 +47,22 @@ export function ThemeProvider({
 }) {
   const [userTheme, setUserTheme] = useState<UserTheme | null>(() => {
     // if a theme is specified, use that
-    if (specifiedTheme) {
-      if (specifiedTheme === "dark" || specifiedTheme === "light") {
-        return specifiedTheme;
-      } else {
-        return null;
-      }
-    }
-
-    // there's no way for us to know what the theme should be in this context
-    // the client will have to figure it out before hydration.
-    if (typeof document === "undefined") {
+    if (specifiedTheme === "dark" || specifiedTheme === "light") {
+      return specifiedTheme;
+    } else {
       return null;
     }
-
-    return getPreferredTheme();
   });
 
-  const persistTheme = useFetcher();
-  const persistThemeRef = useRef(persistTheme);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    persistThemeRef.current = persistTheme;
-  }, [persistTheme]);
-
-  const mountRun = useRef(false);
-  useEffect(() => {
-    if (!mountRun.current) {
-      mountRun.current = true;
-      return;
+    const searchTheme = searchParams.get("theme") as UserTheme;
+    if (userTheme && userTheme !== searchTheme) {
+      searchParams.set("theme", userTheme);
+      setSearchParams(searchParams, { replace: true });
     }
-    if (!userTheme) {
-      return;
-    }
-
-    persistThemeRef.current.submit(
-      { userTheme },
-      { action: "/api/set-theme", method: "post" }
-    );
-  }, [userTheme]);
+  }, [userTheme, searchParams]);
 
   // Event listener for dark mode changes
   useEffect(() => {
@@ -106,31 +96,4 @@ export function useTheme() {
     throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
-}
-
-const clientThemeCode = `
-;(() => {
-  const theme = window.matchMedia(${JSON.stringify(prefersDarkMQ)}).matches
-    ? 'dark'
-    : 'light';
-  const cl = document.documentElement.classList;
-  const themeAlreadyApplied = cl.contains('dark');
-  if (themeAlreadyApplied) {
-    console.warn(
-      "this script shouldn't exist if the theme is already applied",
-    );
-  } else {
-    cl.add(theme);
-  }
-})();
-`;
-
-export function NonFlashOfWrongThemeEls({ ssrTheme }: { ssrTheme: boolean }) {
-  return (
-    <>
-      {ssrTheme ? null : (
-        <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
-      )}
-    </>
-  );
 }

@@ -1,9 +1,11 @@
 import { Link } from "@remix-run/react";
+import { Titlemark } from "~/components/logo/Titlemark";
 import { VStack, Heading, Text } from "~/components/ui";
 
 export default function IntroductionRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
+      <Titlemark />
       <VStack width="100%" alignItems="flex-start" as="section">
         <Heading as="h3" size="xl">
           Introduction
@@ -46,13 +48,13 @@ export default function IntroductionRoute() {
         </Heading>
         <VStack gap={2} width="100%" alignItems="flex-start" as="ul">
           <Text as="li">
-            • Make custom Design Systems and Tokens easy to work with and
+            • Makes custom Design Systems and Tokens easy to work with and
             understand.
           </Text>
           <Text as="li">• Balances flexibility with ease-of-use.</Text>
           <Text as="li">
             • Leverages TypeScript via Vanilla Extract and Sprinkles to make it
-            faster and easier to select valid tokens in your code.
+            faster and easier to apply valid styles in your code.
           </Text>
         </VStack>
         <Text as="p">

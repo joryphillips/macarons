@@ -1,63 +1,44 @@
 import { cssBundleHref } from "@remix-run/css-bundle";
-import { json, type LinksFunction, type LoaderArgs } from "@remix-run/node";
-import type { V2_MetaFunction } from "@remix-run/react";
+import { type LinksFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/react";
 import {
   isRouteErrorResponse,
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLoaderData,
   useRouteError,
 } from "@remix-run/react";
 import clsx from "clsx";
 import "~/styles/global.css";
-import { NonFlashOfWrongThemeEls } from "./components/ThemeProvider/ThemeProvider";
+import { useSpecifiedTheme } from "./components/ThemeProvider/ThemeProvider";
+
 import { Alert, Box } from "./components/ui";
-import { getUserThemeSession } from "./theme/themeSession.server";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{ title: "ssrs-ui-components" }];
 };
 
-export const loader = async ({ request }: LoaderArgs) => {
-  const response = new Response();
-  const themeSession = await getUserThemeSession(request);
-  const theme = themeSession.getTheme();
-  return json(
-    {
-      theme,
-    },
-    {
-      headers: response.headers,
-    }
-  );
-};
-
 export default function App() {
-  const data = useLoaderData<typeof loader>();
-  const theme = data?.theme ?? null;
+  const { specifiedTheme } = useSpecifiedTheme();
 
   return (
-    <html lang="en" className={clsx(theme)}>
+    <html lang="en" className={clsx(specifiedTheme)}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
-        <NonFlashOfWrongThemeEls ssrTheme={true} />
         <Links />
       </head>
       <body>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
@@ -76,7 +57,6 @@ export function ErrorBoundary() {
     <html lang="en">
       <head>
         <Meta />
-        <NonFlashOfWrongThemeEls ssrTheme={true} />
         <Links />
       </head>
       <body>

@@ -5,11 +5,7 @@ export default function DarkmodeRoute() {
   return (
     <VStack marginBottom={8} width="100%" alignItems="flex-start">
       <Heading>Dark Mode</Heading>
-      <Text as="p">
-        Macaroons implements light and dark mode via themes. Much of the
-        technical implementation is specific to Remix, which may not be
-        appropriate for all projects.
-      </Text>
+      <Text as="p">Macaroons implements light and dark mode via themes.</Text>
       <HStack>
         <ThemeToggle />
         <Text fontWeight="bold" as="p" size="sm">
@@ -29,6 +25,13 @@ export default function DarkmodeRoute() {
         designation for colors app-wide, instead of specifying two different
         names based on the mode each time a color is used. It is a tremendous
         affordance in developer experience.
+      </Text>
+      <Text>
+        Note that since the Macarons documentation site itself does not include
+        server-side rendering, some aspects of SSR implementation are missing,
+        such as storing the user's preference in a cookie, and code that ensures
+        that a flash of the wrong theme is not visible as the server render
+        transitions to the client.
       </Text>
     </VStack>
   );

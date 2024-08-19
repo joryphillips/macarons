@@ -16,6 +16,7 @@ export default function CardRoute() {
         flexDirection="column"
         padding={6}
         gap={4}
+        backgroundColor="elementBackground"
       >
         <Heading size="lg">Card Content</Heading>
         <Text size="sm">

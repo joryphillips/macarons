@@ -13,3 +13,7 @@ export const macaronStyles = style({
     },
   }
 });
+
+export const titleMarkTextStyles = style({
+  marginTop: vars.spacing[4],
+});

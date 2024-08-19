@@ -1,28 +1,17 @@
 import { VStack, HStack, Box, Heading } from "../ui";
+import { titleMarkTextStyles } from "./macaron.css";
 import { MacaronStack } from "./MacaronStack";
+import { MacaronsTitleSVG } from "./MacaronsTitleSVG";
 
 export function Titlemark() {
   return (
     <VStack width="100%" gap={4} alignItems="center" marginY={2}>
-      <Box width="100%">
-        <Heading
-          as="h1"
-          color="primaryLowContrastText"
-          align="center"
-          size="jumbo"
-          style={{
-            fontFamily: "Georgia, Cambria, serif",
-            fontWeight: "bold",
-            fontStyle: "italic",
-            transform: "scaleX(0.86)",
-          }}
-        >
-          macarons
-        </Heading>
+      <VStack width="100%">
+        <MacaronsTitleSVG className={titleMarkTextStyles} height="2rem" />
         <HStack gap={0} justifyContent="center" flexWrap="nowrap">
           <MacaronStack width="36px" count={12} />
         </HStack>
-      </Box>
+      </VStack>
       <Heading as="h2" size="md" color="primaryLowContrastText" align="center">
         Design System and Styled UI Components
       </Heading>

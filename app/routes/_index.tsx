@@ -1,6 +1,6 @@
-import { redirect, type V2_MetaFunction } from "@remix-run/node";
+import { redirect, type MetaFunction } from "@remix-run/node";
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [
     { title: "Macarons" },
     {

@@ -45,7 +45,7 @@ export const dialogContent = style({
   animationDuration: "150ms",
   animationTimingFunction: Timing.easeInOut,
   "@media": {
-    [`screen and (min-width: ${breakpoints.mobile})`]: {
+    [`screen and (min-width: ${breakpoints.mobile})px`]: {
       width: "85vw",
       padding: vars.spacing[4],
       animationName: `${contentShow}`,

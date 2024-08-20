@@ -1,4 +1,4 @@
-import { VStack, HStack, Box, Heading } from "../ui";
+import { VStack, HStack, Heading } from "../ui";
 import { titleMarkTextStyles } from "./macaron.css";
 import { MacaronStack } from "./MacaronStack";
 import { MacaronsTitleSVG } from "./MacaronsTitleSVG";
@@ -8,7 +8,7 @@ export function Titlemark() {
     <VStack width="100%" gap={4} alignItems="center" marginY={2}>
       <VStack width="100%">
         <MacaronsTitleSVG className={titleMarkTextStyles} height="2rem" />
-        <HStack gap={0} justifyContent="center" flexWrap="nowrap">
+        <HStack width="100%" gap={0} justifyContent="center" flexWrap="nowrap">
           <MacaronStack width="36px" count={12} />
         </HStack>
       </VStack>

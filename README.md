@@ -1,58 +1,21 @@
-# Welcome to Remix!
+# Macarons
 
-- [Remix Docs](https://remix.run/docs)
+Macarons is a design system with styled UI components intended for React projects. It was built with [Vanilla Extract](https://vanilla-extract.style) and [Radix UI](https://www.radix-ui.com/).
 
-## Development
+# Usage
 
-From your terminal:
+For now, clone the Macarons repo or copy and paste files from the components, styles, and themes folder. Macarons uses a static version of Remix, but Remix is not required to use the design system and components in Macarons. Check out the Vanilla Extract docs if you want to try using Macarons in a different framework or library.
 
-```sh
-npm run dev
-```
+# TODOs
 
-This starts your app in development mode, rebuilding assets on file changes.
+- We'll work to get the components easily decoupled from the Remix app in the near future!
+- Better formated code examples
+- More comprehensive API documentation (or at least links to Radix)
 
-## Deployment
+# Contributions
 
-First, build your app for production:
+Issues and PRs are very welcome.
 
-```sh
-npm run build
-```
+## License
 
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over relevant code/assets from your current app to the new project that's pre-configured for your target server.
-
-Most importantly, this means everything in the `app/` directory, but if you've further customized your current application outside of there it may also include:
-
-- Any assets you've added/updated in `public/`
-- Any updated versions of root files such as `.eslintrc.js`, etc.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.

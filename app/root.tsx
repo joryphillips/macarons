@@ -1,4 +1,3 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import { type LinksFunction } from "@remix-run/node";
 import type { MetaFunction } from "@remix-run/react";
 import {
@@ -17,11 +16,28 @@ import { useSpecifiedTheme } from "./components/ThemeProvider/ThemeProvider";
 import { Alert, Box } from "./components/ui";
 
 export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  {
+    rel: "apple-touch-icon",
+    sizes: "180x180",
+    href: "/apple-touch-icon.png",
+  },
+  {
+    rel: "icon",
+    sizes: "32x32",
+    type: "image/png",
+    href: "/favicon-32x32.png",
+  },
+  {
+    rel: "icon",
+    sizes: "16x16",
+    type: "image/png",
+    href: "/favicon-16x16.png",
+  },
+  { rel: "manifest", href: "/site.webmanifest" },
 ];
 
 export const meta: MetaFunction = () => {
-  return [{ title: "ssrs-ui-components" }];
+  return [{ title: "macarons-ui" }];
 };
 
 export default function App() {
@@ -60,7 +76,7 @@ export function ErrorBoundary() {
         <Links />
       </head>
       <body>
-        <Box height="100vh" padding={1}>
+        <Box height="screen" padding={1}>
           <Alert status="error">An unexpected error has occured.</Alert>
         </Box>
       </body>

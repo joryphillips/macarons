@@ -27,6 +27,9 @@ globalStyle("html", {
   "@media": {
     [`screen and (min-width: ${breakpoints.tablet}px)`]: {
       fontSize: `${breakPointFontRelativeSize.tablet * 100}%`,
+      // prevent page jump when scrollbar appears
+      marginLeft: "calc(100vw - 100%)",
+      marginRight: 0,
     },
     [`screen and (min-width: ${breakpoints.desktop}px)`]: {
       fontSize: `${breakPointFontRelativeSize.desktop * 100}%`,

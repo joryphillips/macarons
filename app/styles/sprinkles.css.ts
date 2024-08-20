@@ -2,8 +2,12 @@ import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 import { breakpoints } from "~/theme/breakpoints";
 import { vars } from "~/theme/theme.css";
 
-const space = vars.spacing;
-export type Space = keyof typeof space;
+const heightShorthand = {
+  auto: "auto",
+  full: "100%",
+  inherit: "inherit",
+  screen: "100vh",
+};
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -26,17 +30,17 @@ const responsiveProperties = defineProperties({
     left: vars.spacing,
     right: vars.spacing,
 
-    marginBottom: space,
-    marginLeft: space,
-    marginRight: space,
-    marginTop: space,
+    marginBottom: vars.spacing,
+    marginLeft: vars.spacing,
+    marginRight: vars.spacing,
+    marginTop: vars.spacing,
 
-    paddingBottom: space,
-    paddingLeft: space,
-    paddingRight: space,
-    paddingTop: space,
+    paddingBottom: vars.spacing,
+    paddingLeft: vars.spacing,
+    paddingRight: vars.spacing,
+    paddingTop: vars.spacing,
 
-    height: ["auto", "100%", "inherit", "100vh"],
+    height: { ...vars.spacing, ...heightShorthand },
     width: vars.contentWidth,
     maxWidth: vars.contentWidth,
     minWidth: vars.contentWidth,
@@ -62,7 +66,7 @@ const responsiveProperties = defineProperties({
     flexDirection: ["row", "row-reverse", "column", "column-reverse"],
     flexWrap: ["wrap", "nowrap"],
 
-    gap: space,
+    gap: vars.spacing,
 
     overflow: ["hidden", "auto", "scroll", "visible"],
     overflowX: ["hidden", "auto", "scroll", "visible"],
@@ -162,6 +166,7 @@ const unresponsiveProperties = defineProperties({
     borderBottomWidth: vars.border.width,
     borderStyle: ["none", "solid"],
     borderBottomStyle: ["none", "solid"],
+    boxSizing: ["border-box"],
     fontWeight: vars.weight,
     background: backgroundColors,
     backgroundColor: backgroundColors,

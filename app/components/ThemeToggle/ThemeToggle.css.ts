@@ -6,6 +6,11 @@ const toggleContent = createVar();
 const focusRingColor = createVar();
 
 export const themeToggleClasses = style({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: vars.border.radius.sm,
+  cursor: "pointer",
   outline: "none",
   fontSize: 24,
   height: 42,

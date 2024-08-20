@@ -27,13 +27,8 @@ export function ThemeToggle() {
   return (
     <Box
       as="button"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      borderRadius="sm"
-      cursor="pointer"
       className={themeToggleClasses}
-      title="Toggle theme"
+      aria-label="Toggle theme between light and dark"
       onClick={() => themeToggle()}
     >
       {getModeIcon()}

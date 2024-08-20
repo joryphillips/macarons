@@ -9,6 +9,7 @@ export const contentWidth = {
   xl: "72rem",
   "2xl": "80rem",
   "100%": "100%",
+  "100vw": "100vw",
   auto: "auto",
   fit: "fit-content",
   min: "min-content",

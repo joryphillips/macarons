@@ -58,6 +58,7 @@ export const vars = createThemeContract({
     xl: "",
     "2xl": "",
     "100%": "",
+    "100vw": "",
     auto: "",
     fit: "",
     min: "",

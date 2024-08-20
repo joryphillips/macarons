@@ -4,7 +4,7 @@ import { vars } from "~/theme/theme.css";
 const { colors } = vars;
 const { primary } = colors;
 
-export const navLinkStyles = style({
+export const navBarLinkStyles = style({
   boxSizing: "border-box",
   display: "inline-flex",
   alignItems: "center",

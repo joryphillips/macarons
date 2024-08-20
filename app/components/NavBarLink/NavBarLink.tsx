@@ -1,5 +1,5 @@
 import { NavLink } from "@remix-run/react";
-import { navLinkStyles } from "./NavBarLink.css";
+import { navBarLinkStyles } from "./NavBarLink.css";
 import clsx from "clsx";
 
 export function NavBarLink({
@@ -17,11 +17,11 @@ export function NavBarLink({
     <NavLink
       aria-disabled={disabled}
       aria-description={
-        disabled ? "This link is disabled" : "navigation link to " + to
+        disabled ? "This link is disabled" : "Navigation link to " + to
       }
       to={to}
       className={({ isActive, isPending }) =>
-        clsx(navLinkStyles, {
+        clsx(navBarLinkStyles, {
           active: isActive,
           disabled: isPending || disabled,
         })

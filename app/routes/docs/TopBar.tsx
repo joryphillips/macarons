@@ -17,6 +17,8 @@ export function TopBar({
       padding={1}
       position="fixed"
       top={0}
+      left={0}
+      height={10}
       width="100%"
       justifyContent="space-between"
       alignItems="center"

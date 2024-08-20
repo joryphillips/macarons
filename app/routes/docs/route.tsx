@@ -3,11 +3,12 @@ import {
   ThemeProvider,
   useSpecifiedTheme,
 } from "~/components/ThemeProvider/ThemeProvider";
-import { Box, HStack, VStack } from "~/components/ui";
+import { Box, HStack } from "~/components/ui";
 import { TooltipProvider } from "~/components/ui/Tooltip/Tooltip";
 import { useState } from "react";
 import { SideNav } from "./SideNav";
 import { TopBar } from "./TopBar";
+import { articleStyles } from "./docs.css";
 
 export default function UI() {
   const { specifiedTheme } = useSpecifiedTheme();
@@ -24,41 +25,32 @@ export default function UI() {
         <TopBar toggleSidebar={toggleSidebar} showSidebar={showSidebar} />
 
         {/* Main Content */}
-        <VStack
+        <HStack
           as="main"
-          height="100vh"
           maxWidth="xl"
+          marginTop={10}
           marginX="auto"
-          spacing={8}
-          paddingTop={12}
           paddingX={showSidebar ? 0 : 4}
-          paddingBottom={8}
-          alignItems="center"
-          overflowY={showSidebar ? "hidden" : "scroll"}
+          width={{ mobile: "100vw", desktop: "100%" }}
+          justifyContent={{ mobile: "flex-start", desktop: "center" }}
+          alignItems="flex-start"
+          gap={8}
+          boxSizing="border-box"
         >
-          {/* Lower page */}
-          <HStack
-            width="100%"
-            justifyContent={{ mobile: "flex-start", desktop: "center" }}
-            alignItems="flex-start"
-            gap={8}
-            paddingTop={4}
-          >
-            {/* Sidebar */}
-            <SideNav
-              display={{
-                mobile: showSidebar ? "flex" : "none",
-                tablet: "flex",
-              }}
-              hideSidebar={hideSidebar}
-            />
+          {/* Sidebar */}
+          <SideNav
+            display={{
+              mobile: showSidebar ? "flex" : "none",
+              tablet: "flex",
+            }}
+            hideSidebar={hideSidebar}
+          />
 
-            {/* Main Content Panel */}
-            <Box paddingBottom={8} maxWidth="prose" width="100%" as="article">
-              <Outlet />
-            </Box>
-          </HStack>
-        </VStack>
+          {/* Main Content Panel */}
+          <Box className={articleStyles} as="article">
+            <Outlet />
+          </Box>
+        </HStack>
       </TooltipProvider>
     </ThemeProvider>
   );

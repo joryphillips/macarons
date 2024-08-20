@@ -18,113 +18,104 @@ export function SideNav({
 }: StackProps & { hideSidebar: () => void }) {
   return (
     <VStack className={sideNavStyles} as="nav" {...props}>
-      <VStack
-        width="100%"
-        alignItems="flex-start"
-        paddingX={{ mobile: 2, tablet: 0 }}
-      >
-        <NavBarLink onClick={hideSidebar} to="/docs/intro">
-          Introduction
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/philosophy">
-          Philosophy
-        </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/intro">
+        Introduction
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/philosophy">
+        Philosophy
+      </NavBarLink>
 
-        <Divider />
+      <Divider />
 
-        <NavBarHeading>Theme/Design System</NavBarHeading>
+      <NavBarHeading>Theme/Design System</NavBarHeading>
 
-        <NavBarLink onClick={hideSidebar} to="/docs/color">
-          Color
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/darkmode">
-          Dark mode
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/shadows">
-          Shadows
-        </NavBarLink>
-        <NavBarLink disabled onClick={hideSidebar} to="/docs/spacing">
-          Spacing
-        </NavBarLink>
-        <NavBarLink disabled onClick={hideSidebar} to="/docs/border">
-          Border and Radius
-        </NavBarLink>
-        <NavBarLink disabled onClick={hideSidebar} to="/docs/breakpoints">
-          Breakpoints
-        </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/color">
+        Color
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/darkmode">
+        Dark mode
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/shadows">
+        Shadows
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/spacing">
+        Spacing
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/border">
+        Border and Radius
+      </NavBarLink>
 
-        <Divider />
+      <Divider />
 
-        <NavBarHeading>Layout</NavBarHeading>
+      <NavBarHeading>Layout</NavBarHeading>
 
-        <NavBarLink onClick={hideSidebar} to="/docs/box">
-          Box
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/stack">
-          Stack
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/card">
-          Card
-        </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/box">
+        Box
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/stack">
+        Stack
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/card">
+        Card
+      </NavBarLink>
 
-        <Divider />
+      <Divider />
 
-        <NavBarHeading>Components</NavBarHeading>
+      <NavBarHeading>Components</NavBarHeading>
 
-        <NavBarLink onClick={hideSidebar} to="/docs/alert">
-          Alert
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/alert-dialog">
-          Alert Dialog
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/badge">
-          Badge
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/button">
-          Button
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/checkbox">
-          Checkbox
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/dialog">
-          Dialog
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/divider">
-          Divider
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/dropdown">
-          Dropdown
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/input">
-          Input
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/label">
-          Label
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/popover">
-          Popover
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/select">
-          Select
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/spinner">
-          Spinner
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/tooltip">
-          Tooltip
-        </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/alert">
+        Alert
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/alert-dialog">
+        Alert Dialog
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/badge">
+        Badge
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/button">
+        Button
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/checkbox">
+        Checkbox
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/dialog">
+        Dialog
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/divider">
+        Divider
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/dropdown">
+        Dropdown
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/input">
+        Input
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/label">
+        Label
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/popover">
+        Popover
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/select">
+        Select
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/spinner">
+        Spinner
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/tooltip">
+        Tooltip
+      </NavBarLink>
 
-        <Divider />
+      <Divider />
 
-        <NavBarHeading>Typography</NavBarHeading>
+      <NavBarHeading>Typography</NavBarHeading>
 
-        <NavBarLink onClick={hideSidebar} to="/docs/text">
-          Text
-        </NavBarLink>
-        <NavBarLink onClick={hideSidebar} to="/docs/heading">
-          Heading
-        </NavBarLink>
-      </VStack>
+      <NavBarLink onClick={hideSidebar} to="/docs/text">
+        Text
+      </NavBarLink>
+      <NavBarLink onClick={hideSidebar} to="/docs/heading">
+        Heading
+      </NavBarLink>
     </VStack>
   );
 }

@@ -2,42 +2,44 @@ import { style } from "@vanilla-extract/css";
 import { breakpoints } from "~/theme/breakpoints";
 import { vars } from "~/theme/theme.css";
 
+const lowerPageHeight = `calc(100vh - ${vars.spacing[10]})`;
+
 export const sideNavStyles = style({
+  boxSizing:"border-box",
   position:"fixed",
   maxWidth:"100%",
-  top:vars.spacing[12],
-  gap:0,
-  paddingTop:vars.spacing[4],
-  paddingRight:0,
-
+  top:vars.spacing[10],
+  bottom: 0,
+  gap:vars.spacing[2],
+  paddingTop:vars.spacing[2],
+  paddingRight:vars.spacing[2],
+  paddingLeft:vars.spacing[2],
   paddingBottom:vars.spacing[12],
   alignItems:"flex-start",
   backgroundColor:vars.colors.standard.appBackground,
-  height:"calc(100vh - 52px)",
+  height:lowerPageHeight,
   width:"100%",
-  overflowY:"scroll",
+  overflowY:"auto",
+  outline:"none",
+  borderRadius: vars.border.radius.sm,
+
 
   "@media": {
     [`screen and (min-width: ${breakpoints.tablet}px)`]: {
-      position:"relative",
+      position:"sticky",
       maxWidth:vars.contentWidth["3xs"],
-      top:"auto",
-      gap: 4,
-      paddingTop:0,
-      paddingRight:vars.spacing[4],
     }
-  } 
+  },
+  selectors: {
+    "&:focus-visible": {
+      boxShadow: `0 0 0 2px ${vars.colors.primary.hoveredElementBorder}`,
+    },
+  }
 });
 
-// position={{ mobile: "fixed", tablet: "relative" }}
-// width="100%"
-// maxWidth={{ tablet: "3xs", mobile: "100%" }}
-// top={{ mobile: 12, tablet: "auto" }}
-// gap={{ mobile: 0, tablet: 4 }}
-// paddingTop={{ mobile: 4, tablet: 0 }}
-// paddingRight={{ mobile: 0, tablet: 4 }}
-// paddingBottom={12}
-// alignItems="flex-start"
-// backgroundColor="appBackground"
-// height="100vh"
-// overflowY="scroll"
+export const articleStyles = style({
+   paddingTop:vars.spacing[4],
+   paddingBottom:vars.spacing[8],
+   width:"100%",
+   maxWidth:vars.contentWidth["prose"],
+});

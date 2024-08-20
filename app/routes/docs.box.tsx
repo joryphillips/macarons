@@ -11,7 +11,7 @@ export default function BoxRoute() {
       <Text>
         This component is primarily intended for making other components and for
         rapid layouts. Also see the Stack components for common flexBox needs.
-        Neither cannot be used to make an SVG.
+        Neither can be used to make an SVG.
       </Text>
       <Text>
         When more design control is needed, use `style` from

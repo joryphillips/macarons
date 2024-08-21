@@ -15,6 +15,7 @@ const responsiveProperties = defineProperties({
     small: { "@media": `screen and (min-width: ${breakpoints.small}px)` },
     tablet: { "@media": `screen and (min-width: ${breakpoints.tablet}px)` },
     desktop: { "@media": `screen and (min-width: ${breakpoints.desktop}px)` },
+    large: { "@media": `screen and (min-width: ${breakpoints.large}px)` },
   },
   defaultCondition: "mobile",
   properties: {

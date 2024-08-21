@@ -47,8 +47,11 @@ export default function SpacingRoute() {
         customizable.
       </Text>
       <VStack width="100%" alignItems="flex-start">
-        {Object.keys(vars.spacing).map((spacing) => (
-          <SpacingDemoRow spacing={spacing as keyof typeof vars.spacing} />
+        {Object.keys(vars.spacing).map((spacing, index) => (
+          <SpacingDemoRow
+            key={`${spacing}-${index}`}
+            spacing={spacing as keyof typeof vars.spacing}
+          />
         ))}
       </VStack>
     </VStack>

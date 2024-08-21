@@ -1,5 +1,6 @@
 {
   "name": "macarons-ui",
+  "homepage": "https://macarons-ui.com",
   "type": "module",
   "private": true,
   "sideEffects": false,

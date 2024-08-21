@@ -3,12 +3,12 @@ import {
   ThemeProvider,
   useSpecifiedTheme,
 } from "~/components/ThemeProvider/ThemeProvider";
-import { Box, HStack, VStack, Text } from "~/components/ui";
+import { Box, VStack, Text } from "~/components/ui";
 import { TooltipProvider } from "~/components/ui/Tooltip/Tooltip";
 import { useState } from "react";
 import { SideNav } from "./SideNav";
 import { TopBar } from "./TopBar";
-import { articleStyles } from "./docs.css";
+import { articleStyles, mainContentContainerStyles } from "./docs.css";
 import { Titlemark } from "~/components/logo/Titlemark";
 
 function IndexIntro() {
@@ -59,18 +59,7 @@ export default function UI() {
         <TopBar toggleSidebar={toggleSidebar} showSidebar={showSidebar} />
 
         {/* Main Content */}
-        <HStack
-          as="main"
-          maxWidth="xl"
-          marginTop={10}
-          marginX="auto"
-          paddingX={showSidebar ? 0 : 4}
-          width={{ mobile: "100vw", desktop: "100%" }}
-          justifyContent={{ mobile: "flex-start", desktop: "center" }}
-          alignItems="flex-start"
-          gap={8}
-          boxSizing="border-box"
-        >
+        <Box as="main" className={mainContentContainerStyles}>
           {/* Sidebar */}
           <SideNav
             display={{
@@ -85,7 +74,7 @@ export default function UI() {
             {showIntro && <IndexIntro />}
             <Outlet />
           </Box>
-        </HStack>
+        </Box>
       </TooltipProvider>
     </ThemeProvider>
   );

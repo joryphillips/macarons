@@ -5,12 +5,11 @@ import { uIText } from "../Text/Text.css";
 const { colors } = vars;
 const { standard, info, primary, destructive } = colors;
 
-const buttonBase = style({
+const buttonBasics = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
   width: "auto",
-  minWidth: vars.contentWidth["4xs"],
   borderRadius: vars.border.radius.sm,
   fontWeight: vars.weight.medium,
   transitionProperty: vars.transitionPropertyCommon,
@@ -19,9 +18,16 @@ const buttonBase = style({
   borderWidth: vars.border.width.standard,
   borderStyle: "solid",
   borderColor: "transparent",
+  cursor: "pointer",
+}
+
+export const buttonBasicsStyles = style(buttonBasics);
+
+const buttonBase = style({
+  ...buttonBasics,
+  minWidth: vars.contentWidth["4xs"],
   backgroundColor: info.solidBackground,
   color: standard.textOnSolidBackground,
-  cursor: "pointer",
   selectors: {
     "&:hover": {
       backgroundColor: info.hoveredSolidBackground,
@@ -45,6 +51,27 @@ export const disabledStyle = style({
   pointerEvents: "none",
   opacity: 0.5,
 });
+
+export const ghostPrimary = {
+  backgroundColor: "transparent",
+  color: primary.highContrastText,
+  selectors: {
+    "&:hover": {
+      backgroundColor: primary.hoveredElementBackground,
+    },
+    "&:focus-visible": {
+      boxShadow: `0 0 0 2px ${primary.hoveredElementBorder}`,
+    },
+    "&:active, &.active": {
+      backgroundColor: primary.activeElementBackground,
+      boxShadow: "none",
+    },
+  },
+};
+
+export const ghostPrimaryStyles = style({
+  ...buttonBasics,
+  ...ghostPrimary});
 
 export const buttonStyleVariants = styleVariants({
   default: [buttonBase, uIText["default"]],
@@ -127,6 +154,10 @@ export const buttonStyleVariants = styleVariants({
         },
       },
     },
+  ],
+  ghostPrimary: [
+    buttonBase,
+    ghostPrimary
   ],
   link: [
     buttonBase,

@@ -48,7 +48,7 @@ export default function IntroductionRoute() {
             Minimize bytes delivered to the device
           </Heading>
           <Text as="p">
-            We developed an app using this system with users that are often are
+            We developed an app using this system with users that are often
             doing their work in possibly subterranean places with thick concrete
             walls, questionable wifi, and tons of electronic equipment
             everywhere. A top priority from day one was minimizing bytes

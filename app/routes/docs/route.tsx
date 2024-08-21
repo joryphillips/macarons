@@ -3,7 +3,7 @@ import {
   ThemeProvider,
   useSpecifiedTheme,
 } from "~/components/ThemeProvider/ThemeProvider";
-import { Box, VStack, Text } from "~/components/ui";
+import { Box, VStack, Text, HStack } from "~/components/ui";
 import { TooltipProvider } from "~/components/ui/Tooltip/Tooltip";
 import { useState } from "react";
 import { SideNav } from "./SideNav";
@@ -70,10 +70,12 @@ export default function UI() {
           />
 
           {/* Main Content Panel */}
-          <Box className={articleStyles} as="article">
-            {showIntro && <IndexIntro />}
-            <Outlet />
-          </Box>
+          <HStack justifyContent="center" width="100%">
+            <Box className={articleStyles} as="article">
+              {showIntro && <IndexIntro />}
+              <Outlet />
+            </Box>
+          </HStack>
         </Box>
       </TooltipProvider>
     </ThemeProvider>

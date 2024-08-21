@@ -9,7 +9,6 @@ export const mainContentContainerStyles = style({
   marginLeft:"auto",
   marginRight:"auto",
   width:"100%",
-  justifyContent:"space-evenly",
   alignItems:"flex-start",
   boxSizing:"border-box",
   "@media": {

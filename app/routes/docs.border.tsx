@@ -57,7 +57,9 @@ function BorderRadiusDemoRow({
 export default function BorderRoute() {
   return (
     <VStack marginBottom={8} width="100%" alignItems="flex-start">
-      <Heading>Border and Radius</Heading>
+      <Heading as="h1" size="xl">
+        Border and Radius
+      </Heading>
       <Text as="p">
         Border width and radius are defined in an independent file and imported
         into common variables in the theme, as well as Sprinkles variables that
@@ -73,8 +75,9 @@ export default function BorderRoute() {
           <Heading as="h2" size="sm">
             Border Width
           </Heading>
-          {Object.keys(vars.border.width).map((width) => (
+          {Object.keys(vars.border.width).map((width, index) => (
             <BorderWidthDemoRow
+              key={`${width}-${index}`}
               borderWidth={width as keyof typeof vars.border.width}
             />
           ))}
@@ -83,8 +86,9 @@ export default function BorderRoute() {
           <Heading as="h2" size="sm">
             Border Radius
           </Heading>
-          {Object.keys(vars.border.radius).map((radius) => (
+          {Object.keys(vars.border.radius).map((radius, index) => (
             <BorderRadiusDemoRow
+              key={`${radius}-${index}`}
               borderRadius={radius as keyof typeof vars.border.radius}
             />
           ))}

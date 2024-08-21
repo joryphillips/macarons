@@ -10,7 +10,7 @@ export default function TextRoute() {
       width="100%"
       alignItems="flex-start"
     >
-      <Heading as="h2" size="xl">
+      <Heading as="h1" size="xl">
         Text
       </Heading>
       <VStack gap={4} alignItems="flex-start" as="section">

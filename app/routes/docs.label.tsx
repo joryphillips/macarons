@@ -10,7 +10,7 @@ export default function LabelRoute() {
       width="100%"
       alignItems="flex-start"
     >
-      <Heading as="h2" size="xl">
+      <Heading as="h1" size="xl">
         Label
       </Heading>
       <VStack gap={3} alignItems="flex-start" as="section">

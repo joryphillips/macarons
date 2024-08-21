@@ -3,7 +3,7 @@ import { Alert, Heading, Text, VStack } from "~/components/ui";
 export default function AlertRoute() {
   return (
     <VStack spacing={8} alignItems="flex-start" width="100%">
-      <Heading as="h2" size="xl">
+      <Heading as="h1" size="xl">
         Alert
       </Heading>
       <Text as="p">

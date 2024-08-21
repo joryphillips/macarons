@@ -26,7 +26,9 @@ export default function ShadowsRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
       <VStack gap={4} width="100%" alignItems="flex-start">
-        <Heading size="lg">Shadows</Heading>
+        <Heading as="h1" size="xl">
+          Shadows
+        </Heading>
         <Text as="p">
           Box and derived components (Stack, etc) have a boxShadow prop that
           accepts a shadow key from the theme. This scale is very similar to

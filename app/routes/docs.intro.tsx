@@ -7,7 +7,7 @@ export default function IntroductionRoute() {
     <VStack gap={8} width="100%" alignItems="flex-start">
       <Titlemark />
       <VStack width="100%" alignItems="flex-start" as="section">
-        <Heading as="h3" size="xl">
+        <Heading as="h1" size="xl">
           Introduction
         </Heading>
         <Text as="p">

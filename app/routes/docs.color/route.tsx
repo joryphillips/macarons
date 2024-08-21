@@ -31,7 +31,7 @@ export default function ColorRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
       <VStack alignItems="flex-start">
-        <Heading as="h1" size="lg">
+        <Heading as="h1" size="xl">
           Color
         </Heading>
         <Text as="p">

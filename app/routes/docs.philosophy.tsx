@@ -4,7 +4,7 @@ import { VStack, Heading, Text, Divider } from "~/components/ui";
 export default function IntroductionRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
-      <Heading as="h2" size="xl">
+      <Heading as="h1" size="xl">
         Philosophy
       </Heading>
       <VStack width="100%" alignItems="flex-start" gap={8}>

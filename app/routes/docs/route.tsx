@@ -43,10 +43,9 @@ function IndexIntro() {
 export default function UI() {
   const location = useLocation();
   const { specifiedTheme } = useSpecifiedTheme();
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [hideSideNav, setHideSideNav] = useState(true);
 
-  const toggleSidebar = () => setShowSidebar(!showSidebar);
-  const hideSidebar = () => setShowSidebar(false);
+  const toggleSideNav = () => setHideSideNav(!hideSideNav);
   const showIntro =
     location.pathname === "/docs/" ||
     location.pathname === "/docs" ||
@@ -56,17 +55,17 @@ export default function UI() {
     <ThemeProvider specifiedTheme={specifiedTheme}>
       <TooltipProvider>
         {/* Top bar */}
-        <TopBar toggleSidebar={toggleSidebar} showSidebar={showSidebar} />
+        <TopBar toggleSideNav={toggleSideNav} hideSideNav={hideSideNav} />
 
         {/* Main Content */}
         <Box as="main" className={mainContentContainerStyles}>
           {/* Sidebar */}
           <SideNav
             display={{
-              mobile: showSidebar ? "flex" : "none",
+              mobile: hideSideNav ? "none" : "flex",
               tablet: "flex",
             }}
-            hideSidebar={hideSidebar}
+            hideSideNav={() => setHideSideNav(true)}
           />
 
           {/* Main Content Panel */}

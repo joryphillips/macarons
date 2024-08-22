@@ -13,15 +13,15 @@ function NavBarHeading({ children }: { children: React.ReactNode }) {
 }
 
 export function SideNav({
-  hideSidebar,
+  hideSideNav,
   ...props
-}: StackProps & { hideSidebar: () => void }) {
+}: StackProps & { hideSideNav: () => void }) {
   return (
     <VStack className={sideNavStyles} as="nav" {...props}>
-      <NavBarLink onClick={hideSidebar} to="/docs/intro">
+      <NavBarLink onClick={hideSideNav} to="/docs/intro">
         Introduction
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/philosophy">
+      <NavBarLink onClick={hideSideNav} to="/docs/philosophy">
         Philosophy
       </NavBarLink>
 
@@ -29,19 +29,19 @@ export function SideNav({
 
       <NavBarHeading>Theme/Design System</NavBarHeading>
 
-      <NavBarLink onClick={hideSidebar} to="/docs/color">
+      <NavBarLink onClick={hideSideNav} to="/docs/color">
         Color
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/darkmode">
+      <NavBarLink onClick={hideSideNav} to="/docs/darkmode">
         Dark mode
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/shadows">
+      <NavBarLink onClick={hideSideNav} to="/docs/shadows">
         Shadows
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/spacing">
+      <NavBarLink onClick={hideSideNav} to="/docs/spacing">
         Spacing
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/border">
+      <NavBarLink onClick={hideSideNav} to="/docs/border">
         Border and Radius
       </NavBarLink>
 
@@ -49,13 +49,13 @@ export function SideNav({
 
       <NavBarHeading>Layout</NavBarHeading>
 
-      <NavBarLink onClick={hideSidebar} to="/docs/box">
+      <NavBarLink onClick={hideSideNav} to="/docs/box">
         Box
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/stack">
+      <NavBarLink onClick={hideSideNav} to="/docs/stack">
         Stack
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/card">
+      <NavBarLink onClick={hideSideNav} to="/docs/card">
         Card
       </NavBarLink>
 
@@ -63,46 +63,46 @@ export function SideNav({
 
       <NavBarHeading>Components</NavBarHeading>
 
-      <NavBarLink onClick={hideSidebar} to="/docs/alert">
+      <NavBarLink onClick={hideSideNav} to="/docs/alert">
         Alert
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/alert-dialog">
+      <NavBarLink onClick={hideSideNav} to="/docs/alert-dialog">
         Alert Dialog
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/badge">
+      <NavBarLink onClick={hideSideNav} to="/docs/badge">
         Badge
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/button">
+      <NavBarLink onClick={hideSideNav} to="/docs/button">
         Button
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/checkbox">
+      <NavBarLink onClick={hideSideNav} to="/docs/checkbox">
         Checkbox
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/dialog">
+      <NavBarLink onClick={hideSideNav} to="/docs/dialog">
         Dialog
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/divider">
+      <NavBarLink onClick={hideSideNav} to="/docs/divider">
         Divider
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/dropdown">
+      <NavBarLink onClick={hideSideNav} to="/docs/dropdown">
         Dropdown
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/input">
+      <NavBarLink onClick={hideSideNav} to="/docs/input">
         Input
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/label">
+      <NavBarLink onClick={hideSideNav} to="/docs/label">
         Label
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/popover">
+      <NavBarLink onClick={hideSideNav} to="/docs/popover">
         Popover
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/select">
+      <NavBarLink onClick={hideSideNav} to="/docs/select">
         Select
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/spinner">
+      <NavBarLink onClick={hideSideNav} to="/docs/spinner">
         Spinner
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/tooltip">
+      <NavBarLink onClick={hideSideNav} to="/docs/tooltip">
         Tooltip
       </NavBarLink>
 
@@ -110,10 +110,10 @@ export function SideNav({
 
       <NavBarHeading>Typography</NavBarHeading>
 
-      <NavBarLink onClick={hideSidebar} to="/docs/text">
+      <NavBarLink onClick={hideSideNav} to="/docs/text">
         Text
       </NavBarLink>
-      <NavBarLink onClick={hideSidebar} to="/docs/heading">
+      <NavBarLink onClick={hideSideNav} to="/docs/heading">
         Heading
       </NavBarLink>
     </VStack>

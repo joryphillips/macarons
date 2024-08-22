@@ -37,11 +37,11 @@ const GitHubLink = () => (
 );
 
 export function TopBar({
-  toggleSidebar,
-  showSidebar,
+  toggleSideNav: toggleSideNav,
+  hideSideNav,
 }: {
-  toggleSidebar: () => void;
-  showSidebar: boolean;
+  toggleSideNav?: () => void;
+  hideSideNav?: boolean;
 }) {
   return (
     <HStack
@@ -58,7 +58,6 @@ export function TopBar({
       borderBottomStyle="solid"
       zIndex={1}
     >
-      {" "}
       <HStack
         gap={1}
         paddingRight={1}
@@ -78,11 +77,15 @@ export function TopBar({
         <GitHubLink />
         <ThemeToggle />
         <Box display={{ mobile: "block", tablet: "none" }}>
-          <IconButton variant="ghostPrimary" onClick={toggleSidebar}>
-            {showSidebar ? (
-              <X color={vars.colors.primary.lowContrastText} />
-            ) : (
+          <IconButton
+            variant="ghostPrimary"
+            isDisabled={!toggleSideNav}
+            onClick={toggleSideNav}
+          >
+            {hideSideNav ? (
               <Menu color={vars.colors.primary.lowContrastText} />
+            ) : (
+              <X color={vars.colors.primary.lowContrastText} />
             )}
           </IconButton>
         </Box>

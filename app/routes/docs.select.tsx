@@ -14,7 +14,14 @@ export default function SelectRoute() {
 
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
-      <Heading>Select</Heading>
+      <Heading as="h1" size="xl">
+        Select
+      </Heading>
+      <Text as="p">
+        A dropdown component that allows users to choose among a list of
+        options. The text displayed in the dropdown and the selected value can
+        be different.
+      </Text>
       <Select onValueChange={setSelection} name="veggie options">
         <SelectTrigger>
           <SelectValue placeholder="Choose an option" />

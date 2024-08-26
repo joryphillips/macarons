@@ -21,10 +21,10 @@ export const lowerPageContainerStyles = style({
 });
 
 export const sideNavStyles = style({
+  zIndex: 1,
   boxSizing:"border-box",
   position:"fixed",
   minWidth:vars.contentWidth["3xs"],
-  maxWidth:vars.contentWidth["2xs"],
   top:vars.spacing[10],
   bottom: 0,
   gap:vars.spacing[2],
@@ -39,6 +39,8 @@ export const sideNavStyles = style({
 
   "@media": {
     [`screen and (min-width: ${breakpoints.tablet}px)`]: {
+      width:"auto",
+      maxWidth:vars.contentWidth["2xs"],
       position:"sticky",
       height:`calc(100vh - ${vars.spacing[10]} - 2px)`,
       paddingBottom:vars.spacing[12],
@@ -59,7 +61,7 @@ export const mainContentPanelStyles = style({
 
   "@media": {
     [`screen and (min-width: ${breakpoints.tablet}px)`]: {
-      maxWidth: `calc(100% - ${vars.contentWidth["3xs"]} - ${vars.spacing[8]})`,
+      maxWidth: `calc(100% - ${vars.contentWidth["3xs"]})`,
     },
     [`screen and (min-width: ${breakpoints.desktop}px)`]: {
       maxWidth:"100%"

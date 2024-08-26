@@ -51,7 +51,13 @@ export {
   PopoverContent,
   PopoverTrigger,
 } from "~/components/ui/Popover/Popover";
-export { Select } from "~/components/ui/Select/Select";
+export {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "~/components/ui/Select/Select";
 export { Spinner } from "~/components/ui/Spinner/Spinner";
 export { Text } from "~/components/ui/Text/Text";
 export {

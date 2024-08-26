@@ -32,7 +32,8 @@
     "lucide-react": "^0.265.0",
     "polished": "^4.2.2",
     "react": "^19.0.0-rc-a960b92c-20240819",
-    "react-dom": "^19.0.0-rc-a960b92c-20240819"
+    "react-dom": "^19.0.0-rc-a960b92c-20240819",
+    "react-highlight-syntax": "^1.2.1"
   },
   "devDependencies": {
     "@capsizecss/metrics": "^1.2.0",

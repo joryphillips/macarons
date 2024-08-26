@@ -1,7 +1,7 @@
 import { VStack, Heading, Text } from "~/components/ui";
-import ReactHighlightSyntax from "react-highlight-syntax";
 import { SelectExample } from "./SelectExample";
 import SelectExampleString from "./SelectExample?raw";
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
 
 export default function SelectRoute() {
   return (
@@ -17,9 +17,12 @@ export default function SelectRoute() {
 
       <SelectExample />
 
-      <ReactHighlightSyntax language="TypeScript" theme="AtomOneLight">
-        {SelectExampleString}
-      </ReactHighlightSyntax>
+      <SyntaxHighlighter>{SelectExampleString}</SyntaxHighlighter>
+      <Text as="p">
+        In the example above, we use a custom prop called <code>truncate</code>{" "}
+        to shorten the text and add an ellipse to the third item in the
+        dropdown.
+      </Text>
     </VStack>
   );
 }

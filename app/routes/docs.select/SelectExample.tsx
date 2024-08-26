@@ -12,7 +12,6 @@ export function SelectExample() {
   const [selection, setSelection] = useState<string | null>(null);
 
   const selectItems = [
-    { value: "celery", label: "Celery" },
     { value: "beets", label: "Beets" },
     {
       value: "a long name",
@@ -39,8 +38,12 @@ export function SelectExample() {
           <SelectValue placeholder="Choose an option" />
         </SelectTrigger>
         <SelectContent>
-          {selectItems.map((item) => (
-            <SelectItem key={item.value} value={item.value}>
+          {selectItems.map((item, index) => (
+            <SelectItem
+              key={item.value}
+              value={item.value}
+              truncate={index === 2}
+            >
               {item.label}
             </SelectItem>
           ))}

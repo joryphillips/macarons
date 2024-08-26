@@ -2,7 +2,6 @@ import { FC } from "react";
 
 import ReactHighlightSyntax, {
   Language,
-  Theme,
   CopyBtnTheme,
 } from "react-highlight-syntax";
 import { useSpecifiedTheme } from "../ThemeProvider/ThemeProvider";
@@ -11,7 +10,6 @@ import { syntaxHighlighterContainer } from "./SyntaxHighlighter.css";
 
 type Props = {
   language?: Language;
-  theme?: Theme;
   copy?: boolean;
   copyBtnTheme?: CopyBtnTheme;
   children: string;

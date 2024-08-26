@@ -1,5 +1,7 @@
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
 import { Box, Text, VStack, Heading, HStack } from "~/components/ui";
 import { Sprinkles } from "~/styles/sprinkles.css";
+import shadowTokens from "~/theme/shadows?raw";
 
 function ShadowBox({ shadow }: { shadow: Sprinkles["boxShadow"] }) {
   return (
@@ -49,6 +51,7 @@ export default function ShadowsRoute() {
         have shadows lighter than a background, and so elevation is expressed
         via background color instead.
       </Text>
+      <SyntaxHighlighter>{shadowTokens}</SyntaxHighlighter>
     </VStack>
   );
 }

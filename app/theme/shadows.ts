@@ -1,3 +1,5 @@
+// app/theme/shadows.ts
+
 const shadowOne = "rgba(45, 55, 72, 0.05)";
 const shadowTwo = "rgba(45, 55, 72, 0.1)";
 

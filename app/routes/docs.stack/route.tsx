@@ -1,41 +1,15 @@
-import { Box, VStack, HStack, Text, Heading, Stack } from "~/components/ui";
-
-function ThreeBoxes() {
-  return (
-    <>
-      <Box
-        padding={4}
-        borderRadius="md"
-        borderStyle="solid"
-        borderColor="infoElementBorder"
-        backgroundColor="infoElementBackground"
-        color="infoHighContrastText"
-      >
-        Item 1
-      </Box>
-      <Box
-        padding={4}
-        borderRadius="md"
-        borderStyle="solid"
-        borderColor="warningElementBorder"
-        backgroundColor="warningElementBackground"
-        color="warningHighContrastText"
-      >
-        Item 2
-      </Box>
-      <Box
-        padding={4}
-        borderRadius="md"
-        borderStyle="solid"
-        borderColor="destructiveElementBorder"
-        backgroundColor="destructiveElementBackground"
-        color="destructiveHighContrastText"
-      >
-        Item 3
-      </Box>
-    </>
-  );
-}
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
+import { VStack, HStack, Text, Heading } from "~/components/ui";
+import { CustomExample } from "./CustomExample";
+import { ResponsiveExample } from "./ResponsiveExample";
+import { VStackExample } from "./VStackExample";
+import { HStackExample } from "./HStackExample";
+import { GapExample } from "./GapExample";
+import ResponsiveExampleString from "./ResponsiveExample?raw";
+import VStackExampleString from "./VStackExample?raw";
+import HStackExampleString from "./HStackExample?raw";
+import GapExampleString from "./GapExample?raw";
+import CustomExampleString from "./CustomExample?raw";
 
 export default function StackRoute() {
   return (
@@ -52,63 +26,33 @@ export default function StackRoute() {
         to dynamically change the direction of the stack based on the width of
         the screen.
       </Text>
-      <Stack direction={{ mobile: "column", tablet: "row" }}>
-        <ThreeBoxes />
-      </Stack>
-      <Text>
-        <code>
-          &#60;Stack direction=&#123;&#123; mobile: "column", tablet: "row"
-          &#125;&#125;&#62;
-        </code>
-      </Text>
+      <ResponsiveExample />
+      <SyntaxHighlighter>{ResponsiveExampleString}</SyntaxHighlighter>
 
       <Heading size="md">Vertical Stack</Heading>
       <Text>The VStack implements a flex column.</Text>
-      <VStack>
-        <ThreeBoxes />
-      </VStack>
-      <Text>
-        <code>&#60;VStack&#62;</code>
-      </Text>
+      <VStackExample />
+      <SyntaxHighlighter>{VStackExampleString}</SyntaxHighlighter>
       <Heading size="md">Horizontal Stack</Heading>
       <Text>The HStack implements a flex row.</Text>
-      <HStack>
-        <ThreeBoxes />
-      </HStack>
-      <Text>
-        <code>&#60;HStack&#62;</code>
-      </Text>
+      <HStackExample />
+      <SyntaxHighlighter>{HStackExampleString}</SyntaxHighlighter>
 
       <Heading size="md">Gap</Heading>
       <Text>
         The gap prop can be used to add space between children of the stack. A
         prop called "spacing" is also available as an alias for gap.
       </Text>
-      <Stack gap={8}>
-        <ThreeBoxes />
-      </Stack>
-      <Text>
-        <code>&#60;Stack gap=&#123;8&#125;&#62;</code>
-      </Text>
+      <GapExample />
+      <SyntaxHighlighter>{GapExampleString}</SyntaxHighlighter>
 
       <Heading size="md">Customization</Heading>
       <Text>
         All props available to Box can be used with a Stack, HStack, or VStack
         component.
       </Text>
-      <HStack
-        backgroundColor="infoActiveElementBackground"
-        color="infoLowContrastText"
-        padding={4}
-      >
-        <ThreeBoxes />
-      </HStack>
-      <Text>
-        <code>
-          &#60;HStack backgroundColor="infoActiveElementBackground"
-          color="infoLowContrastText" padding=&#123;4&#125;&#62;
-        </code>
-      </Text>
+      <CustomExample />
+      <SyntaxHighlighter>{CustomExampleString}</SyntaxHighlighter>
     </VStack>
   );
 }

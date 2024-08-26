@@ -1,6 +1,8 @@
 import { Box, Heading, Stack, Text, VStack } from "~/components/ui";
 import { vars } from "~/theme/theme.css";
 import { border } from "~/theme/border";
+import borderTokens from "~/theme/border?raw";
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
 
 function DemoBox({
   borderWidth,
@@ -94,6 +96,7 @@ export default function BorderRoute() {
           ))}
         </VStack>
       </Stack>
+      <SyntaxHighlighter>{borderTokens}</SyntaxHighlighter>
     </VStack>
   );
 }

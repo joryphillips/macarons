@@ -1,3 +1,5 @@
+// app/theme/border.ts
+
 export const border = {
   width: {
     none: "0",

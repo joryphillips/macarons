@@ -3,12 +3,16 @@ import {
   ThemeProvider,
   useSpecifiedTheme,
 } from "~/components/ThemeProvider/ThemeProvider";
-import { Box, VStack, Text, HStack } from "~/components/ui";
+import { Box, VStack, Text } from "~/components/ui";
 import { TooltipProvider } from "~/components/ui/Tooltip/Tooltip";
 import { useState } from "react";
 import { SideNav } from "./SideNav";
 import { TopBar } from "./TopBar";
-import { articleStyles, mainContentContainerStyles } from "./docs.css";
+import {
+  articleStyles,
+  lowerPageContainerStyles,
+  mainContentPanelStyles,
+} from "./docs.css";
 import { Titlemark } from "~/components/logo/Titlemark";
 
 function IndexIntro() {
@@ -57,8 +61,8 @@ export default function UI() {
         {/* Top bar */}
         <TopBar toggleSideNav={toggleSideNav} hideSideNav={hideSideNav} />
 
-        {/* Main Content */}
-        <Box as="main" className={mainContentContainerStyles}>
+        {/* Lower Paage */}
+        <Box as="main" className={lowerPageContainerStyles}>
           {/* Sidebar */}
           <SideNav
             display={{
@@ -69,12 +73,12 @@ export default function UI() {
           />
 
           {/* Main Content Panel */}
-          <HStack justifyContent="center" width="100%">
+          <Box className={mainContentPanelStyles}>
             <Box className={articleStyles} as="article">
               {showIntro && <IndexIntro />}
               <Outlet />
             </Box>
-          </HStack>
+          </Box>
         </Box>
       </TooltipProvider>
     </ThemeProvider>

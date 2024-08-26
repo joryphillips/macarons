@@ -2,8 +2,10 @@ import { style } from "@vanilla-extract/css";
 import { breakpoints } from "~/theme/breakpoints";
 import { vars } from "~/theme/theme.css";
 
-export const mainContentContainerStyles = style({ 
+export const lowerPageContainerStyles = style({ 
   display:"flex",
+  flexDirection:"row",
+  justifyContent:"center",
   maxWidth:vars.contentWidth["xl"],
   marginTop:vars.spacing[10],
   marginLeft:"auto",
@@ -21,7 +23,8 @@ export const mainContentContainerStyles = style({
 export const sideNavStyles = style({
   boxSizing:"border-box",
   position:"fixed",
-  maxWidth:"100%",
+  minWidth:vars.contentWidth["3xs"],
+  maxWidth:vars.contentWidth["2xs"],
   top:vars.spacing[10],
   bottom: 0,
   gap:vars.spacing[2],
@@ -37,7 +40,6 @@ export const sideNavStyles = style({
   "@media": {
     [`screen and (min-width: ${breakpoints.tablet}px)`]: {
       position:"sticky",
-      maxWidth:vars.contentWidth["3xs"],
       height:`calc(100vh - ${vars.spacing[10]} - 2px)`,
       paddingBottom:vars.spacing[12],
     }
@@ -45,6 +47,22 @@ export const sideNavStyles = style({
   selectors: {
     "&:focus-visible": {
       boxShadow: `inset 0 0 0 2px ${vars.colors.primary.subtleBorder}`,
+    },
+  }
+});
+
+export const mainContentPanelStyles = style({
+  display:"flex",
+  flexDirection:"row",
+  justifyContent:"center",
+  width:"100%",
+
+  "@media": {
+    [`screen and (min-width: ${breakpoints.tablet}px)`]: {
+      maxWidth: `calc(100% - ${vars.contentWidth["3xs"]} - ${vars.spacing[8]})`,
+    },
+    [`screen and (min-width: ${breakpoints.desktop}px)`]: {
+      maxWidth:"100%"
     },
   }
 });

@@ -1,4 +1,9 @@
-import { Box, Text, VStack, Heading } from "~/components/ui";
+import { Text, VStack, Heading } from "~/components/ui";
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
+import { BoxExample } from "./BoxExample";
+import BoxExampleString from "./BoxExample?raw";
+import { BoxAsExample } from "./BoxAsExample";
+import BoxAsExampleString from "./BoxAsExample?raw";
 
 export default function BoxRoute() {
   return (
@@ -18,38 +23,18 @@ export default function BoxRoute() {
         @vanilla-extract/css in a companion .css.ts file with the component or
         HTML Element that best suits your needs.
       </Text>
-      <Box
-        padding={4}
-        borderRadius="md"
-        borderStyle="solid"
-        borderColor="elementBorder"
-        backgroundColor="elementBackground"
-        color="highContrastText"
-      >
-        <Text>Box</Text>
-      </Box>
-      <VStack gap={2} alignItems="flex-start">
-        <code>padding=&#123;4&#125;</code>
-        <code>borderRadius="md"</code>
-        <code>borderStyle="solid"</code>
-        <code>borderColor="elementBorder"</code>
-        <code>backgroundColor="elementBackground"</code>
-        <code>color="highContrastText"</code>
-      </VStack>
+
+      <BoxExample />
+
+      <SyntaxHighlighter>{BoxExampleString}</SyntaxHighlighter>
+
       <Heading size="lg">"as" prop</Heading>
       <Text as="p">
         Using the "as" prop, you can create a Box component that renders as
         another HTML element.
       </Text>
-      <Box
-        as="button"
-        padding={4}
-        borderRadius="lg"
-        backgroundColor="solidBackground"
-        color="textOnSolidBackground"
-      >
-        Button
-      </Box>
+      <BoxAsExample />
+      <SyntaxHighlighter>{BoxAsExampleString}</SyntaxHighlighter>
     </VStack>
   );
 }

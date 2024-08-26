@@ -1,6 +1,8 @@
 import { Box, Heading, HStack, Text, VStack } from "~/components/ui";
 import { vars } from "~/theme/theme.css";
 import { spacing } from "~/theme/spacing";
+import spacingTokens from "~/theme/spacing?raw";
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
 
 function DemoBox() {
   return (
@@ -37,7 +39,7 @@ function SpacingDemoRow({
 
 export default function SpacingRoute() {
   return (
-    <VStack marginBottom={8} width="100%" alignItems="flex-start">
+    <VStack gap={8} width="100%" alignItems="flex-start">
       <Heading>Spacing</Heading>
       <Text as="p">
         Like other tokens, spacing is defined in an independent file and
@@ -54,6 +56,7 @@ export default function SpacingRoute() {
           />
         ))}
       </VStack>
+      <SyntaxHighlighter>{spacingTokens}</SyntaxHighlighter>
     </VStack>
   );
 }

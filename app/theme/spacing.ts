@@ -1,3 +1,5 @@
+// app/theme/spacing.ts
+
 export const spacing = {
   auto: "auto",
   0: "0",

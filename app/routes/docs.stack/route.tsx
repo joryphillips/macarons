@@ -1,5 +1,5 @@
 import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
-import { VStack, HStack, Text, Heading } from "~/components/ui";
+import { VStack, Text, Heading } from "~/components/ui";
 import { CustomExample } from "./CustomExample";
 import { ResponsiveExample } from "./ResponsiveExample";
 import { VStackExample } from "./VStackExample";

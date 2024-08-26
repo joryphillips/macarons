@@ -75,3 +75,5 @@ globalStyle("ul li", {
 });
 
 globalStyle("strong", { fontWeight: vars.weight.semiBold });
+
+globalStyle("pre", { margin: 0 });

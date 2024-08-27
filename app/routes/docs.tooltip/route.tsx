@@ -1,12 +1,12 @@
-import {
-  VStack,
-  Heading,
-  Text,
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  Button,
-} from "~/components/ui";
+import { VStack, Heading, Text } from "~/components/ui";
+import { TooltipExample } from "./TooltipExample";
+import { TooltipCustomExample } from "./TooltipCustomExample";
+import { TooltipFullyCustomExample } from "./TooltipFullyCustomEx";
+import TooltipExString from "./TooltipExample?raw";
+import TooltipCustomExString from "./TooltipCustomExample?raw";
+import TooltipFullyCustomExString from "./TooltipFullyCustomEx?raw";
+import FullCustomStylesString from "./fullyCustomExampleString?raw";
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
 
 export default function TooltipRoute() {
   return (
@@ -18,14 +18,19 @@ export default function TooltipRoute() {
         component will position itself dynamically based on proximity to window
         edges.
       </Text>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button variant="outline">Hover over me</Button>
-        </TooltipTrigger>
-        <TooltipContent>
-          <Text>This is the tooltip content</Text>
-        </TooltipContent>
-      </Tooltip>
+      <VStack gap={4} width="100%" alignItems="flex-start">
+        <TooltipExample />
+        <SyntaxHighlighter>{TooltipExString}</SyntaxHighlighter>
+      </VStack>
+      <VStack gap={4} width="100%" alignItems="flex-start">
+        <TooltipCustomExample />
+        <SyntaxHighlighter>{TooltipCustomExString}</SyntaxHighlighter>
+      </VStack>
+      <VStack gap={4} width="100%" alignItems="flex-start">
+        <TooltipFullyCustomExample />
+        <SyntaxHighlighter>{TooltipFullyCustomExString}</SyntaxHighlighter>
+        <SyntaxHighlighter>{FullCustomStylesString}</SyntaxHighlighter>
+      </VStack>
     </VStack>
   );
 }

@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { tooltipContentStyles } from "./Tooltip.css";
+import { uIText } from "../Text/Text.css";
+import clsx from "clsx";
 
 const TooltipProvider = TooltipPrimitive.Provider;
 
@@ -18,8 +20,11 @@ const TooltipContent = React.forwardRef<
     sideOffset={4}
     className={className}
     {...props}
+    asChild
   >
-    <div className={tooltipContentStyles}>{props.children}</div>
+    <div className={clsx(tooltipContentStyles, uIText["default"])}>
+      {props.children}
+    </div>
   </TooltipPrimitive.Content>
 ));
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;

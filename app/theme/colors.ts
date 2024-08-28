@@ -104,9 +104,7 @@ function aliasStatesToColors(
  * Merges the color scale with the token aliases. See important notes above in aliasStatesToColors.
  */
 function getAliases(
-  colorScale: Record<string, string>,
-  colorName: string
-): Record<TokenContract, string> {
+{ colorScale, colorName }: { colorScale: Record<string, string>; colorName: string; }): Record<TokenContract, string> {
   const scale = aliasStatesToColors(colorScale, colorName);
   const additionalAliases = Object.entries(tokenAliases).reduce(
     (acc, [newAlias, scaleKey]) => {
@@ -127,22 +125,22 @@ function getAliases(
 }
 
 export const lightColorStateTheme = {
-  primary: getAliases(pink, "pink"), // anything other than gray, red, or yellow
-  standard: getAliases(gray, "gray"),
-  info: getAliases(indigo, "indigo"),
-  success: getAliases(grass, "grass"),
-  warning: getAliases(yellow, "yellow"),
-  destructive: getAliases(red, "red"), // errors or destructive actions
+  primary: getAliases({ colorScale: pink, colorName: "pink" }), // anything other than gray, red, or yellow
+  standard: getAliases({ colorScale: gray, colorName: "gray" }),
+  info: getAliases({ colorScale: indigo, colorName: "indigo" }),
+  success: getAliases({ colorScale: grass, colorName: "grass" }),
+  warning: getAliases({ colorScale: yellow, colorName: "yellow" }),
+  destructive: getAliases({ colorScale: red, colorName: "red" }), // errors or destructive actions
   overlay: blackA.blackA9,
 };
 
-// NOTE that the property names do not have the word "Dark" in them
+// NOTE that the colorName property does not use the word "Dark"
 export const darkColorStateTheme = {
-  primary: getAliases(pinkDark, "pink"), // anything other than gray, red or yellow
-  standard: getAliases(grayDark, "gray"),
-  info: getAliases(indigoDark, "indigo"),
-  success: getAliases(grassDark, "grass"),
-  warning: getAliases(yellowDark, "yellow"),
-  destructive: getAliases(redDark, "red"), // errors or destructive actions
+  primary: getAliases({ colorScale: pinkDark, colorName: "pink" }), // anything other than gray, red or yellow
+  standard: getAliases({ colorScale: grayDark, colorName: "gray" }),
+  info: getAliases({ colorScale: indigoDark, colorName: "indigo" }),
+  success: getAliases({ colorScale: grassDark, colorName: "grass" }),
+  warning: getAliases({ colorScale: yellowDark, colorName: "yellow" }),
+  destructive: getAliases({ colorScale: redDark, colorName: "red" }), // errors or destructive actions
   overlay: whiteA.whiteA9,
 };

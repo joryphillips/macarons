@@ -7,7 +7,7 @@ const elementBackground = vars.colors.standard.elementBackground;
 const elementBorder = vars.colors.standard.elementBorder;
 
 export const content = style({
-  zIndex: 50,
+  zIndex: vars.zIndex.dropdowns,
   minWidth: vars.contentWidth["4xs"],
   overflow: "hidden",
   borderRadius: vars.border.radius.sm,

@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "~/theme/theme.css";
 
 export const tooltipContentStyles = style({
-  zIndex: 9999,
+  zIndex: vars.zIndex.tooltip,
   borderRadius: vars.border.radius.sm,
   padding: vars.spacing[3],
   color: vars.colors.standard.appBackground,

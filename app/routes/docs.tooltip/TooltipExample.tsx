@@ -1,6 +1,5 @@
 import {
   Button,
-  Text,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
@@ -8,7 +7,7 @@ import {
 
 export function TooltipExample() {
   return (
-    <Tooltip>
+    <Tooltip open>
       <TooltipTrigger asChild>
         <Button variant="outline">Hover over me</Button>
       </TooltipTrigger>

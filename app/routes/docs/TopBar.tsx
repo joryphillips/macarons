@@ -56,7 +56,7 @@ export function TopBar({
       borderWidth="standard"
       borderColor="subtleBorder"
       borderBottomStyle="solid"
-      zIndex={1}
+      zIndex="topBar"
     >
       <HStack
         gap={1}

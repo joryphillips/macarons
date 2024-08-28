@@ -15,7 +15,7 @@ import {
 // });
 
 export const popup = style({
-  zIndex: 50,
+  zIndex: vars.zIndex.popover,
   width: "100%",
   borderRadius: vars.border.radius.sm,
   borderWidth: "1px",

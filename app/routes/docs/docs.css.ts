@@ -21,7 +21,7 @@ export const lowerPageContainerStyles = style({
 });
 
 export const sideNavStyles = style({
-  zIndex: 1,
+  zIndex: vars.zIndex.sideBar,
   boxSizing:"border-box",
   position:"fixed",
   minWidth:vars.contentWidth["3xs"],

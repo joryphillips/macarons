@@ -66,7 +66,7 @@ export const animationSelectors = {
 };
 
 export const subContent = style({
-  zIndex: 50,
+  zIndex: vars.zIndex.dropdowns,
   minWidth: "8rem",
   overflow: "hidden",
   borderRadius: vars.border.radius.xs,
@@ -87,7 +87,7 @@ export const subContent = style({
 });
 
 export const content = style({
-  zIndex: 50,
+  zIndex: vars.zIndex.dropdowns,
   minWidth: vars.contentWidth["4xs"],
   overflow: "hidden",
   borderRadius: vars.border.radius.xs,

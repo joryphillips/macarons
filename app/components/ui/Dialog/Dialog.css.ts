@@ -8,6 +8,7 @@ import { breakpoints } from "~/theme/breakpoints";
 import { vars } from "~/theme/theme.css";
 
 export const dialogOverlay = style({
+  zIndex: vars.zIndex.overlay,
   position: "fixed",
   inset: 0,
   backgroundColor: vars.colors.overlay,
@@ -32,6 +33,7 @@ const mobileContentShow = keyframes({
 });
 
 export const dialogContent = style({
+  zIndex: vars.zIndex.overlayContent,
   position: "fixed",
   top: '50%',
   left: '50%',

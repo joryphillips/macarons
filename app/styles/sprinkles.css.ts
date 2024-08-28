@@ -49,7 +49,7 @@ const responsiveProperties = defineProperties({
 
     opacity: [0, 1],
 
-    zIndex: [-1, 0, 1],
+    zIndex: vars.zIndex,
     position: ["absolute", "relative", "fixed", "sticky"],
     display: ["none", "block", "inline", "inline-block", "inline-flex", "flex", "grid"],
 

@@ -9,6 +9,7 @@ import { spacing } from "./spacing";
 import { fonts, weight } from "./typography";
 import { contentWidth } from "./contentWidth";
 import { border } from "./border";
+import { zIndex } from "./zIndex";
 
 export const vars = createThemeContract({
   colors: colorStateContract,
@@ -82,6 +83,16 @@ export const vars = createThemeContract({
       full: "",
     },
   },
+  zIndex: {
+    base: "",
+    topBar: "",
+    sideBar: "",
+    overlay: "",
+    overlayContent: "",
+    dropdowns: "",
+    popover: "",
+    tooltip: "",
+  },
   transitionPropertyCommon: "",
 });
 
@@ -92,6 +103,7 @@ const commonVars = {
   boxShadow,
   contentWidth,
   border,
+  zIndex,
   transitionPropertyCommon:
     "background-color,border-color,color,fill,stroke,opacity,box-shadow,transform",
 };

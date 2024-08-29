@@ -2,12 +2,8 @@ import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 import { breakpoints } from "~/theme/breakpoints";
 import { vars } from "~/theme/theme.css";
 
-const heightShorthand = {
-  auto: "auto",
-  full: "100%",
-  inherit: "inherit",
-  screen: "100vh",
-};
+// We might want the height of something to match spacing, content, or font height
+const heightProperties = { ...vars.spacing, ...vars.contentSize, ...vars.typescale };
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -41,10 +37,12 @@ const responsiveProperties = defineProperties({
     paddingRight: vars.spacing,
     paddingTop: vars.spacing,
 
-    height: { ...vars.spacing, ...heightShorthand },
-    width: vars.contentWidth,
-    maxWidth: vars.contentWidth,
-    minWidth: vars.contentWidth,
+    width: vars.contentSize,
+    maxWidth: vars.contentSize,
+    minWidth: vars.contentSize,
+    height: heightProperties,
+    minHeight: heightProperties,
+    maxHeight: heightProperties,
     rotate: ["0deg", "45deg", "90deg", "135deg", "180deg", "225deg", "270deg", "315deg"],
 
     opacity: [0, 1],
@@ -168,6 +166,7 @@ const unresponsiveProperties = defineProperties({
     borderStyle: ["none", "solid"],
     borderBottomStyle: ["none", "solid"],
     boxSizing: ["border-box"],
+    fontSize: vars.typescale,
     fontWeight: vars.weight,
     background: backgroundColors,
     backgroundColor: backgroundColors,

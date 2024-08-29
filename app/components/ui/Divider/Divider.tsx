@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import { dividerStyles } from "./Divider.css";
+import clsx from "clsx";
 
 type DividerProps = React.ComponentPropsWithoutRef<
   typeof SeparatorPrimitive.Root
@@ -19,10 +20,7 @@ export const Divider = React.forwardRef<
         ref={ref}
         decorative={decorative}
         orientation={orientation}
-        className={`
-        ${dividerStyles[orientation]}
-        ${className}
-      `}
+        className={clsx(dividerStyles[orientation], className)}
         {...props}
       />
     );

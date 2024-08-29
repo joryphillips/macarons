@@ -25,7 +25,7 @@ export const buttonBasicsStyles = style(buttonBasics);
 
 const buttonBase = style({
   ...buttonBasics,
-  minWidth: vars.contentWidth["4xs"],
+  minWidth: vars.contentSize["4xs"],
   backgroundColor: info.solidBackground,
   color: standard.textOnSolidBackground,
   selectors: {
@@ -289,16 +289,16 @@ export const buttonWidthVariants = styleVariants({
     width: "33.333%",
   },
   "4xs": {
-    width: vars.contentWidth["4xs"],
+    width: vars.contentSize["4xs"],
   },
   "3xs": {
-    width: vars.contentWidth["3xs"],
+    width: vars.contentSize["3xs"],
   },
   "2xs": {
-    width: vars.contentWidth["2xs"],
+    width: vars.contentSize["2xs"],
   },
   xs: {
-    width: vars.contentWidth.xs,
+    width: vars.contentSize.xs,
   },
 });
 

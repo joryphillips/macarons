@@ -88,7 +88,7 @@ export const subContent = style({
 
 export const content = style({
   zIndex: vars.zIndex.dropdowns,
-  minWidth: vars.contentWidth["4xs"],
+  minWidth: vars.contentSize["4xs"],
   overflow: "hidden",
   borderRadius: vars.border.radius.xs,
   borderWidth: vars.border.width.standard,

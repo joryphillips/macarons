@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "~/theme/theme.css";
 
 export const syntaxHighlighterContainer = style({
-  maxWidth: vars.contentWidth["prose"],
+  maxWidth: vars.contentSize["prose"],
   maxHeight: "50vh",
   width: "100%",
   overflow: "scroll",

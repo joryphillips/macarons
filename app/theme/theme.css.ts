@@ -6,14 +6,23 @@ import {
 } from "./colors";
 import { boxShadow } from "./shadows";
 import { spacing } from "./spacing";
-import { fonts, weight } from "./typography";
-import { contentWidth } from "./contentWidth";
+import { fonts, weight, typescale } from "./typography";
+import { contentSize } from "./contentSize";
 import { border } from "./border";
 import { zIndex } from "./zIndex";
 
 export const vars = createThemeContract({
   colors: colorStateContract,
   fonts: "",
+  typescale: {
+    jumbo: "",
+    "2xl": "",
+    xl: "",
+    lg: "",
+    md: "",
+    sm: "",
+    xs: "",
+  },
   weight: {
     thin: "",
     extraLight: "",
@@ -48,7 +57,7 @@ export const vars = createThemeContract({
     xl: "",
     "2xl": "",
   },
-  contentWidth: {
+  contentSize: {
     "4xs": "",
     "3xs": "",
     "2xs": "",
@@ -60,6 +69,7 @@ export const vars = createThemeContract({
     "2xl": "",
     "100%": "",
     "100vw": "",
+    "100vh": "",
     auto: "",
     fit: "",
     min: "",
@@ -98,10 +108,11 @@ export const vars = createThemeContract({
 
 const commonVars = {
   fonts,
+  typescale,
   weight,
   spacing,
   boxShadow,
-  contentWidth,
+  contentSize,
   border,
   zIndex,
   transitionPropertyCommon:

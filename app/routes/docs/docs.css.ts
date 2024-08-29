@@ -6,7 +6,7 @@ export const lowerPageContainerStyles = style({
   display:"flex",
   flexDirection:"row",
   justifyContent:"center",
-  maxWidth:vars.contentWidth["xl"],
+  maxWidth:vars.contentSize["xl"],
   marginTop:vars.spacing[10],
   marginLeft:"auto",
   marginRight:"auto",
@@ -24,7 +24,7 @@ export const sideNavStyles = style({
   zIndex: vars.zIndex.sideBar,
   boxSizing:"border-box",
   position:"fixed",
-  minWidth:vars.contentWidth["3xs"],
+  minWidth:vars.contentSize["3xs"],
   top:vars.spacing[10],
   bottom: 0,
   gap:vars.spacing[2],
@@ -40,7 +40,7 @@ export const sideNavStyles = style({
   "@media": {
     [`screen and (min-width: ${breakpoints.tablet}px)`]: {
       width:"auto",
-      maxWidth:vars.contentWidth["2xs"],
+      maxWidth:vars.contentSize["2xs"],
       position:"sticky",
       height:`calc(100vh - ${vars.spacing[10]} - 2px)`,
       paddingBottom:vars.spacing[12],
@@ -61,7 +61,7 @@ export const mainContentPanelStyles = style({
 
   "@media": {
     [`screen and (min-width: ${breakpoints.tablet}px)`]: {
-      maxWidth: `calc(100% - ${vars.contentWidth["3xs"]})`,
+      maxWidth: `calc(100% - ${vars.contentSize["3xs"]})`,
     },
     [`screen and (min-width: ${breakpoints.desktop}px)`]: {
       maxWidth:"100%"
@@ -75,5 +75,5 @@ export const articleStyles = style({
    paddingLeft:vars.spacing[4],
    paddingBottom:vars.spacing[12],
    width:"100%",
-   maxWidth:vars.contentWidth["prose"],
+   maxWidth:vars.contentSize["prose"],
 });

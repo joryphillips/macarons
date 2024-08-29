@@ -39,7 +39,7 @@ export const dialogContent = style({
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: "100%",
-  maxWidth: vars.contentWidth.sm,
+  maxWidth: vars.contentSize.sm,
   borderRadius: vars.border.radius.sm,
   backgroundColor: vars.colors.standard.subtleBackground,
   padding: vars.spacing[6],

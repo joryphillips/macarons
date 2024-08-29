@@ -1,6 +1,6 @@
 import { styleVariants, style } from "@vanilla-extract/css";
 import { vars } from "~/theme/theme.css";
-import { baseTypescaleTokens } from "~/theme/typography";
+import { typescale } from "~/theme/typography";
 
 const base = {
   margin: 0,
@@ -9,9 +9,9 @@ const base = {
 
 const PROSE_LINE_HEIGHT = 1.667;
 
-function getFontSize(token: keyof typeof baseTypescaleTokens) {
+function getFontSize(token: keyof typeof typescale) {
   return {
-    fontSize: `${baseTypescaleTokens[token]}rem`,
+    fontSize: typescale[token],
   };
 }
 

@@ -1,5 +1,4 @@
 import lexendMetrics from "@capsizecss/metrics/lexend";
-import { modularScale } from "polished";
 
 const FONT_FAMILY_NAME = "Lexend Variable";
 
@@ -28,14 +27,18 @@ export const breakPointFontRelativeSize = {
 } as const;
 
 /**
- * Roughly major third scale, dropping some values.
+ * Roughly major third scale, dropping some values. Originally
+ * calculated with polished modular scale function.
+ * https://polished.js.org/docs/#modularscale
+ * 
+ * example: `const lg = modularScale(6, 1, "majorThird")`
  */
-export const baseTypescaleTokens = {
-  jumbo: Number(modularScale(6, 1, "majorThird")),
-  "2xl": Number(modularScale(4, 1, "majorThird")),
-  xl: Number(modularScale(2, 1, "majorThird")),
-  lg: Number(modularScale(1, 1, "majorThird")),
-  md: 1,
-  sm: Number(modularScale(-1, 1, "majorThird")),
-  xs: Number(modularScale(-2, 1, "majorThird")),
+export const typescale = {
+  jumbo: "3.8rem",
+  "2xl": "2.45rem",
+  xl: "1.5625rem",
+  lg: "1.25rem",
+  md: "1rem",
+  sm: "0.8rem",
+  xs: "0.64rem",
 } as const;

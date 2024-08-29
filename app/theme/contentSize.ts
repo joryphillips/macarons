@@ -1,4 +1,4 @@
-export const contentWidth = {
+export const contentSize = {
   "4xs": "8rem",
   "3xs": "12rem",
   "2xs": "20rem",
@@ -10,6 +10,7 @@ export const contentWidth = {
   "2xl": "80rem",
   "100%": "100%",
   "100vw": "100vw",
+  "100vh": "100vh",
   auto: "auto",
   fit: "fit-content",
   min: "min-content",

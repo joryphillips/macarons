@@ -1,11 +1,11 @@
 import { style } from "@vanilla-extract/css";
 import { breakpoints } from "~/theme/breakpoints";
 import { vars } from "~/theme/theme.css";
-import { baseTypescaleTokens } from "~/theme/typography";
+import { typescale } from "~/theme/typography";
 
-function getFontSize(token: keyof typeof baseTypescaleTokens) {
+function getFontSize(token: keyof typeof typescale) {
   return {
-    fontSize: `${baseTypescaleTokens[token]}rem`,
+    fontSize: `${typescale[token]}rem`,
   };
 }
 

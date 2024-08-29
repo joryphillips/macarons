@@ -8,7 +8,7 @@ const elementBorder = vars.colors.standard.elementBorder;
 
 export const content = style({
   zIndex: vars.zIndex.dropdowns,
-  minWidth: vars.contentWidth["4xs"],
+  minWidth: vars.contentSize["4xs"],
   overflow: "hidden",
   borderRadius: vars.border.radius.sm,
   borderWidth: vars.border.width.standard,
@@ -28,7 +28,7 @@ export const viewPort = style({
 });
 
 export const item = style({
-  width: vars.contentWidth["xs"],
+  width: vars.contentSize["xs"],
   borderRadius: vars.border.radius.sm,
   padding: `${vars.spacing[2]} ${vars.spacing[4]}`,
   outline: "none",

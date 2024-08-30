@@ -7,7 +7,11 @@ export function Titlemark() {
   return (
     <VStack width="100%" gap={4} alignItems="center" marginY={2}>
       <VStack width="100%">
-        <MacaronsTitleSVG className={titleMarkTextStyles} height="2rem" />
+        <MacaronsTitleSVG
+          height="2rem"
+          width="auto"
+          className={titleMarkTextStyles}
+        />
         <HStack width="100%" gap={0} justifyContent="center" flexWrap="nowrap">
           <MacaronStack width="36px" count={12} />
         </HStack>

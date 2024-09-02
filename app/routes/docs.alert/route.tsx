@@ -1,50 +1,87 @@
 import { Alert, Heading, Text, VStack } from "~/components/ui";
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
+
+const infoAlertString = `<Alert status="info">Info</Alert>`;
+const warningAlertString = `<Alert status="warning">Warning</Alert>`;
+const successAlertString = `<Alert status="success">Success</Alert>`;
+const errorAlertString = `<Alert status="error">Error</Alert>`;
+const customAlertString = `<Alert borderRadius="none" borderStyle="none" showIcon={false}>
+  <span>Custom Alert</span>
+</Alert>`;
 
 export default function AlertRoute() {
   return (
     <VStack spacing={8} alignItems="flex-start" width="100%">
-      <Heading as="h1" size="xl">
-        Alert
-      </Heading>
-      <Text as="p">
-        The alert component is used to display messages to the user. It can be
-        used to display information, warnings, errors, and success. It can also
-        be used inline in a page layout or used as a "butter" or "snack" bar
-        that displays at the top of the page, often below a menu bar.
-      </Text>
-      <Alert status="info" maxWidth="xs" width="100%">
-        <span>Info</span>
-      </Alert>
-      <Alert status="warning" maxWidth="xs" width="100%">
-        <span>Warning</span>
-      </Alert>
-      <Alert status="success" maxWidth="xs" width="100%">
-        <span>Success</span>
-      </Alert>
-      <Alert status="error" maxWidth="xs" width="100%">
-        <span>Error</span>
-      </Alert>
-      <Heading as="h3" size="lg">
-        Customizing
-      </Heading>
-      <Alert
-        borderRadius="none"
-        borderStyle="none"
-        showIcon={false}
-        status="info"
-        maxWidth="xs"
-      >
-        Custom Alert
-      </Alert>
       <VStack spacing={4} alignItems="flex-start">
-        <code>borderRadius="none"</code>
-        <code>borderStyle="none"</code>
-        <code>showIcon=&#123;false&#125;</code>
-        <code>status="info"</code>
-        <code>maxWidth="xs"</code>
+        <Heading as="h1" size="xl">
+          Alert
+        </Heading>
+
+        <Text as="p">
+          The alert component is used to display messages to the user. It can be
+          used to display information, warnings, errors, and success. It can
+          also be used inline in a page layout or used as a "butter" or "snack"
+          bar that displays at the top of the page, often below a menu bar.
+        </Text>
+        <Alert status="warning" width="100%">
+          Alert
+        </Alert>
+        <Text as="p">
+          The alert component extends the Box component and adds a border,
+          background color, and an icon to the left of the message. Alert's
+          "status" prop controls its background color, text color, and border
+          color via styleVariants. These values can be changed in Alert.css.ts.
+        </Text>
+      </VStack>
+
+      <VStack spacing={8} alignItems="flex-start" width="100%" maxWidth="xs">
+        <VStack spacing={4} alignItems="flex-start" width="100%">
+          <Alert status="info" width="100%">
+            Info
+          </Alert>
+          <SyntaxHighlighter copy={false}>{infoAlertString}</SyntaxHighlighter>
+        </VStack>
+
+        <VStack spacing={4} alignItems="flex-start" width="100%">
+          <Alert status="warning" width="100%">
+            Warning
+          </Alert>
+          <SyntaxHighlighter copy={false}>
+            {warningAlertString}
+          </SyntaxHighlighter>
+        </VStack>
+        <VStack spacing={4} alignItems="flex-start" width="100%">
+          <Alert status="success" width="100%">
+            Success
+          </Alert>
+          <SyntaxHighlighter copy={false}>
+            {successAlertString}
+          </SyntaxHighlighter>
+        </VStack>
+
+        <VStack spacing={4} alignItems="flex-start" width="100%">
+          <Alert status="error" width="100%">
+            Error
+          </Alert>
+          <SyntaxHighlighter copy={false}>{errorAlertString}</SyntaxHighlighter>
+        </VStack>
+      </VStack>
+
+      <VStack spacing={4} alignItems="flex-start" width="100%">
+        <Heading as="h3" size="lg">
+          Customizing
+        </Heading>
+        <Text as="p">
+          Quick customization is possible via the the default props listed
+          below.
+        </Text>
+        <Alert borderRadius="none" borderStyle="none" showIcon={false}>
+          Custom Alert
+        </Alert>
+        <SyntaxHighlighter copy={false}>{customAlertString}</SyntaxHighlighter>
       </VStack>
       <Heading as="h3" size="lg">
-        Props and Defaults
+        Default Props
       </Heading>
       <VStack spacing={4} alignItems="flex-start">
         <code>status="info"</code>

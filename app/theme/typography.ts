@@ -1,12 +1,5 @@
-import lexendMetrics from "@capsizecss/metrics/lexend";
-
 const FONT_FAMILY_NAME = "Lexend Variable";
-
 export const fonts = `'${FONT_FAMILY_NAME}', -apple-system, system-ui, sans-serif`;
-export const fontMetrics = {
-  ...lexendMetrics,
-  familyName: FONT_FAMILY_NAME,
-};
 
 export const weight = {
   thin: "100",

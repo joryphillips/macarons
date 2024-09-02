@@ -36,9 +36,6 @@
     "react-highlight-syntax": "^1.2.1"
   },
   "devDependencies": {
-    "@capsizecss/metrics": "^1.2.0",
-    "@capsizecss/unpack": "^1.0.0",
-    "@capsizecss/vanilla-extract": "^1.0.0",
     "@remix-run/dev": "2.11.2",
     "@remix-run/eslint-config": "2.11.2",
     "@types/lodash": "^4.14.196",

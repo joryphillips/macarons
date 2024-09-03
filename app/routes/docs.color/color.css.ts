@@ -5,7 +5,7 @@ import { typescale } from "~/theme/typography";
 
 function getFontSize(token: keyof typeof typescale) {
   return {
-    fontSize: `${typescale[token]}rem`,
+    fontSize: `${typescale[token]}`,
   };
 }
 

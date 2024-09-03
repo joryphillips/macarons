@@ -32,7 +32,10 @@ export const useSpecifiedTheme = () => {
     setSpecifiedTheme: (theme: Theme) => {
       if (theme !== searchTheme) {
         searchParams.set("theme", theme);
-        setSearchParams(searchParams, { replace: true });
+        setSearchParams(searchParams, {
+          replace: true,
+          preventScrollReset: true,
+        });
       }
     },
   };
@@ -60,7 +63,10 @@ export function ThemeProvider({
     const searchTheme = searchParams.get("theme") as UserTheme;
     if (userTheme && userTheme !== searchTheme) {
       searchParams.set("theme", userTheme);
-      setSearchParams(searchParams, { replace: true });
+      setSearchParams(searchParams, {
+        replace: true,
+        preventScrollReset: true,
+      });
     }
   }, [userTheme, searchParams]);
 

@@ -4,6 +4,13 @@ import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { copyFileSync } from "node:fs";
 import { join } from "node:path";
+import babel from "vite-plugin-babel";
+
+const ReactCompilerConfig = {
+  // sources: (filename: string) => {
+  //   return filename.indexOf('app') !== -1;
+  // },
+};
 
 export default defineConfig({
   server: {
@@ -31,6 +38,15 @@ export default defineConfig({
           join(buildPath, "index.html"),
           join(buildPath, "404.html"),
         );
+      },
+    }),
+    babel({
+      filter: /\.[jt]sx?$/,
+      babelConfig: {
+        presets: ["@babel/preset-typescript"], // if you use TypeScript
+        plugins: [
+          ["babel-plugin-react-compiler", ReactCompilerConfig],
+        ],
       },
     }),
     tsconfigPaths(),

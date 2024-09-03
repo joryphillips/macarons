@@ -4,7 +4,7 @@ import { uIText } from "../Text/Text.css";
 import { pinkA, pinkDarkA, grayDark, whiteA, blackA } from "@radix-ui/colors";
 
 const { colors } = vars;
-const { standard, info, primary, destructive } = colors;
+const { standard, info, primary, destructive, textOnSolidBackground } = colors;
 
 const buttonBasics = {
   display: "inline-flex",
@@ -32,7 +32,7 @@ const buttonBase = style({
   ...buttonBasics,
   minWidth: vars.contentSize["4xs"],
   backgroundColor: info.solidBackground,
-  color: standard.textOnSolidBackground,
+  color: textOnSolidBackground,
   selectors: {
     "&:hover": {
       backgroundColor: info.hoveredSolidBackground,
@@ -49,7 +49,7 @@ const buttonBase = style({
       boxShadow: `0 0 0 ${vars.border.width.double} ${info.elementBorder}`,
     },
     "&:active": {
-      backgroundColor: info.activeSolidBackground,
+      filter: "brightness(95%)",
       boxShadow: "none",
     },
   },
@@ -97,7 +97,7 @@ export const ghostOnDark = {
       boxShadow: `0 0 0 2px ${grayDark.gray12}`,
     },
     "&:active, &.active": {
-      backgroundColor: grayDark.gray12,
+      backgroundColor: whiteA.whiteA5,
       boxShadow: "none",
     },
   },
@@ -113,7 +113,7 @@ export const buttonStyleVariants = styleVariants({
     buttonBase,
     {
       backgroundColor: destructive.solidBackground,
-      color: destructive.textOnSolidBackground,
+      color: textOnSolidBackground,
       selectors: {
         "&:hover": {
           backgroundColor: destructive.hoveredSolidBackground,
@@ -122,7 +122,7 @@ export const buttonStyleVariants = styleVariants({
           boxShadow: `0 0 0 2px ${destructive.elementBorder}`,
         },
         "&:active": {
-          backgroundColor: destructive.activeSolidBackground,
+          filter: "brightness(95%)",
           boxShadow: "none",
         },
       },
@@ -209,7 +209,7 @@ export const buttonStyleVariants = styleVariants({
     {
       borderColor: "transparent",
       backgroundColor: primary.solidBackground,
-      color: primary.textOnSolidBackground,
+      color: textOnSolidBackground,
       selectors: {
         "&:hover": {
           backgroundColor: primary.hoveredSolidBackground,
@@ -218,7 +218,7 @@ export const buttonStyleVariants = styleVariants({
           boxShadow: `0 0 0 2px ${primary.elementBorder}`,
         },
         "&:active": {
-          backgroundColor: primary.activeSolidBackground,
+          filter: "brightness(95%)",
           boxShadow: "none",
         },
       },

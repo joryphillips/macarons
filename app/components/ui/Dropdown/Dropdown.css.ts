@@ -116,7 +116,7 @@ export const menuItem = style({
   selectors: {
     "&[data-highlighted]": {
       backgroundColor: vars.colors.standard.solidBackground,
-      color: vars.colors.standard.textOnSolidBackground,
+      color: vars.colors.textOnSolidBackground,
     },
     "&[data-disabled]": {
       pointerEvents: "none",

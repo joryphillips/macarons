@@ -182,6 +182,7 @@ const unresponsiveProperties = defineProperties({
       warningHighContrastText: vars.colors.warning.highContrastText,
       destructiveLowContrastText: vars.colors.destructive.lowContrastText,
       destructiveHighContrastText: vars.colors.destructive.highContrastText,
+      textOnSolidBackground: vars.colors.textOnSolidBackground,
     },
     borderColor: {
       ...vars.colors.standard,

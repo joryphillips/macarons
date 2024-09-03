@@ -11,12 +11,8 @@ export const ghostExample = `<Button variant="ghost">Ghost</Button>`;
 export const ghostPrimaryExample = `<Button variant="ghostPrimary">Ghost</Button>`;
 export const ghostOnDarkExample = `<Button variant="ghostOnDark">Ghost on Dark Background</Button>`;
 export const disabledExample = `<Button isDisabled>Disabled</Button>`;
-export const prefixIconExample = `<Button prefixIcon={InfoIcon}>
-  With Prefix Icon
-</Button>`;
-export const suffixIconExample = `<Button suffixIcon={ChevronDown}>
-  With Suffix Icon
-</Button>`;
+export const prefixIconExample = `<Button prefixIcon={InfoIcon}>With Prefix Icon</Button>`;
+export const suffixIconExample = `<Button suffixIcon={ChevronDown}>With Suffix Icon</Button>`;
 export const prefixSuffixIconExample = `<Button 
   prefixIcon={InfoIcon}
   suffixIcon={ChevronDown}

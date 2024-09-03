@@ -47,31 +47,16 @@ const radixColorScale = {
 
 type RadixScale = keyof typeof radixColorScale;
 
-/**
- * Additional token aliases for better DX. Values must match keys of the
- * radixColorScale object.
- */
-const tokenAliases = {
-  textOnSolidBackground: "appBackground",
-  activeSolidBackground: "lowContrastText",
-} as const;
-
-export const colorTokenContract = {
-  ...radixColorScale,
-  ...tokenAliases,
-};
-
-type TokenContract = keyof typeof colorTokenContract;
-
 export const colorStateContract = {
-  primary: colorTokenContract,
-  standard: colorTokenContract,
-  info: colorTokenContract,
-  success: colorTokenContract,
-  warning: colorTokenContract,
-  destructive: colorTokenContract,
-  // Make an exception for overlay, which is stand-alone and not a scale
+  primary: radixColorScale,
+  standard: radixColorScale,
+  info: radixColorScale,
+  success: radixColorScale,
+  warning: radixColorScale,
+  destructive: radixColorScale,
+  // Exceptions that are stand-alone and outside the scale
   overlay: "",
+  textOnSolidBackground: "",
 };
 
 /**
@@ -81,9 +66,7 @@ export const colorStateContract = {
  * get weird if this changes.
  */
 function aliasStatesToColors(
-  colorScale: Record<string, string>,
-  colorName: string
-): Record<RadixScale, string> {
+{ colorScale, colorName }: { colorScale: Record<string, string>; colorName: string; }): Record<RadixScale, string> {
   const colorScaleKeys = Object.keys(colorScale);
   const colorTokens = Object.keys(radixColorScale) as RadixScale[];
   if (colorScaleKeys.length !== colorTokens.length) {
@@ -100,47 +83,25 @@ function aliasStatesToColors(
   }, {} as Record<RadixScale, string>);
 }
 
-/**
- * Merges the color scale with the token aliases. See important notes above in aliasStatesToColors.
- */
-function getAliases(
-{ colorScale, colorName }: { colorScale: Record<string, string>; colorName: string; }): Record<TokenContract, string> {
-  const scale = aliasStatesToColors(colorScale, colorName);
-  const additionalAliases = Object.entries(tokenAliases).reduce(
-    (acc, [newAlias, scaleKey]) => {
-      if (!(scaleKey in scale)) {
-        throw new Error(`Token ${scaleKey} is not in the color scale.`);
-      }
-      return {
-        ...acc,
-        [newAlias]: scale[scaleKey],
-      };
-    },
-    {} as Record<keyof typeof tokenAliases, string>
-  );
-  return {
-    ...scale,
-    ...additionalAliases,
-  };
-}
-
 export const lightColorStateTheme = {
-  primary: getAliases({ colorScale: pink, colorName: "pink" }), // anything other than gray, red, or yellow
-  standard: getAliases({ colorScale: gray, colorName: "gray" }),
-  info: getAliases({ colorScale: indigo, colorName: "indigo" }),
-  success: getAliases({ colorScale: grass, colorName: "grass" }),
-  warning: getAliases({ colorScale: yellow, colorName: "yellow" }),
-  destructive: getAliases({ colorScale: red, colorName: "red" }), // errors or destructive actions
+  primary: aliasStatesToColors({ colorScale: pink, colorName: "pink" }), // anything other than gray, red, or yellow
+  standard: aliasStatesToColors({ colorScale: gray, colorName: "gray" }),
+  info: aliasStatesToColors({ colorScale: indigo, colorName: "indigo" }),
+  success: aliasStatesToColors({ colorScale: grass, colorName: "grass" }),
+  warning: aliasStatesToColors({ colorScale: yellow, colorName: "yellow" }),
+  destructive: aliasStatesToColors({ colorScale: red, colorName: "red" }), // errors or destructive actions
   overlay: blackA.blackA9,
+  textOnSolidBackground: grayDark.gray12,
 };
 
 // NOTE that the colorName property does not use the word "Dark"
 export const darkColorStateTheme = {
-  primary: getAliases({ colorScale: pinkDark, colorName: "pink" }), // anything other than gray, red or yellow
-  standard: getAliases({ colorScale: grayDark, colorName: "gray" }),
-  info: getAliases({ colorScale: indigoDark, colorName: "indigo" }),
-  success: getAliases({ colorScale: grassDark, colorName: "grass" }),
-  warning: getAliases({ colorScale: yellowDark, colorName: "yellow" }),
-  destructive: getAliases({ colorScale: redDark, colorName: "red" }), // errors or destructive actions
+  primary: aliasStatesToColors({ colorScale: pinkDark, colorName: "pink" }), // anything other than gray, red or yellow
+  standard: aliasStatesToColors({ colorScale: grayDark, colorName: "gray" }),
+  info: aliasStatesToColors({ colorScale: indigoDark, colorName: "indigo" }),
+  success: aliasStatesToColors({ colorScale: grassDark, colorName: "grass" }),
+  warning: aliasStatesToColors({ colorScale: yellowDark, colorName: "yellow" }),
+  destructive: aliasStatesToColors({ colorScale: redDark, colorName: "red" }), // errors or destructive actions
   overlay: whiteA.whiteA9,
+  textOnSolidBackground: grayDark.gray12,
 };

@@ -36,12 +36,12 @@ export const item = style({
   transitionDuration: "150ms",
   selectors: {
     "&[data-state=checked]": {
-      backgroundColor: vars.colors.standard.activeSolidBackground,
-      color: vars.colors.standard.textOnSolidBackground,
+      backgroundColor: vars.colors.standard.hoveredElementBackground,
+      color: vars.colors.textOnSolidBackground,
     },
     "&[data-highlighted]": {
       backgroundColor: vars.colors.standard.solidBackground,
-      color: vars.colors.standard.textOnSolidBackground,
+      color: vars.colors.textOnSolidBackground,
     },
     "&[data-disabled]": {
       pointerEvents: "none",

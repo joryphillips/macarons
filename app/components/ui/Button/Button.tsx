@@ -1,7 +1,6 @@
 import * as React from "react";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import {
-  disabledStyle,
   buttonJustifyContentVariants,
   buttonStyleVariants,
   buttonSizeVariants,
@@ -10,8 +9,8 @@ import {
   buttonPrefixIcon,
   buttonSuffixIcon,
   iconSizeVariants,
+  noBorderStyle,
 } from "./Button.css";
-import { Slot } from "@radix-ui/react-slot";
 import clsx from "clsx";
 import { base as baseReset, button as buttonReset } from "~/styles/reset.css";
 import type { LucideIcon } from "lucide-react";
@@ -30,7 +29,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   justifyContent?: ButtonJustifyContent;
   isDisabled?: boolean;
   isLoading?: boolean;
-  asChild?: boolean;
   prefixIcon?: LucideIcon;
   suffixIcon?: LucideIcon;
   children: ReactNode;
@@ -42,7 +40,7 @@ export interface IconButtonProps
   size?: keyof typeof iconSizeVariants;
   isDisabled?: boolean;
   isLoading?: boolean;
-  asChild?: boolean;
+  showBorder?: boolean;
   children: ReactNode;
 }
 
@@ -56,7 +54,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       justifyContent = "center",
       isDisabled = false,
       isLoading = false,
-      asChild = false,
       type = "button",
       prefixIcon,
       suffixIcon,
@@ -65,7 +62,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const Comp = asChild ? Slot : "button";
+    const Comp = "button";
     const Prefix = prefixIcon;
     const Suffix = suffixIcon;
     return (
@@ -79,13 +76,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           buttonSizeVariants[size],
           buttonWidthVariants[width],
           buttonJustifyContentVariants[justifyContent],
-          isDisabled && disabledStyle,
           className
         )}
         ref={ref}
         {...props}
       >
-        {isLoading && !asChild /* asChild does not work with spinner **/ ? (
+        {isLoading ? (
           <Loader2 className={loadingSpinner} />
         ) : (
           <>
@@ -108,14 +104,14 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
       size = "default",
       isDisabled = false,
       isLoading = false,
-      asChild = false,
+      showBorder = false,
       type = "button",
       children,
       ...props
     },
     ref
   ) => {
-    const Comp = asChild ? Slot : "button";
+    const Comp = "button";
 
     return (
       <Comp
@@ -126,17 +122,13 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
           buttonReset,
           buttonStyleVariants[variant],
           iconSizeVariants[size],
-          isDisabled && disabledStyle,
+          !showBorder && noBorderStyle,
           className
         )}
         ref={ref}
         {...props}
       >
-        {isLoading && !asChild /* asChild does not work with spinner **/ ? (
-          <Loader2 className={loadingSpinner} />
-        ) : (
-          <>{children}</>
-        )}
+        {isLoading ? <Loader2 className={loadingSpinner} /> : <>{children}</>}
       </Comp>
     );
   }

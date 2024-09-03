@@ -1,6 +1,7 @@
 import { keyframes, style, styleVariants } from "@vanilla-extract/css";
 import { vars } from "~/theme/theme.css";
 import { uIText } from "../Text/Text.css";
+import { pinkA, pinkDarkA, grayDark, whiteA, blackA } from "@radix-ui/colors";
 
 const { colors } = vars;
 const { standard, info, primary, destructive } = colors;
@@ -21,6 +22,10 @@ const buttonBasics = {
   cursor: "pointer",
 }
 
+export const noBorderStyle = style({
+  border: "none",
+});
+
 export const buttonBasicsStyles = style(buttonBasics);
 
 const buttonBase = style({
@@ -37,7 +42,11 @@ const buttonBase = style({
     },
     "&:disabled": {
       cursor: "not-allowed",
-      backgroundColor: info.subtleBackground,
+      backgroundColor: info.activeElementBackground,
+      color: info.lowContrastText,
+    },
+    "&:focus-visible:disabled": {
+      boxShadow: `0 0 0 ${vars.border.width.double} ${info.elementBorder}`,
     },
     "&:active": {
       backgroundColor: info.activeSolidBackground,
@@ -46,24 +55,49 @@ const buttonBase = style({
   },
 });
 
-export const disabledStyle = style({
-  cursor: "not-allowed",
-  pointerEvents: "none",
-  opacity: 0.5,
-});
-
 export const ghostPrimary = {
   backgroundColor: "transparent",
   color: primary.highContrastText,
+  borderColor: primary.elementBorder,
   selectors: {
     "&:hover": {
-      backgroundColor: primary.hoveredElementBackground,
+      // TODO: add to theme so that we don't need a .dark selector
+      backgroundColor: pinkA.pinkA4,
+    },
+    ".dark &:hover": {
+      // TODO: add to theme so that we don't need a .dark selector
+      backgroundColor: pinkDarkA.pinkA4,
     },
     "&:focus-visible": {
+      borderColor: primary.hoveredElementBorder,
       boxShadow: `0 0 0 2px ${primary.hoveredElementBorder}`,
     },
     "&:active, &.active": {
       backgroundColor: primary.activeElementBackground,
+      boxShadow: "none",
+    },
+  },
+};
+
+// NOTE: we don't want colors for this component to change in the
+// usual way in dark mode, which more or less flips the scale,
+// as we expect it to always be used on dark backgrounds (images 
+// that are dark in light mode are still dark in dark mode).
+// We are using high contrast values for text and the border.
+export const ghostOnDark = {
+  backgroundColor: "transparent",
+  color: grayDark.gray12,
+  borderColor: grayDark.gray12,
+  selectors: {
+    "&:hover": {
+      backgroundColor: whiteA.whiteA4,
+    },
+    "&:focus-visible": {
+      borderColor: grayDark.gray12,
+      boxShadow: `0 0 0 2px ${grayDark.gray12}`,
+    },
+    "&:active, &.active": {
+      backgroundColor: grayDark.gray12,
       boxShadow: "none",
     },
   },
@@ -127,6 +161,7 @@ export const buttonStyleVariants = styleVariants({
           backgroundColor: standard.hoveredElementBackground,
         },
         "&:focus-visible": {
+          borderColor: standard.hoveredElementBorder,
           boxShadow: `0 0 0 2px ${standard.hoveredElementBorder}`,
         },
         "&:active, &.active": {
@@ -141,11 +176,17 @@ export const buttonStyleVariants = styleVariants({
     {
       backgroundColor: "transparent",
       color: standard.highContrastText,
+      borderColor: standard.elementBorder,
       selectors: {
+        // TODO: add to theme so that we don't need a .dark selector
         "&:hover": {
-          backgroundColor: standard.hoveredElementBackground,
+          backgroundColor: blackA.blackA4,
+        },
+        ".dark &:hover": {
+          backgroundColor: whiteA.whiteA4,
         },
         "&:focus-visible": {
+          borderColor: standard.hoveredElementBorder,
           boxShadow: `0 0 0 2px ${standard.hoveredElementBorder}`,
         },
         "&:active, &.active": {
@@ -157,7 +198,11 @@ export const buttonStyleVariants = styleVariants({
   ],
   ghostPrimary: [
     buttonBase,
-    ghostPrimary
+    ghostPrimary,
+  ],
+  ghostOnDark: [
+    buttonBase,
+    ghostOnDark,
   ],
   link: [
     buttonBase,
@@ -318,7 +363,6 @@ export const buttonSuffixIcon = style({
   marginLeft: vars.spacing[4],
 });
 
-// spinner animation keyframes
 const spin = keyframes({
   "0%": {
     transform: "rotate(0deg)",
@@ -328,7 +372,6 @@ const spin = keyframes({
   },
 });
 
-// loading spinner styles
 export const loadingSpinner = style({
   animation: `${spin} 1s linear infinite`,
 });

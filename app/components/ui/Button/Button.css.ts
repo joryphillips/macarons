@@ -204,37 +204,6 @@ export const buttonStyleVariants = styleVariants({
     buttonBase,
     ghostOnDark,
   ],
-  link: [
-    buttonBase,
-    {
-      backgroundColor: "transparent",
-      color: info.lowContrastText,
-      borderWidth: 0,
-      justifyContent: "flex-start",
-      textDecorationOffset: "0.25rem",
-      selectors: {
-        "&:focus": {
-          outline: "none",
-          boxShadow: "none",
-          textDecoration: "underline",
-        },
-        "&:focus-visible": {
-          outline: "none",
-          boxShadow: "none",
-          textDecoration: "underline",
-        },
-        "&:hover": {
-          textDecoration: "underline",
-          backgroundColor: "transparent",
-          color: info.highContrastText,
-        },
-        "&:active": {
-          backgroundColor: "transparent",
-          color: info.highContrastText,
-        },
-      },
-    },
-  ],
   primary: [
     buttonBase,
     {

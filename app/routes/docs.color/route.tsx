@@ -1,12 +1,7 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@radix-ui/react-tooltip";
 import { Link } from "@remix-run/react";
 import { Box, Divider, Text, VStack, Heading, HStack } from "~/components/ui";
 import { Sprinkles } from "~/styles/sprinkles.css";
-import { colorChip, colorLabel, colorTableLabelSize } from "./color.css";
+import { colorChip, colorLabel, colorTableLabelSize } from "./docs-color.css";
 import clsx from "clsx";
 
 function ColorBox({

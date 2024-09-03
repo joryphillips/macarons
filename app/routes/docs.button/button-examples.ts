@@ -27,12 +27,10 @@ export const specificWidthExample = `<Button
   variant="outline"
   width="3xs"
 >
-  With a specific width and very 
-  long text
+  With a specific width and very long text
 </Button>`;
 export const withoutSpecificWidthExample = `<Button
   variant="outline"
 >
-  Without a specific width and 
-  very long text
+  Without a specific width and very long text
 </Button>`;

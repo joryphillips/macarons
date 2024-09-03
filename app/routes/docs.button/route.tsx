@@ -26,37 +26,37 @@ export default function ButtonRoute() {
     <VStack gap={8} width="100%" alignItems="flex-start">
       <Heading>Button</Heading>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button>Default</Button>
         <SyntaxHighlighter copy={false}>{defaultExample}</SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button size="sm">Size Small</Button>
         <SyntaxHighlighter copy={false}>{sizeSmallExample}</SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button size="lg">Size Large</Button>
         <SyntaxHighlighter copy={false}>{sizeLargeExample}</SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button variant="primary">Primary</Button>
         <SyntaxHighlighter copy={false}>{primaryExample}</SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button variant="destructive">Destructive</Button>
         <SyntaxHighlighter copy={false}>{destructiveExample}</SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button variant="outline">Outline</Button>
         <SyntaxHighlighter copy={false}>{outlineExample}</SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button variant="subtle">Subtle</Button>
         <SyntaxHighlighter copy={false}>{subtleExample}</SyntaxHighlighter>
       </VStack>
@@ -103,22 +103,22 @@ export default function ButtonRoute() {
         <SyntaxHighlighter copy={false}>{ghostOnDarkExample}</SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button isDisabled>Disabled</Button>
         <SyntaxHighlighter copy={false}>{disabledExample}</SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button prefixIcon={InfoIcon}>With Prefix Icon</Button>
         <SyntaxHighlighter copy={false}>{prefixIconExample}</SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button suffixIcon={ChevronDown}>With Suffix Icon</Button>
         <SyntaxHighlighter copy={false}>{suffixIconExample}</SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button prefixIcon={InfoIcon} suffixIcon={ChevronDown}>
           With Prefix and Suffix Icon
         </Button>
@@ -127,7 +127,7 @@ export default function ButtonRoute() {
         </SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button variant="outline" width="3xs">
           With a specific width and very long text
         </Button>
@@ -136,7 +136,7 @@ export default function ButtonRoute() {
         </SyntaxHighlighter>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={2} alignItems="flex-start" width="100%">
         <Button variant="outline">
           Without a width but with very long text
         </Button>

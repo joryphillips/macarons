@@ -5,7 +5,7 @@ export const syntaxHighlighterContainer = style({
   maxWidth: vars.contentSize["prose"],
   maxHeight: "50vh",
   width: "100%",
-  overflow: "scroll",
+  overflow: "auto",
   borderRadius: vars.border.radius.sm,
   borderStyle: "solid",
   borderWidth: vars.border.width.standard,

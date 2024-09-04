@@ -79,12 +79,15 @@ export const ghostPrimary = {
   },
 };
 
-// NOTE: we don't want colors for this component to change in the
-// usual way in dark mode, which more or less flips the scale,
-// as we expect it to always be used on dark backgrounds (images 
-// that are dark in light mode are still dark in dark mode).
-// We are using high contrast values for text and the border.
-export const ghostOnDark = {
+
+/**
+ * NOTE: we don't want colors for this component variant to change
+ * in the usual way in dark mode, which more or less flips the scale,
+ * as we expect it to always be used on dark backgrounds (images
+ * that are dark in light mode are still dark in dark mode).
+ * We are using high contrast values for text and the border.
+ */
+const ghostOnDark = {
   backgroundColor: "transparent",
   color: grayDark.gray12,
   borderColor: grayDark.gray12,

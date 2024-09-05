@@ -75,7 +75,7 @@ export function ErrorBoundary() {
         <Links />
       </head>
       <body>
-        <Box height="screen" padding={1}>
+        <Box height="100vh" padding={1}>
           <Alert status="error">An unexpected error has occured.</Alert>
         </Box>
       </body>

@@ -2,11 +2,12 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "~/theme/theme.css";
 
 export const containerStyles = style({
+  boxSizing: "border-box",
   maxWidth: vars.contentSize["prose"],
   maxHeight: "50vh",
   width: "100%",
   overflow: "auto",
-  padding: vars.spacing[4],
+  padding: vars.spacing[3],
   borderRadius: vars.border.radius.sm,
   borderStyle: "solid",
   borderWidth: vars.border.width.standard,
@@ -15,11 +16,9 @@ export const containerStyles = style({
 
 export const lineStyles = style({
   textAlign: "left",
-  margin: "1em 0",
   lineHeight: 1.3,
   fontSize: vars.typescale.sm,
   fontFamily: "monospace",
-  overflowX: "scroll",
 });
 
 export const lineNumberStyles = style({

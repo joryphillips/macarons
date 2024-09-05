@@ -1,37 +1,48 @@
 import { FC } from "react";
 
-import ReactHighlightSyntax, {
-  Language,
-  CopyBtnTheme,
-} from "react-highlight-syntax";
+import { Highlight, themes } from "prism-react-renderer";
 import { useSpecifiedTheme } from "../ThemeProvider/ThemeProvider";
-import { Box } from "../ui";
-import { syntaxHighlighterContainer } from "./SyntaxHighlighter.css";
+import {
+  containerStyles,
+  lineStyles,
+  lineNumberStyles,
+} from "./SyntaxHighlighter.css";
+import clsx from "clsx";
 
 type Props = {
-  language?: Language;
-  copy?: boolean;
-  copyBtnTheme?: CopyBtnTheme;
+  language?: string;
+  showLineNumbers?: boolean;
   children: string;
 };
 
 export const SyntaxHighlighter: FC<Props> = (props) => {
-  const { language = "TypeScript", copy = true, children } = props;
+  const { language = "tsx", showLineNumbers = false, children } = props;
   const { specifiedTheme } = useSpecifiedTheme();
 
-  const theme = specifiedTheme === "dark" ? "AtomOneDark" : "AtomOneLight";
-  const copyBtnTheme = specifiedTheme === "dark" ? "Dark" : "Light";
+  const theme = specifiedTheme === "dark" ? themes.oneDark : themes.oneLight;
 
   return (
-    <Box className={syntaxHighlighterContainer}>
-      <ReactHighlightSyntax
-        language={language}
-        theme={theme}
-        copy={copy}
-        copyBtnTheme={copyBtnTheme}
-      >
-        {children}
-      </ReactHighlightSyntax>
-    </Box>
+    <Highlight language={language} theme={theme} code={children}>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre
+          className={clsx(className, containerStyles, lineStyles)}
+          style={style}
+        >
+          {tokens.map((line, i) => (
+            <div key={i} {...getLineProps({ line })}>
+              {showLineNumbers && (
+                <span className={lineNumberStyles}>{i + 1}</span>
+              )}
+              {line.map(
+                (token, key) =>
+                  !(i === tokens.length - 1 && token.empty) && (
+                    <span key={key} {...getTokenProps({ token })} />
+                  )
+              )}
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
   );
 };

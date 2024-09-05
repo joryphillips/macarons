@@ -33,9 +33,9 @@
     "isbot": "^3.6.8",
     "lucide-react": "^0.265.0",
     "polished": "^4.2.2",
+    "prism-react-renderer": "^2.4.0",
     "react": "^19.0.0-rc-a960b92c-20240819",
     "react-dom": "^19.0.0-rc-a960b92c-20240819",
-    "react-highlight-syntax": "^1.2.1",
     "vite-plugin-babel": "^1.2.0"
   },
   "devDependencies": {

@@ -22,23 +22,23 @@ export default function BadgeRoute() {
       <VStack gap={6} alignItems="flex-start">
         <VStack gap={2} alignItems="flex-start">
           <Badge variant="standard">Standard</Badge>
-          <SyntaxHighlighter copy={false}>{badgeStandard}</SyntaxHighlighter>
+          <SyntaxHighlighter>{badgeStandard}</SyntaxHighlighter>
         </VStack>
         <VStack gap={2} alignItems="flex-start">
           <Badge variant="info">Info</Badge>
-          <SyntaxHighlighter copy={false}>{badgeInfo}</SyntaxHighlighter>
+          <SyntaxHighlighter>{badgeInfo}</SyntaxHighlighter>
         </VStack>
         <VStack gap={2} alignItems="flex-start">
           <Badge variant="success">Success</Badge>
-          <SyntaxHighlighter copy={false}>{badgeSuccess}</SyntaxHighlighter>
+          <SyntaxHighlighter>{badgeSuccess}</SyntaxHighlighter>
         </VStack>
         <VStack gap={2} alignItems="flex-start">
           <Badge variant="warning">Warning</Badge>
-          <SyntaxHighlighter copy={false}>{badgeWarning}</SyntaxHighlighter>
+          <SyntaxHighlighter>{badgeWarning}</SyntaxHighlighter>
         </VStack>
         <VStack gap={2} alignItems="flex-start">
           <Badge variant="error">Error</Badge>
-          <SyntaxHighlighter copy={false}>{badgeError}</SyntaxHighlighter>
+          <SyntaxHighlighter>{badgeError}</SyntaxHighlighter>
         </VStack>
       </VStack>
     </VStack>

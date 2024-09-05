@@ -39,31 +39,27 @@ export default function AlertRoute() {
           <Alert status="info" width="100%">
             Info
           </Alert>
-          <SyntaxHighlighter copy={false}>{infoAlertString}</SyntaxHighlighter>
+          <SyntaxHighlighter>{infoAlertString}</SyntaxHighlighter>
         </VStack>
 
         <VStack spacing={4} alignItems="flex-start" width="100%">
           <Alert status="warning" width="100%">
             Warning
           </Alert>
-          <SyntaxHighlighter copy={false}>
-            {warningAlertString}
-          </SyntaxHighlighter>
+          <SyntaxHighlighter>{warningAlertString}</SyntaxHighlighter>
         </VStack>
         <VStack spacing={4} alignItems="flex-start" width="100%">
           <Alert status="success" width="100%">
             Success
           </Alert>
-          <SyntaxHighlighter copy={false}>
-            {successAlertString}
-          </SyntaxHighlighter>
+          <SyntaxHighlighter>{successAlertString}</SyntaxHighlighter>
         </VStack>
 
         <VStack spacing={4} alignItems="flex-start" width="100%">
           <Alert status="error" width="100%">
             Error
           </Alert>
-          <SyntaxHighlighter copy={false}>{errorAlertString}</SyntaxHighlighter>
+          <SyntaxHighlighter>{errorAlertString}</SyntaxHighlighter>
         </VStack>
       </VStack>
 
@@ -78,7 +74,7 @@ export default function AlertRoute() {
         <Alert borderRadius="none" borderStyle="none" showIcon={false}>
           Custom Alert
         </Alert>
-        <SyntaxHighlighter copy={false}>{customAlertString}</SyntaxHighlighter>
+        <SyntaxHighlighter>{customAlertString}</SyntaxHighlighter>
       </VStack>
       <Heading as="h3" size="lg">
         Default Props

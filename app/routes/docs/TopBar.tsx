@@ -7,6 +7,7 @@ import { Box, HStack, IconButton } from "~/components/ui";
 import {
   ghostPrimaryStyles,
   iconSizeVariants,
+  noBorderStyle,
 } from "~/components/ui/Button/Button.css";
 import { base as baseReset, button as buttonReset } from "~/styles/reset.css";
 import { vars } from "~/theme/theme.css";
@@ -18,6 +19,7 @@ const GitHubLink = () => (
       baseReset,
       buttonReset,
       ghostPrimaryStyles,
+      noBorderStyle,
       iconSizeVariants.default
     )}
     target="_blank"

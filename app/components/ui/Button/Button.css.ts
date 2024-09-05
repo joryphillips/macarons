@@ -22,8 +22,9 @@ const buttonBasics = {
   cursor: "pointer",
 }
 
+// TODO: reconfigure IconButton styles to avoid using !important
 export const noBorderStyle = style({
-  border: "none",
+  borderStyle: "none!important",
 });
 
 export const buttonBasicsStyles = style(buttonBasics);

@@ -4,7 +4,7 @@ import { uIText } from "../Text/Text.css";
 import { pinkA, pinkDarkA, grayDark, whiteA, blackA } from "@radix-ui/colors";
 
 const { colors } = vars;
-const { standard, info, primary, destructive, textOnSolidBackground } = colors;
+const { standard, info, primary, success, destructive, textOnSolidBackground } = colors;
 
 const buttonBasics = {
   display: "inline-flex",
@@ -56,7 +56,7 @@ const buttonBase = style({
   },
 });
 
-export const ghostPrimary = {
+const ghostPrimary = {
   backgroundColor: "transparent",
   color: primary.highContrastText,
   borderColor: primary.elementBorder,
@@ -113,6 +113,25 @@ export const ghostPrimaryStyles = style({
 
 export const buttonStyleVariants = styleVariants({
   default: [buttonBase, uIText["default"]],
+  success: [
+    buttonBase,
+    {
+      backgroundColor: success.solidBackground,
+      color: textOnSolidBackground,
+      selectors: {
+        "&:hover": {
+          backgroundColor: success.hoveredSolidBackground,
+        },
+        "&:focus-visible": {
+          boxShadow: `0 0 0 2px ${success.elementBorder}`,
+        },
+        "&:active": {
+          filter: "brightness(95%)",
+          boxShadow: "none",
+        },
+      },
+    },
+  ],
   destructive: [
     buttonBase,
     {

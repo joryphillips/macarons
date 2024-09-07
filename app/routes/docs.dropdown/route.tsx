@@ -1,13 +1,7 @@
-import {
-  VStack,
-  Heading,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  Button,
-  DropdownMenu,
-  DropdownMenuTrigger,
-  Text,
-} from "~/components/ui";
+import { VStack, Heading, Text } from "~/components/ui";
+import { DropdownExample } from "./DropdownExample";
+import DropdownExampleString from "./DropdownExample?raw";
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
 
 export default function DropdownRoute() {
   return (
@@ -19,16 +13,8 @@ export default function DropdownRoute() {
         component in that it is not intended to store or display a selected
         value.
       </Text>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline">Open</Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuItem>Item 1</DropdownMenuItem>
-          <DropdownMenuItem>Item 2</DropdownMenuItem>
-          <DropdownMenuItem>Item 3</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <DropdownExample />
+      <SyntaxHighlighter>{DropdownExampleString}</SyntaxHighlighter>
     </VStack>
   );
 }

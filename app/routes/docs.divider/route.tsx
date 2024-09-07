@@ -10,15 +10,22 @@ import VerticalString from "./Vertical?raw";
 export default function DividerRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
-      <Heading size="xl" as="h1">
-        Divider
-      </Heading>
-      <Text as="p">
-        The Divider component will automatically fill the width of its
-        container.{" "}
-      </Text>
+      <VStack gap={4} width="100%" alignItems="flex-start">
+        <Heading size="xl" as="h1">
+          Divider
+        </Heading>
+        <Text as="p">
+          Divider is a subtle graphic element used to dilineate two separate
+          ideas. The Divider component will automatically fill the width of its
+          container.
+        </Text>
+        <Text as="p">
+          By default, its <code>decorative</code> prop is set to{" "}
+          <code>true</code>, which excludes it from screen readers.
+        </Text>
+      </VStack>
 
-      <Stack gap={4} alignItems="flex-start">
+      <Stack gap={4} width="100%" alignItems="flex-start">
         <Heading size="lg" as="h2">
           Horizontal Divider
         </Heading>
@@ -26,7 +33,7 @@ export default function DividerRoute() {
         <SyntaxHighlighter>{HorizontalString}</SyntaxHighlighter>
       </Stack>
 
-      <Stack gap={4} alignItems="flex-start">
+      <Stack gap={4} width="100%" alignItems="flex-start">
         <Heading size="lg" as="h2">
           Narrow Horizontal Divider
         </Heading>
@@ -34,7 +41,7 @@ export default function DividerRoute() {
         <SyntaxHighlighter>{NarrowHorizontalString}</SyntaxHighlighter>
       </Stack>
 
-      <Stack gap={4} alignItems="flex-start">
+      <Stack gap={4} width="100%" alignItems="flex-start">
         <Heading size="lg" as="h2">
           Vertical Divider
         </Heading>

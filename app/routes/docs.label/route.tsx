@@ -37,7 +37,7 @@ export default function LabelRoute() {
           Default
         </Heading>
         <DefaultLabelExample />
-        <SyntaxHighlighter startLineNumber={5} endLineNumber={8}>
+        <SyntaxHighlighter trimToReactReturnValue>
           {defaultExampleString}
         </SyntaxHighlighter>
       </VStack>
@@ -47,7 +47,7 @@ export default function LabelRoute() {
           Custom color and sizes
         </Heading>
         <CustomLabelExample />
-        <SyntaxHighlighter startLineNumber={5} endLineNumber={10}>
+        <SyntaxHighlighter trimToReactReturnValue>
           {customLabelExampleString}
         </SyntaxHighlighter>
       </VStack>

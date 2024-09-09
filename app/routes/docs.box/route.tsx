@@ -26,7 +26,9 @@ export default function BoxRoute() {
 
       <BoxExample />
 
-      <SyntaxHighlighter>{BoxExampleString}</SyntaxHighlighter>
+      <SyntaxHighlighter trimToReactReturnValue>
+        {BoxExampleString}
+      </SyntaxHighlighter>
 
       <Heading size="lg">"as" prop</Heading>
       <Text as="p">
@@ -34,7 +36,9 @@ export default function BoxRoute() {
         another HTML element.
       </Text>
       <BoxAsExample />
-      <SyntaxHighlighter>{BoxAsExampleString}</SyntaxHighlighter>
+      <SyntaxHighlighter trimToReactReturnValue>
+        {BoxAsExampleString}
+      </SyntaxHighlighter>
     </VStack>
   );
 }

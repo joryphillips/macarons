@@ -14,7 +14,9 @@ export default function DropdownRoute() {
         value.
       </Text>
       <DropdownExample />
-      <SyntaxHighlighter>{DropdownExampleString}</SyntaxHighlighter>
+      <SyntaxHighlighter trimToReactReturnValue>
+        {DropdownExampleString}
+      </SyntaxHighlighter>
     </VStack>
   );
 }

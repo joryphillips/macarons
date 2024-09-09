@@ -37,6 +37,9 @@ export default function DividerRoute() {
         <Heading size="lg" as="h2">
           Narrow Horizontal Divider
         </Heading>
+        <Text as="p">
+          Example of Divider expanding only to width of its parent.
+        </Text>
         <NarrowHorizontalDividerExample />
         <SyntaxHighlighter>{NarrowHorizontalString}</SyntaxHighlighter>
       </Stack>

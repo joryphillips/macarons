@@ -23,7 +23,6 @@ const reactReturnStringEnd = ");";
 
 function getLineNumbersFromString(code: string) {
   const lines = code.split("\n");
-  console.log(lines);
   // Add 2 to get the line number (not index) of the line following the return statement
   const startReactLine =
     lines.findIndex((line) => line.includes(reactReturnStringStart)) + 2;

@@ -11,22 +11,39 @@ import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighligh
 export default function TooltipRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
-      <Heading>Tooltip</Heading>
-      <Text as="p">
-        The tooltip component is used to display additional information when a
-        user hovers over a trigger element. The base Radix tooltip content
-        component will position itself dynamically based on proximity to window
-        edges.
-      </Text>
+      <VStack gap={4} alignItems="flex-start" width="100%">
+        <Heading as="h1" size="xl">
+          Tooltip
+        </Heading>
+        <Text as="p">
+          The tooltip component is used to display additional information when a
+          user hovers over a trigger element. The base Radix tooltip content
+          component will position itself dynamically based on proximity to
+          window edges.
+        </Text>
+      </VStack>
       <VStack gap={4} width="100%" alignItems="flex-start">
+        <Heading size="lg" as="h2">
+          Default
+        </Heading>
         <TooltipExample />
-        <SyntaxHighlighter>{TooltipExString}</SyntaxHighlighter>
+        <SyntaxHighlighter trimToReactReturnValue>
+          {TooltipExString}
+        </SyntaxHighlighter>
       </VStack>
       <VStack gap={4} width="100%" alignItems="flex-start">
+        <Heading size="lg" as="h2">
+          Minor Customization
+        </Heading>
         <TooltipCustomExample />
-        <SyntaxHighlighter>{TooltipCustomExString}</SyntaxHighlighter>
+        <SyntaxHighlighter trimToReactReturnValue>
+          {TooltipCustomExString}
+        </SyntaxHighlighter>
       </VStack>
       <VStack gap={4} width="100%" alignItems="flex-start">
+        <Heading size="lg" as="h2">
+          Full Customization
+        </Heading>
         <TooltipFullyCustomExample />
         <SyntaxHighlighter>{TooltipFullyCustomExString}</SyntaxHighlighter>
         <SyntaxHighlighter>{FullCustomStylesString}</SyntaxHighlighter>

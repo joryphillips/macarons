@@ -8,6 +8,6 @@ export const customTooltipContentStyles = style({
   padding: `${vars.spacing[2]} ${vars.spacing[4]}`,
   color: vars.colors.standard.highContrastText,
   backgroundColor: vars.colors.warning.solidBackground,
-  opacity: "0.75",
+  opacity: "0.85",
   boxShadow: vars.boxShadow["2xl"],
 });

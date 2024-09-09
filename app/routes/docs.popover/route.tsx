@@ -1,13 +1,7 @@
-import {
-  Button,
-  Card,
-  Heading,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  Text,
-  VStack,
-} from "~/components/ui";
+import { Heading, Text, VStack } from "~/components/ui";
+import { PopoverExample } from "./PopoverExample";
+import popoverExampleString from "./PopoverExample?raw";
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
 
 export default function PopoverRoute() {
   return (
@@ -17,23 +11,10 @@ export default function PopoverRoute() {
         The popover component is used to display additional information or
         actions when a user interacts with a trigger element.
       </Text>
-
-      <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Trigger</Button>
-        </PopoverTrigger>
-        <PopoverContent asChild>
-          <Card background="activeElementBackground">
-            <VStack gap={4} alignItems="flex-start">
-              <Heading size="lg">Popover Content</Heading>
-              <Text size="sm">
-                This is the content of the popover. You can put anything you
-                want in here.
-              </Text>
-            </VStack>
-          </Card>
-        </PopoverContent>
-      </Popover>
+      <PopoverExample />
+      <SyntaxHighlighter trimToReactReturnValue>
+        {popoverExampleString}
+      </SyntaxHighlighter>
     </VStack>
   );
 }

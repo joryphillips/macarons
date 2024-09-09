@@ -1,21 +1,22 @@
-import { ChevronDown, InfoIcon } from "lucide-react";
 import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
-import { VStack, Heading, Button, HStack, Stack } from "~/components/ui";
+import { VStack, Heading, Button, HStack, Text, Stack } from "~/components/ui";
 import { backgroundImageStyle } from "./docs-button.css";
 import {
-  stateExample,
-  deemphasisExample,
   ghostExample,
   ghostPrimaryExample,
   ghostOnDarkExample,
   disabledExample,
-  prefixIconExample,
-  suffixIconExample,
-  prefixSuffixIconExample,
   specificWidthExample,
   withoutSpecificWidthExample,
-  sizeExample,
-} from "./button-examples";
+} from "./ButtonExamples";
+import { SizeExample } from "./SizeExample";
+import sizeExampleString from "./SizeExample?raw";
+import { StateExample } from "./StateExample";
+import stateExampleString from "./StateExample?raw";
+import { DeemphasisExample } from "./DeemphasisExample";
+import deemphasisExampleString from "./DeemphasisExample?raw";
+import { IconExample } from "./IconExamples";
+import iconExampleString from "./IconExamples?raw";
 
 export default function ButtonRoute() {
   return (
@@ -34,11 +35,11 @@ export default function ButtonRoute() {
           alignItems={{ tablet: "flex-end", mobile: "flex-start" }}
           width="100%"
         >
-          <Button size="sm">Size Small</Button>
-          <Button>Default</Button>
-          <Button size="lg">Size Large</Button>
+          <SizeExample />
         </Stack>
-        <SyntaxHighlighter>{sizeExample}</SyntaxHighlighter>
+        <SyntaxHighlighter startLineNumber={6} endLineNumber={8}>
+          {sizeExampleString}
+        </SyntaxHighlighter>
       </VStack>
 
       <VStack gap={4} alignItems="flex-start" width="100%">
@@ -46,23 +47,27 @@ export default function ButtonRoute() {
           State/Brand
         </Heading>
         <Stack gap={2} flexWrap="wrap" flexDirection="row" width="100%">
-          <Button variant="primary">Primary</Button>
-          <Button variant="default">Default</Button>
-          <Button variant="success">Success</Button>
-          <Button variant="destructive">Destructive</Button>
+          <StateExample />
         </Stack>
-        <SyntaxHighlighter>{stateExample}</SyntaxHighlighter>
+        <SyntaxHighlighter startLineNumber={6} endLineNumber={9}>
+          {stateExampleString}
+        </SyntaxHighlighter>
       </VStack>
 
       <VStack gap={4} alignItems="flex-start" width="100%">
         <Heading size="lg" as="h2">
           Deemphasis
         </Heading>
+        <Text as="p">
+          Good to use in tandem with one of the buttons above to direct the
+          user's attention to a specific action.
+        </Text>
         <Stack gap={2} flexWrap="wrap" flexDirection="row" width="100%">
-          <Button variant="outline">Outline</Button>
-          <Button variant="subtle">Subtle</Button>
+          <DeemphasisExample />
         </Stack>
-        <SyntaxHighlighter>{deemphasisExample}</SyntaxHighlighter>
+        <SyntaxHighlighter startLineNumber={6} endLineNumber={7}>
+          {deemphasisExampleString}
+        </SyntaxHighlighter>
       </VStack>
 
       <VStack gap={4} alignItems="flex-start" width="100%">
@@ -126,22 +131,10 @@ export default function ButtonRoute() {
         <Heading size="lg" as="h2">
           With Icons
         </Heading>
-        <VStack gap={2} alignItems="flex-start" width="100%">
-          <Button prefixIcon={InfoIcon}>With Prefix Icon</Button>
-          <SyntaxHighlighter>{prefixIconExample}</SyntaxHighlighter>
-        </VStack>
-
-        <VStack gap={2} alignItems="flex-start" width="100%">
-          <Button suffixIcon={ChevronDown}>With Suffix Icon</Button>
-          <SyntaxHighlighter>{suffixIconExample}</SyntaxHighlighter>
-        </VStack>
-
-        <VStack gap={2} alignItems="flex-start" width="100%">
-          <Button prefixIcon={InfoIcon} suffixIcon={ChevronDown}>
-            With Prefix and Suffix Icon
-          </Button>
-          <SyntaxHighlighter>{prefixSuffixIconExample}</SyntaxHighlighter>
-        </VStack>
+        <Stack gap={2} alignItems="flex-start" width="100%">
+          <IconExample />
+          <SyntaxHighlighter>{iconExampleString}</SyntaxHighlighter>
+        </Stack>
       </VStack>
 
       <VStack gap={4} alignItems="flex-start" width="100%">

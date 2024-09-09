@@ -10,7 +10,7 @@ export default function CardRoute() {
       <Text as="p">
         The card component is used to group related content together. It is not
         that different than Stack or Box — and in fact, extends the Box
-        component. As a commonly used component and is provided here for
+        component. As a commonly used component, Card is provided here for
         convenience and as an example.
       </Text>
       <CardExample />

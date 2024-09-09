@@ -1,24 +1,40 @@
-import { Spinner, VStack, Heading, HStack, Text } from "~/components/ui";
+import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
+import { Spinner, Stack, VStack, Heading, HStack, Text } from "~/components/ui";
 import { vars } from "~/theme/theme.css";
+
+const spinnerExampleString = `<Spinner />`;
+
+const spinnerDefaultExampleString = `<Spinner
+  size="md"
+  color={vars.colors.primary.solidBackground}
+  speed="0.8s"
+/>`;
+
 export default function SpinnerRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
-      <Heading>Spinner</Heading>
-      <Text as="p">
-        The spinner component is used to indicate that a page or component is
-        loading.
-      </Text>
-      <Spinner />
-      <Heading size="lg">Props and Defaults</Heading>
-      <Text size="sm">
-        <VStack gap={2} alignItems="flex-start">
-          <code>size="md"</code>
-          <code>color=vars.colors.primary.solidBackground</code>
-          <code>speed="0.8s"</code>
-        </VStack>
-      </Text>
+      <VStack gap={4} width="100%" alignItems="flex-start">
+        <Heading as="h1" size="xl">
+          Spinner
+        </Heading>
+        <Text as="p">
+          The spinner component is used to indicate that a page or component is
+          loading.
+        </Text>
+        <Spinner />
+        <SyntaxHighlighter>{spinnerExampleString}</SyntaxHighlighter>
+      </VStack>
+      <VStack gap={4} width="100%" alignItems="flex-start">
+        <Heading size="lg">Default Props</Heading>
+        <Spinner
+          size="md"
+          color={vars.colors.primary.solidBackground}
+          speed="0.8s"
+        />
+        <SyntaxHighlighter>{spinnerDefaultExampleString}</SyntaxHighlighter>
+      </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={4} alignItems="flex-start">
         <Heading size="lg">Size</Heading>
         <HStack gap={6} alignItems="flex-end">
           <VStack gap={2}>
@@ -44,33 +60,34 @@ export default function SpinnerRoute() {
         </HStack>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={4} alignItems="flex-start">
         <Heading size="lg">Color</Heading>
-        <HStack gap={6} alignItems="flex-end">
-          <VStack gap={2}>
-            <Spinner color="orange" />
-            <Text size="sm">orange</Text>
-          </VStack>
+        <Stack
+          flexDirection={{ mobile: "column", tablet: "row" }}
+          gap={6}
+          alignItems={{ mobile: "center", tablet: "flex-end" }}
+          flexWrap="wrap"
+        >
           <VStack gap={2}>
             <Spinner color="blue" />
             <Text size="sm">blue</Text>
           </VStack>
           <VStack gap={2}>
-            <Spinner color="yellow" />
-            <Text size="sm">yellow</Text>
+            <Spinner color="#ffef00" />
+            <Text size="sm">#ffef00</Text>
           </VStack>
           <VStack gap={2}>
-            <Spinner color="purple" />
-            <Text size="sm">purple</Text>
+            <Spinner color="rgb(250, 117, 0)" />
+            <Text size="sm">rgb(250,117,0)</Text>
           </VStack>
           <VStack gap={2}>
             <Spinner color={vars.colors.destructive.solidBackground} />
             <Text size="sm">vars.colors.destructive.solidBackground</Text>
           </VStack>
-        </HStack>
+        </Stack>
       </VStack>
 
-      <VStack gap={2} alignItems="flex-start">
+      <VStack gap={4} alignItems="flex-start">
         <Heading size="lg">Speed</Heading>
         <HStack gap={6} alignItems="flex-end">
           <VStack gap={2}>

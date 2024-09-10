@@ -19,17 +19,26 @@ type Props = {
   trimToReactReturnValue?: boolean;
 };
 
-const reactReturnStringStart = "return (";
-const reactReturnStringEnd = ");";
+// NOTE: these are quick & dirty regex checks for a common React pattern.
+// For a more robust solution use specific comment markers.
+
+/**
+ * Regex to check for "return (" as the only content of a line (ignoring leading whitespace)
+ */
+const reactReturnStringStart = /^[ \t]*return \($/;
+/**
+ * Regex to check for ");" as the only content of a line (ignoring leading whitespace)
+ */
+const reactReturnStringEnd = /^[ \t]*\);$/;
 
 function getLineNumbersFromString(code: string) {
   const lines = code.split("\n");
   // Add 2 to get the line number (not index) of the line following the return statement
   const startReactLine =
-    lines.findIndex((line) => line.includes(reactReturnStringStart)) + 2;
+    lines.findIndex((line) => reactReturnStringStart.test(line)) + 2;
   // The index of reactReturnStringEnd equals the line number of the previous line
   const endReactLine = lines.findIndex((line) =>
-    line.includes(reactReturnStringEnd)
+    reactReturnStringEnd.test(line)
   );
   return { startReactLine, endReactLine };
 }

@@ -3,9 +3,7 @@ import { vars } from "~/theme/theme.css";
 
 export const containerStyles = style({
   boxSizing: "border-box",
-  maxWidth: vars.contentSize["prose"],
   maxHeight: "50vh",
-  width: "100%",
   overflow: "auto",
   padding: vars.spacing[3],
   borderRadius: vars.border.radius.sm,

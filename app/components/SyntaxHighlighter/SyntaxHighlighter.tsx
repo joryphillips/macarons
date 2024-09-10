@@ -8,6 +8,7 @@ import {
   lineNumberStyles,
 } from "./SyntaxHighlighter.css";
 import clsx from "clsx";
+import { Box, BoxProps } from "../ui";
 
 type Props = {
   language?: string;
@@ -43,7 +44,7 @@ function showLine(
   return true;
 }
 
-export const SyntaxHighlighter: FC<Props> = (props) => {
+export const SyntaxHighlighter: FC<Props & BoxProps> = (props) => {
   const {
     language = "tsx",
     showLineNumbers = false,
@@ -51,6 +52,7 @@ export const SyntaxHighlighter: FC<Props> = (props) => {
     startLineNumber,
     endLineNumber,
     trimToReactReturnValue,
+    ...rest
   } = props;
   const { specifiedTheme } = useSpecifiedTheme();
 
@@ -66,9 +68,13 @@ export const SyntaxHighlighter: FC<Props> = (props) => {
   return (
     <Highlight language={language} theme={theme} code={children}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre
+        <Box
+          as="pre"
           className={clsx(className, containerStyles, lineStyles)}
           style={style}
+          width="100%"
+          maxWidth="min"
+          {...rest}
         >
           {tokens.map(
             (line, i) =>
@@ -105,7 +111,7 @@ export const SyntaxHighlighter: FC<Props> = (props) => {
                 </div>
               )
           )}
-        </pre>
+        </Box>
       )}
     </Highlight>
   );

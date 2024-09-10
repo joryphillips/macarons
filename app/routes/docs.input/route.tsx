@@ -56,7 +56,7 @@ export default function CheckboxRoute() {
         </SyntaxHighlighter>
       </VStack>
 
-      <VStack alignItems="flex-start" gap={4} as="section">
+      <VStack alignItems="flex-start" gap={4} as="section" width="100%">
         <Heading as="h2" size="md">
           Invalid state
         </Heading>
@@ -68,7 +68,7 @@ export default function CheckboxRoute() {
         </SyntaxHighlighter>
       </VStack>
 
-      <VStack alignItems="flex-start" gap={4} as="section">
+      <VStack alignItems="flex-start" gap={4} as="section" width="100%">
         <Heading as="h2" size="md">
           With Label
         </Heading>
@@ -80,7 +80,7 @@ export default function CheckboxRoute() {
         </SyntaxHighlighter>
       </VStack>
 
-      <VStack alignItems="flex-start" gap={4} as="section">
+      <VStack alignItems="flex-start" gap={4} as="section" width="100%">
         <Heading as="h2" size="md">
           Clearable
         </Heading>
@@ -90,7 +90,7 @@ export default function CheckboxRoute() {
         <SyntaxHighlighter>{clearableString}</SyntaxHighlighter>
       </VStack>
 
-      <VStack alignItems="flex-start" gap={4} as="section">
+      <VStack alignItems="flex-start" gap={4} as="section" width="100%">
         <Heading as="h2" size="md">
           With Info
         </Heading>
@@ -102,16 +102,18 @@ export default function CheckboxRoute() {
         </SyntaxHighlighter>
       </VStack>
 
-      <VStack alignItems="flex-start" gap={4} as="section">
+      <VStack alignItems="flex-start" gap={4} as="section" width="100%">
         <Heading as="h2" size="md">
           Info with Error State
         </Heading>
-        <WithError />
+        <VStack>
+          <WithError />
+        </VStack>
         <SyntaxHighlighter trimToReactReturnValue minWidth="2xs">
           {withErrorString}
         </SyntaxHighlighter>
       </VStack>
-      <VStack alignItems="flex-start" gap={4} as="section">
+      <VStack alignItems="flex-start" gap={4} as="section" width="100%">
         <Heading as="h2" size="md">
           Small
         </Heading>

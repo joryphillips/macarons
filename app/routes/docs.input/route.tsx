@@ -1,4 +1,4 @@
-import { VStack, Heading, Text } from "~/components/ui";
+import { VStack, Heading, Text, HStack, Stack } from "~/components/ui";
 import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighlighter";
 import { Minimal } from "./Minimal";
 import minimalString from "./Minimal?raw";
@@ -17,7 +17,7 @@ import withErrorString from "./WithError?raw";
 import { Small } from "./Small";
 import withSmallString from "./Small?raw";
 
-export default function CheckboxRoute() {
+export default function InputRoute() {
   return (
     <VStack gap={8} width="100%" alignItems="flex-start">
       <VStack gap={4} alignItems="flex-start" width="100%" as="section">
@@ -25,9 +25,32 @@ export default function CheckboxRoute() {
           Input
         </Heading>
         <Text as="p">
-          The Input component is used to collect text input from users, often in
-          a form. It can be used in a variety of sizes and states.
+          The Input component wraps the native input element, and is used to
+          collect text input from users, often in a form. This component has
+          three variants:
         </Text>
+        <VStack gap={4} alignItems="flex-start" width="100%">
+          <Stack alignItems="baseline" gap={1}>
+            <Text>
+              <code>Input</code>
+            </Text>
+            <Text>A minimal input with no label or decriptive text.</Text>
+          </Stack>
+          <Stack alignItems="baseline" gap={1}>
+            <Text>
+              <code>InputWithLabel</code>
+            </Text>
+            <Text>An input with a label above it.</Text>
+          </Stack>
+          <Stack alignItems="baseline" gap={1}>
+            <Text>
+              <code>InputWithInfo</code>
+            </Text>
+            <Text>
+              An input with a label above it and informational text below it.
+            </Text>
+          </Stack>
+        </VStack>
       </VStack>
 
       <VStack width="100%" alignItems="flex-start" gap={4} as="section">

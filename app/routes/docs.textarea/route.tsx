@@ -9,8 +9,9 @@ export default function TextAreaRoute() {
           Textarea
         </Heading>
         <Text as="p">
-          The Textarea component wraps the native textarea element, and is used
-          to collect multi-line text input from users, often in a form.
+          The Textarea component wraps the native <code>textarea</code> element,
+          and is used to collect multi-line text input from users, often in a
+          form.
         </Text>
       </VStack>
       <VStack width="100%" alignItems="flex-start">

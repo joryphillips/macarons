@@ -5,7 +5,7 @@ import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighligh
 
 export default function SelectRoute() {
   return (
-    <VStack gap={8} width="100%" alignItems="flex-start">
+    <VStack gap={4} width="100%" alignItems="flex-start">
       <Heading as="h1" size="xl">
         Select
       </Heading>

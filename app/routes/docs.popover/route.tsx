@@ -5,7 +5,7 @@ import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighligh
 
 export default function PopoverRoute() {
   return (
-    <VStack gap={8} width="100%" alignItems="flex-start">
+    <VStack gap={4} width="100%" alignItems="flex-start">
       <Heading>Popover</Heading>
       <Text as="p">
         The popover component is used to display additional information or

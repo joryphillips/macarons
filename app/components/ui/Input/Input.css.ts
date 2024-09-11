@@ -96,7 +96,7 @@ export const inputStyles = styleVariants({
   ],
 });
 
-export const invalid = style({
+export const invalidStyles = style({
   borderColor: destructive.elementBorder,
   selectors: {
     "&:focus": {
@@ -110,7 +110,12 @@ export const invalid = style({
 });
 
 export const textAreaStyles = style({
-  height: "5rem",
+  height: vars.contentSize["4xs"],
+  paddingLeft: vars.spacing[3],
+  paddingRight: vars.spacing[3],
+  paddingTop: vars.spacing[2],
+  paddingBottom: vars.spacing[2],
+  lineHeight: 1.4,
 });
 
 export const errorTextStyles = style({

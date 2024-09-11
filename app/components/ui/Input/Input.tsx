@@ -13,7 +13,7 @@ import {
   inputContainerStyles,
   inputStyles,
   inputClearButtonStyles,
-  invalid,
+  invalidStyles,
 } from "./Input.css";
 
 export const defaultScrollBehavior: ScrollIntoViewOptions = {
@@ -43,7 +43,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         disabled={isDisabled}
-        className={clsx(inputStyles[size], isInvalid && invalid, className)}
+        className={clsx(
+          inputStyles[size],
+          isInvalid && invalidStyles,
+          className
+        )}
         ref={ref}
         {...props}
       />

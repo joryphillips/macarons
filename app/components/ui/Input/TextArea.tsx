@@ -1,15 +1,16 @@
 import clsx from "clsx";
 import * as React from "react";
 import { base as baseReset, input as inputReset } from "~/styles/reset.css";
-import { inputBaseStyles, textAreaStyles } from "./Input.css";
+import { inputBaseStyles, textAreaStyles, invalidStyles } from "./Input.css";
 
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   isDisabled?: boolean;
+  isInvalid?: boolean;
 }
 
 const TextArea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ isDisabled = false, className, ...props }, ref) => {
+  ({ isDisabled = false, isInvalid = false, className, ...props }, ref) => {
     return (
       <textarea
         disabled={isDisabled}
@@ -18,6 +19,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           inputReset,
           inputBaseStyles,
           textAreaStyles,
+          isInvalid && invalidStyles,
           className
         )}
         ref={ref}

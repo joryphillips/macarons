@@ -113,6 +113,9 @@ export function SideNav({
       <NavBarLink onClick={hideSideNav} to="/docs/text">
         Text
       </NavBarLink>
+      <NavBarLink onClick={hideSideNav} to="/docs/textarea">
+        Textarea
+      </NavBarLink>
       <NavBarLink onClick={hideSideNav} to="/docs/heading">
         Heading
       </NavBarLink>

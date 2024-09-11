@@ -6,7 +6,7 @@ const warningAlertString = `<Alert status="warning">Warning</Alert>`;
 const successAlertString = `<Alert status="success">Success</Alert>`;
 const errorAlertString = `<Alert status="error">Error</Alert>`;
 const customAlertString = `<Alert borderRadius="none" borderStyle="none" showIcon={false}>
-  <span>Custom Alert</span>
+  Custom Alert
 </Alert>`;
 
 export default function AlertRoute() {
@@ -80,16 +80,21 @@ export default function AlertRoute() {
         Default Props
       </Heading>
       <VStack spacing={4} alignItems="flex-start">
-        <code>status="info"</code>
-        <code>showIcon=&#123;true&#125;</code>
-        <code>borderRadius="sm"</code>
-        <code>borderStyle="solid"</code>
-        <code>borderWidth="double"</code>
-        <code>padding={3}</code>
-        <code>display="flex"</code>
-        <code>flexDirection="row"</code>
-        <code>alignItems="center"</code>
-        <code>gap={2}</code>
+        <SyntaxHighlighter>{`<Alert
+  status="info"
+  showIcon={true}
+  borderRadius="sm"
+  borderStyle="solid"
+  borderWidth="double"
+  padding={3}
+  display="flex"
+  flexDirection="row"
+  alignItems="center"
+  gap={2}
+>
+// equivalent to 
+<Alert>
+`}</SyntaxHighlighter>
       </VStack>
     </VStack>
   );

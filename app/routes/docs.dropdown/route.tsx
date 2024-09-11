@@ -5,7 +5,7 @@ import { SyntaxHighlighter } from "~/components/SyntaxHighlighter/SyntaxHighligh
 
 export default function DropdownRoute() {
   return (
-    <VStack gap={8} width="100%" alignItems="flex-start">
+    <VStack gap={4} width="100%" alignItems="flex-start">
       <Heading>Dropdown</Heading>
       <Text as="p">
         The dropdown component is used to show a list of actions or options when

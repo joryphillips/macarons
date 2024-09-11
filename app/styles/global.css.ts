@@ -77,3 +77,11 @@ globalStyle("ul li", {
 globalStyle("strong", { fontWeight: vars.weight.semiBold });
 
 globalStyle("pre", { margin: 0 });
+
+globalStyle("code", {
+  fontFamily: "monospace",
+  fontSize: "90%",
+  padding: `${vars.spacing[1]} ${vars.spacing[2]}`,
+  borderRadius: vars.border.radius.xs,
+  backgroundColor: vars.colors.standard.hoveredElementBackground,
+});

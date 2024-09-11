@@ -4,16 +4,25 @@ import { Divider, Heading, Text, VStack } from "~/components/ui";
 export default function HeadingsRoute() {
   return (
     <VStack gap={8} paddingBottom={8} width="100%" alignItems="flex-start">
-      <Heading>Heading</Heading>
-      <Text as="p">
-        A convenience component, Heading extends the{" "}
-        <Link to="/ui/text">Text</Link> component, narrowing the allowed "as"
-        elements to HTML headings (h1, h2, etc.) and defaulting to{" "}
-        <strong>size="xl"</strong> (as opposed to <strong>"md"</strong> for
-        Text). Headings use the same font scale as Text. Headings default to a
-        font weight of semi-bold (600) and the HTML tag h2.
-      </Text>
+      <VStack gap={4} alignItems="flex-start" width="100%" as="section">
+        <Heading>Heading</Heading>
+        <Text as="p">
+          A convenience component, Heading extends the{" "}
+          <Link to="/docs/text">Text</Link> component, narrowing the allowed
+          "as" elements to HTML headings (h1, h2, etc.) and defaulting to{" "}
+          <code>size="xl"</code> (as opposed to <code>md</code> for Text).
+          Headings also default to <code>fontWeight="semiBold"</code> and the
+          HTML tag <code>h2</code>.
+        </Text>
+        <Text as="p">
+          Headings use the same font scale as Text. See the{" "}
+          <Link to="/docs/text">Text</Link> component for usage examples of
+          available props.
+        </Text>
+      </VStack>
+
       <Divider />
+
       <VStack gap={6} alignItems="flex-start">
         <Heading as="h3" size="lg">
           Size Options
@@ -80,7 +89,9 @@ export default function HeadingsRoute() {
           </Heading>
         </VStack>
       </VStack>
+
       <Divider />
+
       <VStack gap={6} alignItems="flex-start">
         <Heading as="h3" size="lg">
           Weight Options
@@ -113,6 +124,51 @@ export default function HeadingsRoute() {
           <Heading color="lowContrastText" size="md" fontWeight="black">
             black (900)
           </Heading>
+        </VStack>
+      </VStack>
+
+      <Divider />
+
+      <VStack gap={6} alignItems="flex-start" as="section">
+        <Heading as="h3" size="lg">
+          Tag Options
+        </Heading>
+        <Text as="p">
+          The Heading component defaults to a <code>h2</code> element. You can
+          change this by passing the <code>as</code> prop with one of the
+          following values.
+        </Text>
+        <VStack gap={1} as="ul" alignItems="flex-start">
+          <Text as="li">
+            <code>span</code>
+          </Text>
+          <Text as="li">
+            <code>p</code>
+          </Text>
+          <Text as="li">
+            <code>h1</code>
+          </Text>
+          <Text as="li">
+            <code>h2</code> (default)
+          </Text>
+          <Text as="li">
+            <code>h3</code>
+          </Text>
+          <Text as="li">
+            <code>h4</code>
+          </Text>
+          <Text as="li">
+            <code>h5</code>
+          </Text>
+          <Text as="li">
+            <code>h6</code>
+          </Text>
+          <Text as="li">
+            <code>label</code>
+          </Text>
+          <Text as="li">
+            <code>li</code>
+          </Text>
         </VStack>
       </VStack>
     </VStack>

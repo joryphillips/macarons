@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Input, InputWithLabel, VStack } from "~/components/ui";
+import { Input, VStack } from "~/components/ui";
 
 export function Small() {
   const [clearableSmallInputValue, setClearableSmallInputValue] =
@@ -8,12 +8,12 @@ export function Small() {
   return (
     <VStack>
       <Input size="sm" placeholder="small placeholder" />
-      <InputWithLabel
+      <Input
         size="sm"
         placeholder="small with label placeholder"
         label="small with label"
       />
-      <InputWithLabel
+      <Input
         size="sm"
         placeholder="small clearable placeholder"
         label="small with label"

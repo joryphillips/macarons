@@ -1,8 +1,8 @@
-import { InputWithLabel } from "~/components/ui";
+import { Input } from "~/components/ui";
 
 // prettier-ignore
 export function WithLabel() {
   return (
-      <InputWithLabel placeholder="placeholder" label="Label" />
+      <Input placeholder="placeholder" label="Label" />
   );
 }

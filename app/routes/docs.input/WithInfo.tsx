@@ -1,9 +1,9 @@
-import { InputWithInfo } from "~/components/ui";
+import { Input } from "~/components/ui";
 
 // prettier-ignore
 export function WithInfo() {
   return (
-    <InputWithInfo
+    <Input
       placeholder="placeholder"
       label="Label"
       infoText="Descriptive text"

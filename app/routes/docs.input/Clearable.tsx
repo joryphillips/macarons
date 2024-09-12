@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { InputWithLabel } from "~/components/ui";
+import { Input } from "~/components/ui";
 
 export function Clearable() {
   const [clearableInputValue, setClearableInputValue] = useState("clearable");
 
   return (
-    <InputWithLabel
+    <Input
       label="Clearable Input"
       placeholder="placeholder"
       value={clearableInputValue}

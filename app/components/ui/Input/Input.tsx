@@ -29,7 +29,7 @@ export interface InputProps extends InputAttributes {
   isInvalid?: boolean;
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+const MinimalInput = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       size = "default",
@@ -54,12 +54,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
-Input.displayName = "Input";
+MinimalInput.displayName = "MinimalInput";
 
-const InputWithLabel = forwardRef<
-  HTMLInputElement,
-  InputProps & { label: string; onClear?: () => void }
->(
+type InputWithLabelProps = InputProps & {
+  label?: string;
+  onClear?: () => void;
+};
+
+const InputWithLabel = forwardRef<HTMLInputElement, InputWithLabelProps>(
   (
     {
       id,
@@ -78,9 +80,9 @@ const InputWithLabel = forwardRef<
     const labelId = `${useId()}-${id ?? label}`;
     return (
       <VStack width="100%" alignItems="flex-start" spacing={1}>
-        <Label htmlFor={labelId}>{label}</Label>
+        {!!label && <Label htmlFor={labelId}>{label}</Label>}
         <Box className={inputContainerStyles}>
-          <Input
+          <MinimalInput
             ref={inputRef}
             name={name}
             id={labelId}
@@ -120,8 +122,8 @@ InputWithLabel.displayName = "InputWithLabel";
 
 const InputWithInfo = forwardRef<
   HTMLInputElement,
-  InputProps & {
-    label: string;
+  InputWithLabelProps & {
+    label?: string;
     /** Additional input instructions to show below the input. Hides if errorText
      * is present. */
     infoText?: string;
@@ -155,18 +157,20 @@ const InputWithInfo = forwardRef<
           autoComplete="off"
           {...props}
         />
-        <VStack spacing={2} alignItems="flex-start" width="100%">
-          {!errorText && infoText && <Text size="xs">{infoText}</Text>}
-          {errorText && (
-            <Text size="xs" className={errorTextStyles}>
-              {errorText}
-            </Text>
-          )}
-        </VStack>
+        {(!!errorText || !!infoText) && (
+          <VStack spacing={2} alignItems="flex-start" width="100%">
+            {!errorText && infoText && <Text size="xs">{infoText}</Text>}
+            {errorText && (
+              <Text size="xs" className={errorTextStyles}>
+                {errorText}
+              </Text>
+            )}
+          </VStack>
+        )}
       </VStack>
     );
   }
 );
 InputWithInfo.displayName = "InputWithInfo";
 
-export { Input, InputWithInfo, InputWithLabel };
+export { InputWithInfo as Input };

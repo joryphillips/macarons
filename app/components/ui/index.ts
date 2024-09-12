@@ -33,11 +33,7 @@ export {
   DropdownMenuTrigger,
 } from "~/components/ui/Dropdown/Dropdown";
 export { Heading } from "~/components/ui/Heading/Heading";
-export {
-  Input,
-  InputWithInfo,
-  InputWithLabel,
-} from "~/components/ui/Input/Input";
+export { Input } from "~/components/ui/Input/Input";
 export { TextArea } from "~/components/ui/Input/TextArea";
 export { Label } from "~/components/ui/Label/Label";
 export { Box } from "~/components/ui/Layout/Box";

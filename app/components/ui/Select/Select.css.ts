@@ -35,7 +35,6 @@ export const viewPort = style({
 });
 
 export const item = style({
-  // width: vars.contentSize["xs"],
   borderRadius: vars.border.radius.sm,
   padding: `${vars.spacing[2]} ${vars.spacing[4]}`,
   outline: "none",

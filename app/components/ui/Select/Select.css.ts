@@ -2,6 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "~/theme/theme.css";
 import { animationSelectors } from "../Dropdown/Dropdown.css";
 import { easeInOut } from "polished";
+import { breakpoints } from "~/theme/breakpoints";
 
 const elementBackground = vars.colors.standard.elementBackground;
 const elementBorder = vars.colors.standard.elementBorder;
@@ -9,6 +10,7 @@ const elementBorder = vars.colors.standard.elementBorder;
 export const content = style({
   zIndex: vars.zIndex.dropdowns,
   minWidth: vars.contentSize["4xs"],
+  maxWidth: "calc(100vw - 20px)",
   overflow: "hidden",
   borderRadius: vars.border.radius.sm,
   borderWidth: vars.border.width.standard,
@@ -21,6 +23,11 @@ export const content = style({
   animationTimingFunction: easeInOut("quad"),
   animationDuration: "150ms",
   selectors: animationSelectors,
+  "@media" : {
+    [`screen and (min-width: ${breakpoints.tablet}px)`]: {
+      maxWidth: vars.contentSize["sm"],
+    },
+  },
 });
 
 export const viewPort = style({
@@ -28,7 +35,7 @@ export const viewPort = style({
 });
 
 export const item = style({
-  width: vars.contentSize["xs"],
+  // width: vars.contentSize["xs"],
   borderRadius: vars.border.radius.sm,
   padding: `${vars.spacing[2]} ${vars.spacing[4]}`,
   outline: "none",
@@ -36,16 +43,17 @@ export const item = style({
   transitionDuration: "150ms",
   selectors: {
     "&[data-state=checked]": {
-      backgroundColor: vars.colors.standard.hoveredElementBackground,
-      color: vars.colors.textOnSolidBackground,
+      backgroundColor: vars.colors.standard.activeElementBackground,
+      color: vars.colors.standard.lowContrastText,
     },
     "&[data-highlighted]": {
-      backgroundColor: vars.colors.standard.solidBackground,
-      color: vars.colors.textOnSolidBackground,
+      backgroundColor: vars.colors.standard.hoveredElementBackground,
+      color: vars.colors.standard.highContrastText,
     },
     "&[data-disabled]": {
       pointerEvents: "none",
       backgroundColor: vars.colors.standard.subtleBackground,
+      color: vars.colors.standard.lowContrastText,
     },
   },
 });

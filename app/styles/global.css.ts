@@ -85,3 +85,9 @@ globalStyle("code", {
   borderRadius: vars.border.radius.xs,
   backgroundColor: vars.colors.standard.hoveredElementBackground,
 });
+
+// Prevent page jump when dropdown appears
+// https://github.com/radix-ui/primitives/issues/1925
+globalStyle("html body[data-scroll-locked]", {
+  marginRight: "0px!important",
+})

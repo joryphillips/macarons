@@ -27,7 +27,7 @@ export default function AvatarRoute() {
             Standard
           </Heading>
           <Avatar
-            imageSource="https://i.pravatar.cc/150"
+            imageSource="https://i.pravatar.cc/150?u=consistent3"
             userName="Jane Doe"
             userInitials="JD"
           />

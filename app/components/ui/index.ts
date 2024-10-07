@@ -9,6 +9,7 @@ export {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "~/components/ui/AlertDialog/AlertDialog";
+export { Avatar } from "~/components/ui/Avatar/Avatar";
 export { Badge } from "~/components/ui/Badge/Badge";
 export { Button, IconButton } from "~/components/ui/Button/Button";
 export { Checkbox } from "~/components/ui/Checkbox/Checkbox";

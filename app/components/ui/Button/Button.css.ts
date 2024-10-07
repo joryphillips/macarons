@@ -284,13 +284,13 @@ export const buttonSizeVariants = styleVariants({
 
 export const iconSizeVariants = styleVariants({
   default: {
-    minWidth: vars.spacing[8],
+    minWidth: vars.spacing[8], // override button base min-width
     width: vars.spacing[8],
     height: vars.spacing[8],
     padding: 0,
   },
   sm: {
-    minWidth: vars.spacing[6],
+    minWidth: vars.spacing[6], // override button base min-width
     width: vars.spacing[6],
     height: vars.spacing[6],
     padding: 0,
@@ -340,7 +340,6 @@ export const buttonWidthVariants = styleVariants({
 });
 
 const prefixAndSuffixBase = {
-  minWidth: "1.25rem",
   width: "1.25rem",
   height: "1.25rem",
 };

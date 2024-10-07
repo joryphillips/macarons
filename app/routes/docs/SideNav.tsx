@@ -69,6 +69,9 @@ export function SideNav({
       <NavBarLink onClick={hideSideNav} to="/docs/alert-dialog">
         Alert Dialog
       </NavBarLink>
+      <NavBarLink onClick={hideSideNav} to="/docs/avatar">
+        Avatar
+      </NavBarLink>
       <NavBarLink onClick={hideSideNav} to="/docs/badge">
         Badge
       </NavBarLink>

@@ -8,7 +8,7 @@ For now, clone the Macarons repo or copy and paste files from the components, st
 
 # TODOs
 
-- We'll work to get the components easily decoupled from the Remix app in the near future!
+- Components better decoupled from the Remix app
 - Better formated code examples
 - More comprehensive API documentation (or at least links to Radix)
 
